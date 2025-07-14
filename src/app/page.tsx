@@ -4,13 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 export default function Home() {
   return (
     <div className=" container">
-      <h1>seif1</h1>
-      <h2>seif2</h2>
-      <h3>seif3</h3>
-      <h4>seif456</h4>
-      <h5>seif456</h5>
-      <h6>seif456</h6>
-      <p>seif456</p>
+      <h1 className="heading1">seif1</h1>
+      <h2 className="heading2">seif2</h2>
+      <h3 className="heading3">seif3</h3>
+      <h4 className="heading4">seif4</h4>
+      <p className="heading5">seif5</p>
+
       <Button variant="primary">
         Contact us <ArrowUpRight className="size-5" />
       </Button>

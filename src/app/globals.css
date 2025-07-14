@@ -129,21 +129,19 @@
   body {
     @apply bg-background text-foreground;
   }
-  h1 {
+  .heading1 {
     @apply text-xl lg:text-5xl font-bold;
   }
-  h2 {
+  .heading2 {
     @apply text-base  lg:text-[40px] font-semibold;
   }
-  h3 {
+  .heading3 {
     @apply text-sm  lg:text-[32px] font-medium;
   }
-  h4,
-  h5,
-  h6 {
+  .heading4 {
     @apply text-sm  lg:text-[24px] font-medium;
   }
-  p {
+  .heading5 {
     @apply text-xs lg:text-[24px] font-medium;
   }
 }
