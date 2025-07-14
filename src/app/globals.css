@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 :root {
@@ -45,6 +44,10 @@
 @theme inline {
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
+
+  --font-weight-bold: 700;
+  --font-weight-semibold: 589;
+  --font-weight-medium: 490;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -126,8 +129,48 @@
   body {
     @apply bg-background text-foreground;
   }
-  h1
-  {
-    @apply text-primary
+  h1 {
+    @apply text-xl lg:text-5xl font-bold;
+  }
+  h2 {
+    @apply text-base  lg:text-[40px] font-semibold;
+  }
+  h3 {
+    @apply text-sm  lg:text-[32px] font-medium;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply text-sm  lg:text-[24px] font-medium;
+  }
+  p {
+    @apply text-xs lg:text-[24px] font-medium;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  max-width: 1408px;
+
+  @media (max-width: 1280px) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 960px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
