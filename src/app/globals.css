@@ -129,19 +129,19 @@
   body {
     @apply bg-background text-foreground;
   }
-  .heading1 {
+  .heading-1 {
     @apply text-xl lg:text-5xl font-bold;
   }
-  .heading2 {
+  .heading-2 {
     @apply text-base  lg:text-[40px] font-semibold;
   }
-  .heading3 {
+  .heading-3 {
     @apply text-sm  lg:text-[32px] font-medium;
   }
-  .heading4 {
+  .heading-4 {
     @apply text-sm  lg:text-[24px] font-medium;
   }
-  .heading5 {
+  .heading-5 {
     @apply text-xs lg:text-[24px] font-medium;
   }
 }
