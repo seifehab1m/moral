@@ -17,7 +17,10 @@ export default function ManifestoBook() {
           nec velit. Quisque eu sapien eu tortor consequat porta vel id turpis.
         </p>
       </div>
-      <div className="flex flex-col justify-between h-full min-h-[240px] bg-primary md:py-5 py-3  md:px-16 px-2  rounded-[8px] rounded-br-[48px] max-w-[450px]">
+      <div
+        className="flex flex-col justify-between h-full min-h-[240px] bg-primary md:py-5 py-3
+        md:px-16 px-2  rounded-[8px] rounded-br-[48px] md:max-w-full max-w-[490px] "
+      >
         <h2 className="text-white md:text-[64px] text-3xl">
           culture <br /> Manifesto
         </h2>
