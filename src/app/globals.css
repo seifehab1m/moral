@@ -6,7 +6,7 @@
   --color-secondary: #7e7d82;
   --color-primary-bg: #f2f2f2;
   --color-grey: #f2f2f2;
-
+  --color-light-black: #1e1e1e;
 
   /* --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -45,7 +45,8 @@
 @theme inline {
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
-
+  --color-light-black: var(--color-light-black);
+  
   --font-weight-bold: 700;
   --font-weight-semibold: 589;
   --font-weight-medium: 490;
