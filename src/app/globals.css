@@ -1,12 +1,10 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
 :root {
   --color-primary: #002855;
   --color-secondary: #7e7d82;
   --color-primary-bg: #f2f2f2;
   --color-grey: #f2f2f2;
-
 
   /* --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -45,6 +43,7 @@
 @theme inline {
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
+  --color-grey: var(--color-grey);
 
   --font-weight-bold: 700;
   --font-weight-semibold: 589;
@@ -89,6 +88,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* @custom-variant dark (&:is(.dark *)); */
 /* .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -127,44 +127,54 @@
   * {
     @apply border-border outline-ring/50 font-common;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   .heading-1 {
-    @apply text-xl lg:text-5xl font-bold;
+    @apply text-xl lg:text-5xl leading-[1.2];
   }
+
   .heading-2 {
-    @apply text-base  lg:text-[40px] font-semibold;
+    @apply text-base  lg:text-[40px] leading-[1.2];
   }
+
   .heading-3 {
-    @apply text-sm  lg:text-[32px] font-medium;
+    @apply text-sm  lg:text-[32px] leading-[1.2];
   }
+
   .heading-4 {
-    @apply text-sm  lg:text-[24px] font-medium;
+    @apply text-sm  lg:text-[24px] leading-[1.2];
   }
+
   .heading-5 {
-    @apply text-xs lg:text-[24px] font-medium;
+    @apply text-xs lg:text-[24px] leading-[1.2];
+  }
+
+  .sub-header {
+    @apply text-[12px] lg:text-[20px] leading-[1.2] text-secondary;
+  }
+
+  .top-rounded-section {
+    @apply bg-white py-[24px] lg:py-[80px] rounded-t-[16px] lg:rounded-t-[40px] relative z-10 -mt-[16px] lg:-mt-[40px];
+  }
+
+  .rounded-card {
+    @apply bg-primary text-white rounded-[8px] rounded-ee-[48px] lg:rounded-ee-[80px] min-h-[250px] lg:min-h-[450px] p-[16px] pe-[49px] lg:p-[48px] lg:pb-[70px] flex flex-col;
   }
 }
 
 .container {
   width: 100%;
-  margin: 0 auto;
+  margin-inline: auto;
   padding-left: 1rem;
   padding-right: 1rem;
 
-  max-width: 1408px;
-
-  @media (max-width: 1280px) {
-    max-width: 1200px;
-  }
-
-  @media (max-width: 1024px) {
-    max-width: 960px;
-  }
-
-  @media (max-width: 768px) {
-    max-width: 720px;
+  @media (max-width: 1728px) {
+    max-width: 1408px;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   @media (max-width: 640px) {
