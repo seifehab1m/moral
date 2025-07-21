@@ -5,7 +5,7 @@ export default function PositiveImpact() {
   return (
     <section className=" bg-[#CFCECD] py-20">
       <div className="container">
-        <h6 className="text-secondary text-[20px]">Open Roles</h6>
+        <h6 className="text-secondary text-[20px] font-medium">Open Roles</h6>
         <div className="flex justify-between flex-col md:flex-row md:gap-60 gap-4">
           <h2 className="heading-1 text-primary pt-2.5 font-medium text-nowrap ">
             Positive impact

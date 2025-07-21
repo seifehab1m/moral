@@ -26,7 +26,7 @@ export default function ValuesCreator() {
       <div className="rounded-t-[40px] py-10   bg-white w-full ">
         <div className="grid md:grid-cols-2 grid-cols-1 container">
           <div>
-            <h6 className="text-secondary text-[20px]">
+            <h6 className="text-secondary text-[20px] font-medium">
              Core Values
             </h6>
           </div>

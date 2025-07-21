@@ -1,5 +1,6 @@
 import ValuesCreator from "@/components/pages/career-opportunities/ValuesCreator";
-import img from "@/assets/images/carrerHero.jpg";
+// import img from "@/assets/images/carrerHero.jpg";
+import img from "@/assets/images/carrerHero2.jpg";
 import { Button } from "@/components/ui/button";
 import PositiveImpact from "@/components/pages/career-opportunities/positive-impact/PositiveImpact";
 import ManifestoBook from "@/components/pages/career-opportunities/ManifestoBook";
