@@ -69,7 +69,7 @@ export function Footer() {
                 }
               </nav>
             ) : (
-              <div>
+              <div key={"div " + i}>
                 <h2 className="font-medium text-sm lg:text-[28px]">
                   {c.header}
                 </h2>

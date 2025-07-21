@@ -11,6 +11,7 @@ export function useWindowScroll() {
     y: null,
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const scrollTo = useCallback((...args: any) => {
     if (typeof args[0] === "object") {
       window.scrollTo(args[0]);
