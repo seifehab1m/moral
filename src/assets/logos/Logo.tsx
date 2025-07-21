@@ -6,7 +6,7 @@ const Logo = ({ className, ...props }: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 450 96"
     fill="none"
-    className={cn("w-[143px] lg:w-[450px] h-auto", className)}
+    className={cn("w-full max-w-[143px] lg:max-w-[450px] h-auto", className)}
     {...props}
   >
     <g fill="currentColor" clipPath="url(#a)">
