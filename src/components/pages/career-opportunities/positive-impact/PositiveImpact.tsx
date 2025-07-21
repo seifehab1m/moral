@@ -21,9 +21,9 @@ export default function PositiveImpact() {
         <div className="pt-16">
           <CardPositiveImpact title="01.Desgnation" description="SECTOR NAME" />
           <div className="line w-full h-[1px] bg-secondary my-7"></div>
-          <CardPositiveImpact title="01.Desgnation" description="SECTOR NAME" />
+          <CardPositiveImpact title="02.Desgnation" description="SECTOR NAME" />
           <div className="line w-full h-[1px] bg-secondary my-7"></div>
-          <CardPositiveImpact title="01.Desgnation" description="SECTOR NAME" />
+          <CardPositiveImpact title="03.Desgnation" description="SECTOR NAME" />
           <div className="line w-full h-[1px] bg-secondary my-7"></div>
         </div>
       </div>

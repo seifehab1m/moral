@@ -25,7 +25,11 @@ export default function ValuesCreator() {
     <div className="transform -translate-y-12">
       <div className="rounded-t-[40px] py-10   bg-white w-full ">
         <div className="grid md:grid-cols-2 grid-cols-1 container">
-          <div></div>
+          <div>
+            <h6 className="text-secondary text-[20px]">
+             Core Values
+            </h6>
+          </div>
 
           <div className="flex gap-4 relative items-stretch me-6">
             {/* ✅ Gray vertical line fixed */}
@@ -33,7 +37,7 @@ export default function ValuesCreator() {
 
             <div className="flex flex-col gap-6">
               <h2
-                className={`heading-2 font-medium text-primary md:max-w-[40%]`}
+                className={`heading-2 font-medium text-primary md:max-w-[60%]`}
               >
                 Value creators and builders.
               </h2>
@@ -56,7 +60,7 @@ export default function ValuesCreator() {
                     >
                       {item.title}
                     </h2>
-                    <p className={`pt-2 heading-5 text-light-black `}>
+                    <p className={`pt-2 heading-5 text-light-black font-medium`}>
                       {item.description}
                     </p>
                   </div>

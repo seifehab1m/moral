@@ -3,11 +3,13 @@ import img from "@/assets/images/carrerHero.jpg";
 import { Button } from "@/components/ui/button";
 import PositiveImpact from "@/components/pages/career-opportunities/positive-impact/PositiveImpact";
 import ManifestoBook from "@/components/pages/career-opportunities/ManifestoBook";
+import CareerHeader from "@/components/pages/career-opportunities/CareerHeader";
 
 export default function Page() {
   return (
     <>
       <section >
+        <CareerHeader />
         <div
           style={{
             backgroundImage: `url(${img?.src})`,
