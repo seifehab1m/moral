@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import heroImage from "../../../../public/hero-image.png";
+import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 
 export function Hero() {
+  useHeaderTheme(false);
+
   return (
     <main className="sticky top-0 min-h-screen">
       {/* <video */}
