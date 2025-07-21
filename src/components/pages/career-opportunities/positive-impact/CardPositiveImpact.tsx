@@ -13,7 +13,7 @@ export default function CardPositiveImpact({
       {/* ✅ Desktop layout (visible on md and up) */}
       <div className="hidden md:flex justify-between items-center">
         <h2 className="heading-2 text-primary font-medium">{title}</h2>
-        <p className="heading-5 text-primary">{description}</p>
+        <p className="heading-5 text-primary font-medium">{description}</p>
         <Button className="text-secondary">Apply Here</Button>
       </div>
 
@@ -21,7 +21,7 @@ export default function CardPositiveImpact({
       <div className="flex justify-between items-center md:hidden">
         <div>
           <h2 className="heading-2 text-primary font-medium">{title}</h2>
-          <p className="heading-5 text-primary pt-1">{description}</p>
+          <p className="heading-5 text-primary pt-1 font-medium">{description}</p>
         </div>
         <div className="flex justify-between">
           <Button className="text-secondary">Apply Here</Button>
