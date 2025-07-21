@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/assets/logos/Logo";
@@ -16,12 +15,10 @@ export function Header({ forceDark }: HeaderProps) {
 
   const darkMode = (scroll?.y ?? 0) > 100 || !!forceDark;
 
-  console.log({ scroll, darkMode });
-
   return (
     <header
       className={cn(
-        "lg:py-[52px] transition-all fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between duration-500 w-full",
+        "py-7 lg:py-[52px] transition-all fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between duration-500 w-full",
         darkMode && "bg-white shadow lg:py-7",
       )}
     >
@@ -30,14 +27,14 @@ export function Header({ forceDark }: HeaderProps) {
           <Logo
             className={cn(
               "transition-all text-white duration-500",
-              darkMode && "text-primary w-50",
+              darkMode && "text-primary lg:w-50",
             )}
           />
         </Link>
         <div className="flex items-center gap-8">
           <div
             className={cn(
-              "text-white font-semibold transition duration-500 flex items-center gap-1",
+              "text-white font-semibold transition duration-500 hidden lg:flex items-center gap-1",
               darkMode && "text-primary",
             )}
           >
