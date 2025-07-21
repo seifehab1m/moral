@@ -15,8 +15,10 @@ export function Stats() {
         </div>
         <div className="rounded-card">
           <div>
-            <p className="heading-1 font-medium">13</p>
-            <p className="mt-3 mb-10 text-xs lg:text-xl">Countries With Direct Investment</p>
+            <p className="text-[24px] lg:text-[72px] font-medium">13</p>
+            <p className="mt-0 mb-10 text-xs lg:text-xl">
+              Countries With Direct Investment
+            </p>
           </div>
           <p className="mt-auto text-xs lg:text-xl">
             Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc

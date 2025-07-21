@@ -13,10 +13,10 @@ export default function HomePage() {
       <Hero />
       <Stats />
       <CallToActionBG
-        imageURL="/cta-image.jpg"
+        imageURL="/cta-image-2.png"
         ctaURL="https://www.google.com"
         ctaText="watch video"
-        headerText="We're building a better future for everyone"
+        headerText="Shaping industries driving progress"
         className="pb-10"
       />
       <Sectors />

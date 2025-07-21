@@ -26,7 +26,7 @@ export function Header({ forceDark }: HeaderProps) {
         <Link href="/">
           <Logo
             className={cn(
-              "transition-all text-white duration-500",
+              "w-[450px] transition-all text-white duration-500",
               darkMode && "text-primary lg:w-50",
             )}
           />
