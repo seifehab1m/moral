@@ -37,35 +37,32 @@ export function Sectors() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-[#CFCECD] top-rounded-section ">
+    <section className="bg-[#CFCECD] top-rounded-section">
       <div className="container">
         <div>
-          <span className="sub-header">Our Sectors</span>
+          <span className="sub-header font-medium">Our Sectors</span>
 
-          <p className="mt-3 lg:mt-12 lg:text-2xl">
-            Horem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
-            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-            Suspendisse
+          <p className="mt-3 lg:mt-12 lg:text-2xl font-medium text-light-black">
+            MRBF Holding manages sizeable assets across investment and financial
+            services, healthcare, real estate, construction, IT services and
+            hospitality. It delivers experiences at the forefront of market
+            expectation – all fuelled by an unwavering dedication to innovation,
+            customer-centricity and sustainable quality.
           </p>
         </div>
 
-        <div className="grid grid-cols-12 mt-10">
+        <div className="grid grid-cols-12 mt-10 lg:mt-[94px]">
           <div className="col-span-8 h-full">
-            <div className="min-h-[15%]">
+            <div >
               <span className="text-secondary font-medium text-base lg:text-[32px]">
                 0{active + 1}
               </span>
-              <h2 className="text-primary font-medium heading-3">
+              <h2 className="text-primary font-medium heading-3 lg:max-w-[410px] lg:mt-2">
                 {sectors[active].title}
               </h2>
             </div>
 
-            <div className="relative h-[85%]">
+            <div className="relative h-[80%] lg:mt-[35px]">
               <Image
                 src={sectors[active].imageURL}
                 alt={sectors[active].title}
@@ -88,7 +85,7 @@ export function Sectors() {
                     key={i}
                     className={cn(
                       i < sectors?.length - 1 &&
-                        'after:content-[" "] after:block after:h-[1px] after:w-full after:bg-secondary after:mt-10',
+                        'after:content-[" "] after:block after:h-[2px] after:w-full after:bg-secondary after:mt-10',
                     )}
                   >
                     <button
