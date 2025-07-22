@@ -6,16 +6,12 @@ export default function PositiveImpact() {
     <section className=" bg-[#CFCECD] py-20">
       <div className="container">
         <h6 className="text-secondary text-[20px] font-medium">Open Roles</h6>
-        <div className="flex justify-between flex-col md:flex-row md:gap-60 gap-4">
+        <div className="flex justify-between items-center flex-col md:flex-row md:gap-60 gap-4">
           <h2 className="heading-1 text-primary pt-2.5 font-medium text-nowrap ">
             Positive impact
           </h2>
           <p className="text-light-black heading-5 font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis.
-            Suspendisse potenti. Phasellus vel sem at odio fringilla tincidunt
-            non nec velit. Quisque eu sapien eu tortor consequat porta vel id
-            turpis.
+            Join a family of nearly 2,000 colleagues across the world.
           </p>
         </div>
         <div className="pt-16">

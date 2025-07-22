@@ -5,16 +5,16 @@ const items = [
   {
     title: "01. Pioneering innovation",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Suspendisse potenti. Phasellus vel sem at odio fringilla tincidunt non nec velit. Quisque eu sapien eu tortor consequat porta vel id turpis.",
+      "The nimble pursuit of ever-evolving opportunities across multiple industries.",
   },
   {
-    title: "02. Purposeful partnerships",
+    title: "02. Sustainable Impact",
     description:
-      "Aliquet odio mattis. Suspendisse potenti. Phasellus vel sem at odio.",
+      "An ethical belief in using the power of investment to generate more than just dividends.",
   },
   {
-    title: "03. Pursuing excellence",
-    description: "Short and sharp.",
+    title: "03. Quality and Excellence",
+    description: "Driven by robust standards, a customer-centric ethos, and high-calibre people and partners",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function ValuesCreator() {
         <div className="grid md:grid-cols-2 grid-cols-1 container">
           <div>
             <h6 className="text-secondary text-[20px] font-medium">
-             Core Values
+             Our Values
             </h6>
           </div>
 
@@ -39,7 +39,7 @@ export default function ValuesCreator() {
               <h2
                 className={`heading-2 font-medium text-primary md:max-w-[60%]`}
               >
-                Value creators and builders.
+             Agility and Intent
               </h2>
               {items.map((item, index) => {
                 const isActive = index === activeIndex;
