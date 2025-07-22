@@ -12,7 +12,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-white text-secondary",
         primary: "bg-white text-secondary",
-        secondary: "bg-primary text-white",
+        secondary: "bg-secondary text-white",
       },
       size: {
         default: "flex items-center gap-2 ",

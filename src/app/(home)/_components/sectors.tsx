@@ -9,27 +9,27 @@ import Link from "next/link";
 const sectors = [
   {
     title: "Financial Services & Investment Management",
-    imageURL: "/cta-image.jpg",
+    imageURL: "/sectors.png",
   },
   {
     title: "Healthcare",
-    imageURL: "/cta-image.jpg",
+    imageURL: "/sectors.png",
   },
   {
     title: "Real Estate Development & Management",
-    imageURL: "/cta-image.jpg",
+    imageURL: "/sectors.png",
   },
   {
     title: "Construction",
-    imageURL: "/cta-image.jpg",
+    imageURL: "/sectors.png",
   },
   {
     title: "IT Services",
-    imageURL: "/cta-image.jpg",
+    imageURL: "/sectors.png",
   },
   {
     title: "Hospitality",
-    imageURL: "/cta-image.jpg",
+    imageURL: "/sectors.png",
   },
 ];
 
@@ -40,7 +40,7 @@ export function Sectors() {
     <section className="bg-[#CFCECD] top-rounded-section ">
       <div className="container">
         <div>
-          <span className="sub-header">Sectors</span>
+          <span className="sub-header">Our Sectors</span>
 
           <p className="mt-3 lg:mt-12 lg:text-2xl">
             Horem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu

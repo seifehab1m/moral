@@ -29,7 +29,13 @@ export function CallToActionBG({
         className,
       )}
     >
-      <Image src={imageURL} alt="" layout="fill" objectFit="cover" />
+      <Image
+        src={imageURL}
+        alt=""
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
       <div className="relative z-10 container flex flex-row gap-4 items-end lg:items-center justify-between mb-[38px]">
         <h2 className="heading-1 text-white font-semibold max-w-[500px]">
           {headerText}

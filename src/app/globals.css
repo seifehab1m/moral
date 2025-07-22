@@ -5,6 +5,7 @@
   --color-secondary: #7e7d82;
   --color-primary-bg: #f2f2f2;
   --color-grey: #f2f2f2;
+  --color-grey-2: #cfcecd;
   --color-light-black: #1e1e1e;
 
   /* --radius: 0.625rem;
@@ -45,7 +46,9 @@
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-light-black: var(--color-light-black);
-  
+  --color-grey: var(--color-grey);
+  --color-grey-2: var(--color-grey-2);
+
   --font-weight-bold: 700;
   --font-weight-semibold: 589;
   --font-weight-medium: 490;
@@ -162,7 +165,7 @@
   }
 
   .rounded-card {
-    @apply bg-primary text-white rounded-[8px] rounded-ee-[48px] lg:rounded-ee-[80px] min-h-[250px] lg:min-h-[450px] p-[16px] pe-[49px] lg:p-[48px] lg:pb-[70px] flex flex-col;
+    @apply bg-primary text-white rounded-ee-[48px] lg:rounded-ee-[80px] lg:rounded-[8px]  min-h-[250px] lg:min-h-[450px] p-[16px] pe-[49px] lg:px-[42px] lg:pt-[48px] lg:pb-[70px] flex flex-col;
   }
 }
 
