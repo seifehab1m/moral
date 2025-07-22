@@ -11,7 +11,7 @@ export function Header() {
   const [scroll] = useWindowScroll();
   const { forceDark } = useHeaderContext();
 
-  const isScrolled = (scroll?.y ?? 0) > 100;
+  const isScrolled = (scroll?.y ?? 0) > 10;
 
   return (
     <header

@@ -1,4 +1,4 @@
-import { Header, Footer } from "@/components/layout/";
+import { Header, Footer, ContactUs } from "@/components/layout/";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
@@ -38,6 +38,7 @@ export default function RootLayout({
         <HeaderProvider>
           <Header />
           {children}
+          <ContactUs />
           <Footer />
         </HeaderProvider>
       </body>

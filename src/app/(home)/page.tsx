@@ -4,7 +4,6 @@ import {
   CallToActionBG,
   Sectors,
   FlagshipSpotlight,
-  ContactUs,
 } from "./_components";
 
 export default function HomePage() {
@@ -21,7 +20,6 @@ export default function HomePage() {
       />
       <Sectors />
       <FlagshipSpotlight />
-      <ContactUs />
     </>
   );
 }
