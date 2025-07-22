@@ -1,15 +1,19 @@
+"use client";
+
 import ValuesCreator from "@/components/pages/career-opportunities/ValuesCreator";
- import img from "@/assets/images/carrerHero.png";
-// import img from "@/assets/images/carrerHero2.jpg";
+import img from "@/assets/images/carrerHero.png";
 import { Button } from "@/components/ui/button";
 import PositiveImpact from "@/components/pages/career-opportunities/positive-impact/PositiveImpact";
 import ManifestoBook from "@/components/pages/career-opportunities/ManifestoBook";
 import CareerHeader from "@/components/pages/career-opportunities/CareerHeader";
+import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 
 export default function Page() {
+  useHeaderTheme(true);
+
   return (
     <>
-      <section >
+      <section className="pt-[92px] lg:pt-[230px]">
         <CareerHeader />
         <div
           style={{
@@ -32,7 +36,7 @@ export default function Page() {
         <ValuesCreator />
       </section>
       <PositiveImpact />
-      <ManifestoBook/>
+      <ManifestoBook />
     </>
   );
 }
