@@ -24,7 +24,7 @@ export function Header() {
         <Link href="/">
           <Logo
             className={cn(
-              "w-[450px] transition-all text-white duration-500",
+              "w-[450px] transition-all text-grey-2 duration-500",
               isScrolled && "text-primary lg:w-50",
               forceDark && "text-primary",
             )}
@@ -33,7 +33,7 @@ export function Header() {
         <div className="flex items-center gap-8">
           <div
             className={cn(
-              "text-white font-semibold transition duration-500 hidden lg:flex items-center gap-1",
+              "text-grey-2 font-semibold transition duration-500 hidden lg:flex items-center gap-1",
               isScrolled && "text-primary",
               forceDark && "text-primary",
             )}
@@ -46,7 +46,7 @@ export function Header() {
             <Menu
               size={30}
               className={cn(
-                "text-white transition duration-500",
+                "text-grey-2 transition duration-500",
                 isScrolled && "text-primary",
                 forceDark && "text-primary",
               )}

@@ -8,7 +8,7 @@ export function Hero() {
   useHeaderTheme(false);
 
   return (
-    <main className="sticky top-0 min-h-screen">
+    <main className="sticky top-0">
       {/* <video */}
       {/*   className="absolute w-full h-full object-cover z-0" */}
       {/*   autoPlay */}
@@ -19,8 +19,8 @@ export function Hero() {
       {/* </video> */}
 
       <Image src={heroImage} alt="hero-image" className="object-cover" fill />
-      <div className="grid place-items-center relative z-10 min-h-screen">
-        <h1 className="text-[32px] lg:text-[52px] text-white font-medium">
+      <div className="grid place-items-center relative z-10 h-screen max-h-[800px] lg:max-h-screen ">
+        <h1 className="text-[32px] lg:text-[52px] text-grey-2 font-medium">
           Future, Present
         </h1>
       </div>

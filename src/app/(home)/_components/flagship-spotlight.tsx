@@ -16,7 +16,7 @@ export function FlagshipSpotlight() {
         <div>
           <p className="text-xl">Flagship spotlight: Maison fifty four Dubai</p>
           <h2 className="heading-2 font-medium mt-3 lg:mt-12 max-w-[496px]">
-            A place that honours your heritage and nutures your future.
+            a place that honours your heritage and nutures your future.
           </h2>
         </div>
         <Image className="max-w-[262px] lg:max-w-[343px]" src={logo} alt="" />

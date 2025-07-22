@@ -51,33 +51,33 @@ export function Sectors() {
           </p>
         </div>
 
-        <div className="grid grid-cols-12 mt-10 lg:mt-[94px]">
-          <div className="col-span-8 h-full">
+        <div className="grid grid-cols-24 mt-10 lg:mt-[94px]">
+          <div className="col-span-16 h-full">
             <div >
               <span className="text-secondary font-medium text-base lg:text-[32px]">
                 0{active + 1}
               </span>
-              <h2 className="text-primary font-medium heading-3 lg:max-w-[410px] lg:mt-2">
+              <h2 className="text-primary font-medium heading-3 lg:max-w-[410px] mt-1 lg:mt-2">
                 {sectors[active].title}
               </h2>
             </div>
 
-            <div className="relative h-[80%] lg:mt-[35px]">
+            <div className="relative h-[80%] mt-4 lg:mt-[35px]">
               <Image
                 src={sectors[active].imageURL}
                 alt={sectors[active].title}
                 className="object-cover rounded"
                 fill
               />
-              <Button asChild className="absolute bottom-20 right-8">
+              <Button asChild className="absolute bottom-8 right-8">
                 <Link href="/">Watch Video</Link>
               </Button>
             </div>
           </div>
 
-          <div className="w-[2px] bg-secondary col-span-1 justify-self-center" />
+          <div className="w-[1px] lg:w-[2px] bg-secondary col-span-1 justify-self-center" />
 
-          <ol className="col-span-3 space-y-7 pt-4">
+          <ol className="col-span-7 space-y-2 lg:space-y-7 lg:pt-4">
             {sectors?.map(
               (s, i) =>
                 i !== active && (
@@ -85,7 +85,7 @@ export function Sectors() {
                     key={i}
                     className={cn(
                       i < sectors?.length - 1 &&
-                        'after:content-[" "] after:block after:h-[2px] after:w-full after:bg-secondary after:mt-10',
+                        'after:content-[" "] after:block after:h-[1px] after:lg:h-[2px] after:w-full after:bg-secondary after:mt-2 after:lg:mt-10',
                     )}
                   >
                     <button

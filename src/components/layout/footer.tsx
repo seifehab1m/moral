@@ -36,9 +36,8 @@ const links: FooterNavigationLinks[] = [
 
 export function Footer() {
   return (
-    /* reset py to py-8*/
     <footer className="bg-primary relative z-10 px-4 py-8 lg:py-[42px]">
-      <div className="container flex flex-col lg:flex-row lg:justify-between gap-32">
+      <div className="container flex flex-col lg:flex-row lg:justify-between lg:gap-32">
         <div className="flex-[.3]">
           <Logo className="text-grey-2 max-w-[148px] lg:max-w-[393px]" />
           <p className="text-grey-2 font-semibold text-sm lg:text-xl mt-8 lg:mt-10">
