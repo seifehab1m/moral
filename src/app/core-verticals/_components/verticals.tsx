@@ -32,10 +32,7 @@ export function Verticals() {
 
 function Card() {
   return (
-    <Link
-      href="/"
-      className="relative aspect-[2/3] bg-[#D8D8D6] max-lg:min-w-[196px] max-w-[196px] lg:max-w-[300px] rounded group flex flex-col justify-between p-3.5 lg:p-4"
-    >
+    <div className="relative aspect-[2/3] bg-[#D8D8D6] max-lg:min-w-[196px] max-w-[196px] lg:max-w-[300px] rounded group flex flex-col justify-between p-3.5 lg:p-4">
       <Image
         src={cardImg}
         className="object-cover rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -47,9 +44,12 @@ function Card() {
         FINANCIAL SERVICES & INVESTMENT MANAGEMENT
       </h3>
 
-      <button className="text-white group-hover:text-primary relative z-10 duration-500 bg-secondary group-hover:bg-white p-2 rounded-[8px] self-end">
+      <Link
+        href="/"
+        className="text-white group-hover:text-primary relative z-10 duration-500 bg-secondary group-hover:bg-white p-2 rounded-[8px] self-end"
+      >
         <ArrowUpRight />
-      </button>
-    </Link>
+      </Link>
+    </div>
   );
 }

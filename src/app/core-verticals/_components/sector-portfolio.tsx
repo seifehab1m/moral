@@ -33,10 +33,10 @@ export function SectorPortfolio() {
       <div className="container">
         <span className="lg:text-[32px] text-secondary">Construction</span>
 
-        <div className="grid grid-cols-12 mt-3">
-          <div className="col-span-8 h-full">
+        <div className="grid grid-cols-24 mt-3">
+          <div className="col-span-15">
             <div className="min-h-[15%]">
-              <h2 className="text-primary font-medium heading-1 max-w-[636px] mb-10">
+              <h2 className="text-primary font-medium heading-1 max-w-[636px] mb-3 lg:mb-10">
                 {comapnies[active].title}
               </h2>
             </div>
@@ -54,9 +54,9 @@ export function SectorPortfolio() {
             </div>
           </div>
 
-          <div className="w-[2px] bg-secondary col-span-1 justify-self-center" />
+          <div className="w-[1px] lg:w-[2px] bg-secondary col-span-1 justify-self-center" />
 
-          <ol className="col-span-3 lg:space-y-[60px] lg:py-[52px]">
+          <ol className="col-span-8 lg:space-y-[60px] lg:py-[52px]">
             {comapnies?.map(
               (s, i) =>
                 i !== active && (
@@ -64,14 +64,14 @@ export function SectorPortfolio() {
                     key={i}
                     className={cn(
                       i < comapnies?.length - 1 &&
-                        'after:content-[" "] after:block after:h-[2px] after:w-full after:bg-secondary after:mt-[60px]',
+                        'after:content-[" "] after:block after:h-[1px] after:lg:h-[2px] after:w-full after:bg-secondary after:my-[30px] after:lg:my-[60px]',
                     )}
                   >
                     <button
-                      className="cursor-pointer flex flex-col gap-2 items-start"
+                      className="cursor-pointer w-full"
                       onClick={() => setActive(i)}
                     >
-                      <p className="text-secondary font-medium heading-1 text-start">
+                      <p className="text-secondary font-medium heading-1 break-words text-start min-w-0">
                         {s.title}
                       </p>
                     </button>

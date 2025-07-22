@@ -10,19 +10,15 @@ export default function CoreVerticals() {
   return (
     <>
       <Verticals />
+
       <CompanyDescription
-        className="lg:mt-[71px]"
+        className="mt-8 lg:mt-[71px]"
         sectorName="Real Estate"
         companyLogo="/hotel-logo-light.svg"
         description="Investing in local, regional and global property markets, MRBF Real Estate Development and Management leverages deep market insight and a keen sense of future trends to maximise sustainable returns for investors. Its development arm, Fifty Three East, delivers the company’s ethos of next- generation experiential living through customer- centric communities."
       />
 
-      <CallToActionSection
-        className=""
-        bgURL="/hotel-2.png"
-        text="Visit Website"
-        href="/"
-      />
+      <CallToActionSection bgURL="/hotel-2.png" text="Visit Website" href="/" />
 
       <StatsSection
         stats={[
@@ -65,10 +61,10 @@ export default function CoreVerticals() {
       />
 
       <CompanyDescription
+        className='lg:my-[91px]'
         sectorName="Hospitality"
         companyName="Yashar Palace Restaurant"
         description="MRBF Hospitality works with top-tier partners to deliver pioneering lifestyle and culinary experiences. This is embodied by the Dubai- based restaurant, Yashar Palace, which continually evolves to meet the fast-changing tastes of premium markets."
-        rounded
       />
 
       <CallToActionSection

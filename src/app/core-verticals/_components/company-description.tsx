@@ -12,7 +12,7 @@ type CompanyDescriptionProps = {
 
 export function CompanyDescription(props: CompanyDescriptionProps) {
   return (
-    <div className={cn(props.rounded && "top-rounded-section")}>
+    <div className={cn("max-lg:my-[16px]", props.rounded && "top-rounded-section")}>
       <div
         className={cn(
           "container flex flex-col lg:flex-row justify-between gap-3 lg:gap-10",
