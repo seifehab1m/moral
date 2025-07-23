@@ -14,7 +14,8 @@ const items = [
   },
   {
     title: "03. Quality and Excellence",
-    description: "Driven by robust standards, a customer-centric ethos, and high-calibre people and partners",
+    description:
+      "Driven by robust standards, a customer-centric ethos, and high-calibre people and partners",
   },
 ];
 
@@ -22,12 +23,12 @@ export default function ValuesCreator() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="transform -translate-y-12">
+    <div className="transform -translate-y-12 ">
       <div className="rounded-t-[40px] py-10   bg-white w-full ">
         <div className="grid md:grid-cols-2 grid-cols-1 container">
           <div>
             <h6 className="text-secondary text-[20px] font-medium">
-             Our Values
+              Our Values
             </h6>
           </div>
 
@@ -39,7 +40,7 @@ export default function ValuesCreator() {
               <h2
                 className={`heading-2 font-medium text-primary md:max-w-[60%]`}
               >
-             Agility and Intent
+                Agility and Intent
               </h2>
               {items.map((item, index) => {
                 const isActive = index === activeIndex;
@@ -60,7 +61,9 @@ export default function ValuesCreator() {
                     >
                       {item.title}
                     </h2>
-                    <p className={`pt-2 heading-5 text-light-black font-medium`}>
+                    <p
+                      className={`pt-2 heading-5 text-light-black font-medium`}
+                    >
                       {item.description}
                     </p>
                   </div>
