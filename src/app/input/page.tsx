@@ -7,10 +7,11 @@
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
-  FormDescription,
+  // FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,12 +23,11 @@ import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Select,
-  SelectWrapper,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
+  // SelectWrapper,
+  // SelectContent,
+  // SelectItem,
+  // SelectTrigger,
 } from "@/components/ui/select";
-import { SelectValue } from "@radix-ui/react-select";
 
 const schema = z.object({
   username: z.string().min(3).max(20),
@@ -70,6 +70,11 @@ export default function Page() {
             { label: "Option 4", value: "option4" },
           ]}
         />
+      </div>
+
+      <div className="bg-grey-2 p-10">
+        <Label htmlFor="firstName">Check a Box</Label>
+        <Checkbox id="firstName" />
       </div>
 
       <div className="bg-grey-2 p-10">

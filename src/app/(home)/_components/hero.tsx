@@ -18,10 +18,10 @@ export function Hero() {
       {/*   <source src="/hero-video.mp4" type="video/mp4" /> */}
       {/* </video> */}
 
-      <Image src={heroImage} alt="hero-image" className="object-cover" fill />
+      <Image src={heroImage} alt="hero-image" className="object-cover" fill quality={100} />
       <div className="grid place-items-center relative z-10 h-screen max-h-[800px] lg:max-h-screen ">
         <h1 className="text-[32px] lg:text-[52px] text-grey-2 font-medium">
-          Future, Present
+          Future, Present.
         </h1>
       </div>
     </main>
