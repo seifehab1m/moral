@@ -26,9 +26,11 @@ export default function Investment() {
             <div className="flex flex-col justify-between">
               <div className="flex items-center gap-4">
                 <Dirham />
-                <h5 className="text-[92px] font-medium text-primary">4.2tn</h5>
+                <h5 className="md:text-[92px] text-[24px] font-medium text-primary">
+                  4.2tn
+                </h5>
               </div>
-              <h6 className="text-primary font-medium sub-header">
+              <h6 className="text-primary font-medium sub-header pt-3">
                 AGGREGATE GDP
               </h6>
             </div>
@@ -36,10 +38,12 @@ export default function Investment() {
             <div className="flex flex-col justify-between">
               <div className="flex items-center gap-4">
                 <Dirham />
-                <h5 className="text-[92px] font-medium text-primary">3.2tn</h5>
+                <h5 className="md:text-[92px] text-[24px] font-medium text-primary">
+                  4.2tn
+                </h5>
               </div>
               <h6 className="text-primary font-medium sub-header">
-                RESIDENTIAL CONSTRUCTION
+                AGGREGATE GDP
               </h6>
             </div>
           </div>
