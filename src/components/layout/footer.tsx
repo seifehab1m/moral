@@ -43,7 +43,7 @@ export function Footer() {
           <p className="text-grey-2 font-semibold text-sm lg:text-xl mt-8 lg:mt-10">
             Join Our Newsletter
           </p>
-          <Input />
+          <Input variant="secondary" />
         </div>
         <div className="flex-[.7] text-grey-2 grid grid-cols-3 lg:gap-10 mt-5 lg:mt-[162px]">
           {links.map((c, i) =>
