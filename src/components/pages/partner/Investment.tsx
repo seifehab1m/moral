@@ -1,6 +1,5 @@
 import React from "react";
-import icon from "@/assets/images/DirhamIcon.png";
-import Image from "next/image";
+import { Dirham } from "@/assets/svgs/Dirham";
 export default function Investment() {
   return (
     <div className="top-rounded-section py-16">
@@ -26,13 +25,7 @@ export default function Investment() {
           <div className="flex mt-14  gap-6">
             <div className="flex flex-col justify-between">
               <div className="flex items-center gap-4">
-                <Image
-                  src={icon}
-                  alt="Dirham"
-                  width={92}
-                  height={80}
-                  className="object-fit h-[80px]"
-                />
+                <Dirham />
                 <h5 className="text-[92px] font-medium text-primary">4.2tn</h5>
               </div>
               <h6 className="text-primary font-medium sub-header">
@@ -42,13 +35,7 @@ export default function Investment() {
             <div className="w-[2px] bg-secondary" />
             <div className="flex flex-col justify-between">
               <div className="flex items-center gap-4">
-                <Image
-                  src={icon}
-                  alt="Dirham"
-                  width={92}
-                  height={80}
-                  className="object-fit h-[80px]"
-                />
+                <Dirham />
                 <h5 className="text-[92px] font-medium text-primary">3.2tn</h5>
               </div>
               <h6 className="text-primary font-medium sub-header">

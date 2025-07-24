@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import img from "@/assets/images/success.png";
+
 export function SuccessStories() {
   return (
     <section className="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between text-white">
