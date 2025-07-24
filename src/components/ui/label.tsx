@@ -13,8 +13,8 @@ const labelVariants = cva(
   {
     variants: {
       variant: {
-        primary: "text-grey-2",
-        secondary: "text-primary",
+        primary: "text-primary",
+        secondary: "text-grey-2",
       },
     },
     defaultVariants: {
