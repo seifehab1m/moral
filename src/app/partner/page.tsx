@@ -23,7 +23,7 @@ export default function Page() {
       ></div>
       <Investment />
       <SuccessStories />
-      <ContactUsPartner/>
+      <ContactUsPartner />
     </section>
   );
 }

@@ -12,7 +12,6 @@ export function SuccessStories() {
         alt=""
       />
 
-      {/* Mobile image (visible < lg) */}
       <Image
         className="block lg:hidden object-cover w-full "
         src={img2}

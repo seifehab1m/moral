@@ -1,10 +1,16 @@
-import { Input } from '@/components/ui/input'
-import React from 'react'
+import ContactUsPartnerForm from "./ContactUsPartnerForm";
 
-export default function ContactUs() {
+export default function ContactUsPartner() {
   return (
-    <div className='bg-[#CFCECD] h-80'>
-      <Input type="email" placeholder="Email" />
+    <div>
+      <div className="container py-22">
+        <h6 className="sub-header pb-5">Contact Us</h6>
+        <h2 className="text-primary font-medium heading-1 md:max-w-[768px]">
+          If you would like to know more about MBRF And opportunities,{} please
+          complete the form below
+        </h2>
+      </div>
+      <ContactUsPartnerForm />
     </div>
-  )
+  );
 }
