@@ -40,7 +40,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       className={cn(
         "data-[placeholder]:text-primary [&_svg:not([class*='text-'])]:text-primary text-primary", //variant this
-        "border-b-primary w-full text-base lg:text-xl py-2 focus-visible:border-ring border-b-[.5px] ",
+        "border-b-primary w-full text-base lg:text-xl pt-1 pb-4 focus-visible:border-ring border-b-[1.5px] ",
         "focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
         "flex items-center justify-between gap-2 rounded-md bg-transparent whitespace-nowrap",
         "transition-[color,box-shadow] outline-none focus-visible:border-b-2 disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9",
@@ -192,13 +192,15 @@ type TSelect = {
     label: string;
     value: string;
   }>;
+  field?: Record<any, any>;
 };
 
-function Select(props: TSelect) {
+function Select({ field = {}, ...props }: TSelect) {
+  console.log({ field });
   return (
-    <SelectWrapper>
+    <SelectWrapper {...field}>
       <SelectTrigger>
-        <SelectValue placeholder={props.label} />
+        <SelectValue placeholder={props.label.toUpperCase()} />
       </SelectTrigger>
       <SelectContent>
         {props.options.map((option) => (
