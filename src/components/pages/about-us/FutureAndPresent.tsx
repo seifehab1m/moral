@@ -11,7 +11,7 @@ export default function FutureAndPresent() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="w-full min-h-screen py-12 lg:py-28 bg-no-repeat bg-cover bg-center"
+      className="w-full mt-14 min-h-screen py-12 lg:py-28 bg-no-repeat bg-cover bg-center"
     >
       <div className="flex items-center h-full">
         <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
