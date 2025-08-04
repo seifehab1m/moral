@@ -1,6 +1,7 @@
 import AboutUsSection from "@/components/pages/about-us/AboutUsSection";
 import FutureAndPresent from "@/components/pages/about-us/FutureAndPresent";
 import LeaderShip from "@/components/pages/about-us/LeaderShip";
+import Values from "@/components/pages/about-us/Values";
 import React from "react";
 
 export default function page() {
@@ -11,6 +12,7 @@ export default function page() {
       </div>
       <FutureAndPresent />
       <LeaderShip />
+      <Values/>
     </section>
   );
 }
