@@ -29,14 +29,14 @@ export default function Page() {
                 Shaping industries <br />
                 driving progress
               </h2>
-              <Button>WATCH VIDEO</Button>
+              {/* <Button>WATCH VIDEO</Button> */}
             </div>
           </div>
         </div>
         <ValuesCreator />
       </section>
       <PositiveImpact />
-      <ManifestoBook />
+      {/* <ManifestoBook /> */}
     </>
   );
 }

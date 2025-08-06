@@ -13,8 +13,8 @@ export default function HomePage() {
       <Stats />
       <CallToActionBG
         imageURL="/cta-image-2.png"
-        ctaURL="https://www.google.com"
-        ctaText="watch video"
+        // ctaURL="https://www.google.com"
+        // ctaText="watch video"
         headerText="Shaping industries driving progress"
         className="pb-10"
       />

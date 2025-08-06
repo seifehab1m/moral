@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 type CallToActionBGProps = {
   imageURL: string;
-  ctaURL: string;
-  ctaText: string;
+  ctaURL?: string;
+  ctaText?: string;
   headerText: string;
   className?: string;
 };
@@ -40,9 +40,11 @@ export function CallToActionBG({
         <h2 className="heading-1 text-white font-semibold max-w-[500px]">
           {headerText}
         </h2>
-        <Button variant="primary" asChild>
-          <Link href={ctaURL}>{ctaText}</Link>
-        </Button>
+        {!!ctaURL && !!ctaText && (
+          <Button variant="primary" asChild>
+            <Link href={ctaURL}>{ctaText}</Link>
+          </Button>
+        )}
       </div>
     </section>
   );

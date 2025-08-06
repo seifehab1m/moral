@@ -30,29 +30,16 @@ export function Header() {
             )}
           />
         </Link>
-        <div className="flex items-center gap-8">
-          <div
+        <button className="cursor-pointer">
+          <Menu
+            size={30}
             className={cn(
-              "text-grey-2 font-semibold transition duration-500 hidden lg:flex items-center gap-1",
+              "text-grey-2 transition duration-500",
               isScrolled && "text-primary",
               forceDark && "text-primary",
             )}
-          >
-            <Link href="/">EN</Link>
-            <span>|</span>
-            <Link href="/">AR</Link>
-          </div>
-          <button className="cursor-pointer">
-            <Menu
-              size={30}
-              className={cn(
-                "text-grey-2 transition duration-500",
-                isScrolled && "text-primary",
-                forceDark && "text-primary",
-              )}
-            />
-          </button>
-        </div>
+          />
+        </button>
       </div>
     </header>
   );

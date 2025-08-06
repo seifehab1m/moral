@@ -8,41 +8,45 @@ export default function Values() {
         <div className="grid md:grid-cols-2 grid-cols-1 gap-18">
           <div>
             <h2 className="heading-2 text-primary font-medium">
-              Timeless integrity
+              Agility and Intent
             </h2>
             <p className="mt-6 text-base md:text-sm font-medium">
-              Vorem ipsum dolor sit amet, consectetur adipiscing elit.Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis.
+              An investment strategy that moves decisively in the considered
+              pursuit of dynamic opportunities and innovative synergies across
+              verticals.
             </p>
             <div className="line w-full h-[1.5px] bg-secondary my-7"></div>
           </div>
-           <div>
+          <div>
             <h2 className="heading-2 text-primary font-medium">
-              Timeless integrity
+              Sustainable Impact
             </h2>
             <p className="mt-6 text-base md:text-sm font-medium">
-              Vorem ipsum dolor sit amet, consectetur adipiscing elit.Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis.
+              An ethical belief in using the power of investment to generate
+              more than just dividends – providing sustainable returns for
+              shareholders and real impact for communities.
             </p>
             <div className="line w-full h-[1.5px] bg-secondary my-7"></div>
           </div>
-           <div>
+          <div>
             <h2 className="heading-2 text-primary font-medium">
-              Timeless integrity
+              Quality and Excellence
             </h2>
             <p className="mt-6 text-base md:text-sm font-medium">
-              Vorem ipsum dolor sit amet, consectetur adipiscing elit.Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis.
+              Robust standards, high-calibre partners and careful consideration
+              of customers’ needs ensure that MRBH Holding delivers at the apex
+              of market expectation.
             </p>
             <div className="line w-full h-[1.5px] bg-secondary my-7"></div>
           </div>
-           <div>
+          <div>
             <h2 className="heading-2 text-primary font-medium">
-              Timeless integrity
+              Strategic Foresight
             </h2>
             <p className="mt-6 text-base md:text-sm font-medium">
-              Vorem ipsum dolor sit amet, consectetur adipiscing elit.Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis.
+              Perfectly attuned to the market, MRBF Holding invests and develops
+              with foresight to strike long and short-term opportunities at the
+              right time to maximise returns.
             </p>
             <div className="line w-full h-[1.5px] bg-secondary my-7"></div>
           </div>

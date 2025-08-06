@@ -15,7 +15,6 @@ const links: FooterNavigationLinks[] = [
       { label: "About", href: "#" },
       { label: "What We Do", href: "#" },
       { label: "Partner With Us", href: "#" },
-      { label: "Media", href: "#" },
       { label: "Careers", href: "#" },
     ],
   },
@@ -24,13 +23,12 @@ const links: FooterNavigationLinks[] = [
     children: [
       { label: "Linkedin", href: "#" },
       { label: "Instagram", href: "#" },
-      { label: "X", href: "#" },
     ],
   },
   {
-    header: "Contact",
+    header: "Location",
     children:
-      "Jumeirah Emirates Towers 22nd Floor, P.O. Box: 15881 Dubai United Arab Emirates",
+      "Level 22, Office No. 22A & 22C Jumeirah Emirates Towers PO Box 416131 Dubai, UAE",
   },
 ];
 
@@ -40,12 +38,8 @@ export function Footer() {
       <div className="container flex flex-col lg:flex-row lg:justify-between lg:gap-32">
         <div className="flex-[.3]">
           <Logo className="text-grey-2 max-w-[148px] lg:max-w-[393px]" />
-          <p className="text-grey-2 font-semibold text-sm lg:text-xl mt-8 lg:mt-10">
-            Join Our Newsletter
-          </p>
-          <Input variant="secondary" />
         </div>
-        <div className="flex-[.7] text-grey-2 grid grid-cols-3 lg:gap-10 mt-5 lg:mt-[162px]">
+        <div className="flex-[.7] text-grey-2 grid grid-cols-3 lg:gap-10 mt-5 lg:mt-0">
           {links.map((c, i) =>
             Array.isArray(c.children) ? (
               <nav key={"nav " + i} className="">

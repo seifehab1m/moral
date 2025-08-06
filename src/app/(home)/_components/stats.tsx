@@ -5,8 +5,8 @@ export function Stats() {
         <div className="flex-[.6]">
           <span className="sub-header">Key Numbers</span>
           <h2 className="text-gray-500 heading-1 mt-2 mb-[46px] lg:mt-6  font-medium">
-            Building Legacies, <br />
-            <span className="text-primary">Bettering Lives</span>
+            Building legacies, <br />
+            <span className="text-primary">bettering lives</span>
           </h2>
           <p className="text-light-black font-medium lg:text-2xl lg:max-w-[690px] lg:mt-[99px]">
             MRBF Holding is a new kind of holding company. Built on 55 years of

@@ -9,15 +9,18 @@ export default function Sector() {
             <h6 className="text-secondary text-[20px] font-medium mb-2">
               SECTORS
             </h6>
-            <h2 className="text-primary font-medium heading-1">Overview</h2>
+            <h2 className="text-primary font-medium heading-1 lg:max-w-[590px]">
+              <span className="text-secondary">Broad sector expertise,</span>{" "}
+              deep market understanding.
+            </h2>
           </div>
           <p className="md:w-1/2 heading-4 font-medium">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-            consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
-            velit esse molestie consequat, vel illum dolore eu feugiat nulla.
+            MRBF Holding creates value in key sectors that have the power to
+            deliver sustainable returns and a genuine impact for communities.
+            From quality developments that transform lifestyles, to strategic
+            investments in financial services, hospitality, healthcare, IT and
+            other high-growth opportunities, it is committed to ambitious yet
+            responsible growth.
           </p>
         </div>
       </div>

@@ -7,7 +7,8 @@ export function Info() {
           <div className="py-[18px] lg:py-10 max-lg:mx-10 lg:pe-20 text-primary font-medium max-lg:border-b-1 lg:border-e-2 max-lg:border-b-secondary lg:border-e-secondary">
             <h3 className="text-2xl lg:text-[clamp(20px,5vw,96px)]">Address</h3>
             <address className="uppercase text-base lg:text-xl mt-2 lg:mt-4 not-italic">
-              office no.22a & 22c, level 22 emirates towers offices
+              Level 22, Office No. 22A & 22C Jumeirah Emirates Towers PO Box
+              416131 Dubai, UAE
             </address>
           </div>
           <div className="py-[18px] lg:py-10 max-lg:mx-10 lg:pe-20 text-primary font-medium max-lg:border-b-1 lg:border-e-2 max-lg:border-b-secondary lg:border-e-secondary">

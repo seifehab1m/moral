@@ -10,11 +10,11 @@ export function Intro() {
     <section className="pt-[132px] lg:pt-[230px]">
       <div className="container">
         <span className="sub-header font-medium">Contact Us</span>
-        <h1 className="heading-1 text-secondary font-medium mt-3 lg:max-w-[600px] lg:mt-10">
+        <h1 className="heading-1 text-secondary font-medium mt-3 lg:max-w-[650px] lg:mt-10">
           A 40-year legacy
           <br />
           of
-          <span className="text-primary"> quality and excellence</span>
+          <span className="text-primary"> Connect with MRBF Holding</span>
         </h1>
         <p className="lg:text-2xl font-medium mt-3 lg:mt-10">
           MRBF Holding is headquartered in Dubai, UAE, with interests across

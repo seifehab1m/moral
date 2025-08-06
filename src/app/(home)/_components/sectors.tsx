@@ -69,9 +69,9 @@ export function Sectors() {
                 className="object-cover rounded"
                 fill
               />
-              <Button asChild className="absolute bottom-8 right-8">
-                <Link href="/">Watch Video</Link>
-              </Button>
+              {/* <Button asChild className="absolute bottom-8 right-8"> */}
+              {/*   <Link href="/">Watch Video</Link> */}
+              {/* </Button> */}
             </div>
           </div>
 

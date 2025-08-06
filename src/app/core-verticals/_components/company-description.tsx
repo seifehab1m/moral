@@ -12,7 +12,9 @@ type CompanyDescriptionProps = {
 
 export function CompanyDescription(props: CompanyDescriptionProps) {
   return (
-    <div className={cn("max-lg:my-[16px]", props.rounded && "top-rounded-section")}>
+    <div
+      className={cn("max-lg:my-[16px]", props.rounded && "top-rounded-section")}
+    >
       <div
         className={cn(
           "container flex flex-col lg:flex-row justify-between gap-3 lg:gap-10",
@@ -22,7 +24,7 @@ export function CompanyDescription(props: CompanyDescriptionProps) {
         <div>
           <span className="sub-header uppercase">{props.sectorName}</span>
           {props.companyName && (
-            <h2 className="heading-2 font-medium text-primary my-3">
+            <h2 className="heading-2 font-medium text-primary my-3 lg:max-w-[400px]">
               {props.companyName}
             </h2>
           )}
