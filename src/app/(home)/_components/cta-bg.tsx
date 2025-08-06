@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+// import { Button } from "@/components/ui/button";
+// import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 type CallToActionBGProps = {
@@ -22,11 +22,12 @@ export function CallToActionBG({
   headerText,
   className,
 }: CallToActionBGProps) {
+  console.log(ctaText, ctaURL);
   return (
     <section
       className={cn(
         "relative min-h-[264px] lg:min-h-[864px] flex flex-col justify-end",
-        className,
+        className
       )}
     >
       <Image
@@ -40,9 +41,9 @@ export function CallToActionBG({
         <h2 className="heading-1 text-white font-semibold max-w-[500px]">
           {headerText}
         </h2>
-        <Button variant="primary" asChild>
+        {/* <Button variant="primary" asChild>
           <Link href={ctaURL}>{ctaText}</Link>
-        </Button>
+        </Button> */}
       </div>
     </section>
   );

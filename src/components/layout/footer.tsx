@@ -24,13 +24,13 @@ const links: FooterNavigationLinks[] = [
     children: [
       { label: "Linkedin", href: "#" },
       { label: "Instagram", href: "#" },
-      { label: "X", href: "#" },
+      // { label: "X", href: "#" },
     ],
   },
   {
-    header: "Contact",
+    header: "Location ",
     children:
-      "Jumeirah Emirates Towers 22nd Floor, P.O. Box: 15881 Dubai United Arab Emirates",
+      "Level 22, Office No. 22A & 22C Jumeirah Emirates Towers PO Box 416131 Dubai, UAE",
   },
 ];
 
@@ -76,7 +76,7 @@ export function Footer() {
                   {c.children}
                 </address>
               </div>
-            ),
+            )
           )}
         </div>
       </div>

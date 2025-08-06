@@ -2,9 +2,9 @@
 
 import ValuesCreator from "@/components/pages/career-opportunities/ValuesCreator";
 import img from "@/assets/images/carrerHero.png";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import PositiveImpact from "@/components/pages/career-opportunities/positive-impact/PositiveImpact";
-import ManifestoBook from "@/components/pages/career-opportunities/ManifestoBook";
+// import ManifestoBook from "@/components/pages/career-opportunities/ManifestoBook";
 import CareerHeader from "@/components/pages/career-opportunities/CareerHeader";
 import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 
@@ -29,14 +29,14 @@ export default function Page() {
                 Shaping industries <br />
                 driving progress
               </h2>
-              <Button>WATCH VIDEO</Button>
+              {/* <Button>WATCH VIDEO</Button> */}
             </div>
           </div>
         </div>
         <ValuesCreator />
       </section>
       <PositiveImpact />
-      <ManifestoBook />
+      {/* <ManifestoBook /> */}
     </>
   );
 }

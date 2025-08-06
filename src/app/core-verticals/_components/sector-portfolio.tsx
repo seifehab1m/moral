@@ -3,8 +3,8 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+// import { Button } from "@/components/ui/button";
+// import Link from "next/link";
 
 const comapnies = [
   {
@@ -48,9 +48,9 @@ export function SectorPortfolio() {
                 className="object-cover rounded"
                 fill
               />
-              <Button asChild className="absolute bottom-8 right-8">
+              {/* <Button asChild className="absolute bottom-8 right-8">
                 <Link href="/">Watch Video</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
 
