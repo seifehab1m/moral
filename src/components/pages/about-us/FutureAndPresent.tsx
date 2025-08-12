@@ -33,7 +33,7 @@ export default function FutureAndPresent() {
             <div className="flex justify-between text-white mt-18 flex-wrap gap-4">
               <div>
                 <h4 className="heading-4 font-medium">
-                  Mohammed rashed alfalasi
+                  Mohammed Rashed Alfalasi
                 </h4>
                 <h6 className="sub-header !text-white mt-2">Group chairman</h6>
               </div>
