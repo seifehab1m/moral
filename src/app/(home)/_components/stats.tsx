@@ -19,7 +19,6 @@ export function Stats() {
         linesClass: "line",
         autoSplit: true,
         onSplit: (instance) => {
-          console.log("split");
           return gsap.from(instance.lines, {
             yPercent: 120,
             stagger: 0.1,

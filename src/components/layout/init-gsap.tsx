@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
+import { Cursor } from "../ui";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
@@ -39,6 +40,7 @@ export function InitGSAP({ children }: React.PropsWithChildren) {
           {children}
         </div>
       </div>
+      {/* <Cursor /> */}
     </>
   );
 }
