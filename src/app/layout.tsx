@@ -1,9 +1,9 @@
-import { Header, Footer, ContactUs } from "@/components/layout/";
 import type { Metadata } from "next";
+import { Header, Footer, ContactUs, InitGSAP } from "@/components/layout/";
+import { HeaderProvider } from "@/components/providers/header-context";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { HeaderProvider } from "@/components/providers/header-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,12 +35,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} `}
       >
-        <HeaderProvider>
-          <Header />
-          {children}
-          <ContactUs />
-          <Footer />
-        </HeaderProvider>
+        <InitGSAP>
+          <HeaderProvider>
+            <Header />
+            {children}
+            <ContactUs />
+            <Footer />
+          </HeaderProvider>
+        </InitGSAP>
       </body>
     </html>
   );
