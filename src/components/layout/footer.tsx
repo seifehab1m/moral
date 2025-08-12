@@ -1,5 +1,4 @@
 import Logo from "@/assets/logos/Logo";
-import { Input } from "../ui/input";
 import Link from "next/link";
 
 type FooterNavigationLinks = {
@@ -11,11 +10,11 @@ const links: FooterNavigationLinks[] = [
   {
     header: "Quick Links",
     children: [
-      { label: "Home", href: "#" },
-      { label: "About", href: "#" },
-      { label: "What We Do", href: "#" },
-      { label: "Partner With Us", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about-us" },
+      { label: "Partner With Us", href: "/partnership" },
+      { label: "Careers", href: "/carrer-opportunities" },
+      { label: "Contact Us", href: "/contact-us" },
     ],
   },
   {
@@ -26,7 +25,7 @@ const links: FooterNavigationLinks[] = [
     ],
   },
   {
-    header: "Location",
+    header: "Address",
     children:
       "Level 22, Office No. 22A & 22C Jumeirah Emirates Towers PO Box 416131 Dubai, UAE",
   },
