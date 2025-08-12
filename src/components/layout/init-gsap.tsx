@@ -5,9 +5,10 @@ import { useGSAP } from "@gsap/react";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 export function InitGSAP({ children }: React.PropsWithChildren) {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export function InitGSAP({ children }: React.PropsWithChildren) {
       // pin: true,
       start: "top center",
       // end: "+=300",
-      markers: true,
+      // markers: true,
     });
   }, []);
 
