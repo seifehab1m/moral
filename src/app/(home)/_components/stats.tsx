@@ -25,7 +25,7 @@ export function Stats() {
             stagger: 0.1,
             scrollTrigger: {
               trigger: textRef.current,
-              markers: true,
+              // markers: true,
               scrub: true,
               end: "clamp(bottom center)",
               once: true,

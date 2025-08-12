@@ -28,7 +28,7 @@ export function InitGSAP({ children }: React.PropsWithChildren) {
       // pin: true,
       start: "top center",
       // end: "+=300",
-      markers: true,
+      // markers: true,
     });
   }, []);
 

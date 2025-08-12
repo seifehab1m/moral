@@ -38,7 +38,7 @@ export function Hero() {
   });
 
   return (
-    <main className="sticky top-0">
+    <main className="relative">
       {/* <video */}
       {/*   className="absolute w-full h-full object-cover z-0" */}
       {/*   autoPlay */}
