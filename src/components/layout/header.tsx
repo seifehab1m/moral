@@ -82,9 +82,8 @@ export function Header() {
           clipPath: "circle(0% at 50% 50%);",
         }}
         className={cn(
-          "bg-primary fixed inset-0 w-screen h-screen transition",
-          open && "opacity-100",
-          !open && "opacity-0 pointer-events-none"
+          "bg-primary fixed inset-0 w-screen h-screen transition opacity-100",
+          !open && "pointer-events-none",
         )}
       >
         <div className="container h-full flex flex-col justify-between py-15">
