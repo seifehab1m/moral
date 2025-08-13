@@ -6,8 +6,11 @@ import Logo from "@/assets/logos/Logo";
 import { useWindowScroll } from "@/hooks/useWindowScroll";
 import { cn } from "@/lib/utils";
 import { useHeaderContext } from "../providers/header-context";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useScrollLock } from "@/hooks";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { getFixedPosition } from "@/lib/utils";
 
 const links = [
   { name: "Home", href: "/" },
@@ -22,9 +25,21 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scroll] = useWindowScroll();
   const { forceDark } = useHeaderContext();
+  const navRef = useRef<HTMLDivElement>(null);
+  const openButtonRef = useRef<HTMLButtonElement>(null);
   useScrollLock(open);
 
   const isScrolled = (scroll?.y ?? 0) > 10;
+
+  useGSAP(() => {
+    const { centerXPct, centerYPct } = getFixedPosition(openButtonRef.current!);
+    gsap.to(navRef.current, {
+      clipPath: open
+        ? `circle(200% at ${centerXPct}% ${centerYPct}%)`
+        : `circle(0% at ${centerXPct}% ${centerYPct}%)`,
+      duration: 0.5,
+    });
+  }, [open]);
 
   return (
     <header
@@ -44,6 +59,7 @@ export function Header() {
           />
         </Link>
         <button
+          ref={openButtonRef}
           aria-label="Open Menu"
           onClick={() => setOpen(true)}
           className="cursor-pointer"
@@ -60,7 +76,11 @@ export function Header() {
       </div>
 
       <nav
+        ref={navRef}
         aria-hidden={!open}
+        style={{
+          clipPath: "circle(0% at 50% 50%);",
+        }}
         className={cn(
           "bg-primary fixed inset-0 w-screen h-screen transition",
           open && "opacity-100",
