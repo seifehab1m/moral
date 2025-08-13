@@ -11,9 +11,9 @@ export function Intro() {
       <div className="container">
         <span className="sub-header font-medium">Contact Us</span>
         <h1 className="heading-1 text-secondary font-medium mt-3 lg:max-w-[650px] lg:mt-10">
-          A 40-year legacy
+          {/* A 40-year legacy
           <br />
-          of
+          of */}
           <span className="text-primary"> Connect with MRBF Holding</span>
         </h1>
         <p className="lg:text-2xl font-medium mt-3 lg:mt-10">

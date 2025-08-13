@@ -13,7 +13,7 @@ export default function HomePage() {
       <Stats />
       <CallToActionBG
         imageURL="/cta-image-2.png"
-        headerText="Shaping industries driving progress"
+        headerText="Shaping industries, driving progress."
         className="pb-10"
       />
       <Sectors />

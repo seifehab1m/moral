@@ -7,20 +7,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 const cards = [
-  "Financial Services & Investment Management",
-  "Healthcare",
   "Real Estate Development & Management",
   "Construction",
-  "IT Services",
+  "Healthcare",
+  "Financial Services, IT & Investment Management",
   "Hospitality",
-];
+]
 
 export function Verticals() {
   useHeaderTheme(true);
   return (
     <main className="pt-[92px] lg:pt-[230px] bg-white">
       <div className="container">
-        <h1 className="sub-header">Core Verticals</h1>
+        <h1 className="sub-header">What We Do</h1>
         <h2 className="heading-1 font-medium text-secondary lg:max-w-[700px] mt-3 lg:mt-8">
           Delivering{" "}
           <span className="text-primary">

@@ -39,10 +39,9 @@ export default function ContactUsPartnerForm() {
           <Select
             label="type of enquiry"
             options={[
-              { label: "Option 1", value: "option1" },
-              { label: "Option 2", value: "option2" },
-              { label: "Option 3", value: "option3" },
-              { label: "Option 4", value: "option4" },
+              { label: "Partnership", value: "Partnership" },
+              { label: "Support", value: "Support" },
+              { label: "Other", value: "Other" },
             ]}
           />
           <Select
@@ -59,18 +58,20 @@ export default function ContactUsPartnerForm() {
         <div className="flex items-center gap-2 ">
           <Checkbox />
           <Label className="pt-3 !lowercase">
-            I confirm that i am over 18 years of age, or over the legal age of
-            majority in my country of residence [acceptance]
+            <span className="!uppercase">I </span>confirm that i am over 18
+            years of age, or over the legal age of majority in my country of
+            residence .
           </Label>
         </div>
         <div className="flex items-center gap-2 ">
           <Checkbox />
           <Label className="pt-3 !lowercase">
-            I consent to having this website store my submitted information so
-            they can respond to my inquiry [acceptance]
+            <span className="!uppercase">I </span> consent to having this
+            website store my submitted information so they can respond to my
+            inquiry .
           </Label>
         </div>
-        <Button className="mt-9 !lowercase">Send</Button>
+        <Button className="mt-9">Send</Button>
       </div>
     </div>
   );

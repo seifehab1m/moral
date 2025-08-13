@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import heroImage from "../../../../public/hero-image.png";
+// import heroImage from "../../../../public/hero-image.png";
+import heroImage from "../../../../public/hero-2.jpg";
 import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
@@ -36,18 +37,8 @@ export function Hero() {
       },
     });
   });
-
   return (
     <main className="relative">
-      {/* <video */}
-      {/*   className="absolute w-full h-full object-cover z-0" */}
-      {/*   autoPlay */}
-      {/*   muted */}
-      {/*   loop */}
-      {/* > */}
-      {/*   <source src="/hero-video.mp4" type="video/mp4" /> */}
-      {/* </video> */}
-
       <Image
         ref={imageRef}
         src={heroImage}
@@ -56,7 +47,11 @@ export function Hero() {
         fill
         quality={100}
       />
-      <div className="grid place-items-center relative z-10 h-screen max-h-[800px] lg:max-h-screen ">
+
+      {/* Overlay Layer */}
+      <div className="absolute inset-0 bg-black/40 z-[5]" />
+
+      <div className="grid place-items-center relative z-10 h-screen max-h-[800px] lg:max-h-screen">
         <h1
           ref={headingRef}
           className="text-[32px] lg:text-[52px] text-grey-2 font-medium"

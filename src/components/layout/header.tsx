@@ -12,10 +12,10 @@ import { useScrollLock } from "@/hooks";
 const links = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
+  { name: "What We Do", href: "/core-verticals" },
+  { name: "Partner With Us", href: "/partnership" },
+  { name: "Careers & Opportunities", href: "/carrer-opportunities" },
   { name: "Contact Us", href: "/contact-us" },
-  { name: "Core Verticals", href: "/core-verticals" },
-  { name: "Partnership", href: "/partnership" },
-  { name: "Carrer Opportunities", href: "/carrer-opportunities" },
 ];
 
 export function Header() {
@@ -30,7 +30,7 @@ export function Header() {
     <header
       className={cn(
         "py-7 lg:py-[52px] transition-all fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between duration-500 w-full",
-        isScrolled && "bg-white shadow lg:py-7",
+        isScrolled && "bg-white shadow lg:py-7"
       )}
     >
       <div className="container w-full flex items-center justify-between">
@@ -39,7 +39,7 @@ export function Header() {
             className={cn(
               "w-[450px] transition-all text-grey-2 duration-500",
               isScrolled && "text-primary lg:w-50",
-              forceDark && "text-primary",
+              forceDark && "text-primary"
             )}
           />
         </Link>
@@ -53,7 +53,7 @@ export function Header() {
             className={cn(
               "text-grey-2 transition duration-500",
               isScrolled && "text-primary",
-              forceDark && "text-primary",
+              forceDark && "text-primary"
             )}
           />
         </button>
@@ -64,7 +64,7 @@ export function Header() {
         className={cn(
           "bg-primary fixed inset-0 w-screen h-screen transition",
           open && "opacity-100",
-          !open && "opacity-0 pointer-events-none",
+          !open && "opacity-0 pointer-events-none"
         )}
       >
         <div className="container h-full flex flex-col justify-between py-15">
@@ -75,7 +75,7 @@ export function Header() {
           >
             <XIcon className="size-7 lg:size-10" />
           </button>
-          <ul className="h-full flex flex-col justify-end text-xl gap-2 lg:text-5xl lg:gap-5">
+          <ul className="h-full flex flex-col md:justify-end justify-center text-xl gap-2 lg:text-5xl lg:gap-5">
             {links.map((link) => (
               <li key={link.name} onClick={() => setOpen(false)}>
                 <Link

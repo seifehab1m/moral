@@ -1,9 +1,11 @@
+"use client";
+
 import Logo from "@/assets/logos/Logo";
 import Link from "next/link";
 
 type FooterNavigationLinks = {
   header: string;
-  children?: Array<{ label: string; href: string }> | string;
+  children?: Array<{ label: string; href: string; target?: string }> | string;
 };
 
 const links: FooterNavigationLinks[] = [
@@ -11,23 +13,31 @@ const links: FooterNavigationLinks[] = [
     header: "Quick Links",
     children: [
       { label: "Home", href: "/" },
-      { label: "About", href: "/about-us" },
+      { label: "About Us", href: "/about-us" },
+      { label: "What We Do", href: "/core-verticals" },
       { label: "Partner With Us", href: "/partnership" },
-      { label: "Careers", href: "/carrer-opportunities" },
+      { label: "Careers & Opportunities", href: "/carrer-opportunities" },
       { label: "Contact Us", href: "/contact-us" },
     ],
   },
   {
     header: "Social",
     children: [
-      { label: "Linkedin", href: "#" },
-      { label: "Instagram", href: "#" },
+      {
+        label: "Linkedin",
+        href: "https://www.linkedin.com/company/mrbfholding/",
+        target: "_blank",
+      },
+      {
+        label: "Instagram",
+        href: "https://www.instagram.com/mrbfholding/",
+        target: "_blank",
+      },
     ],
   },
   {
     header: "Address",
-    children:
-      "Level 22, Office No. 22A & 22C Jumeirah Emirates Towers PO Box 416131 Dubai, UAE",
+    children: "Level 22Jumeirah Emirates Towers Dubai, UAE",
   },
 ];
 
@@ -52,6 +62,7 @@ export function Footer() {
                         <Link
                           className="font-medium text-xs lg:text-xl transition hover:text-whtie"
                           href={l.href}
+                          {...(l.target ? { target: l.target } : {})}
                         >
                           {l.label}
                         </Link>
@@ -69,7 +80,7 @@ export function Footer() {
                   {c.children}
                 </address>
               </div>
-            ),
+            )
           )}
         </div>
       </div>

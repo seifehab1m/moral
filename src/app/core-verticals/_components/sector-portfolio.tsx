@@ -8,19 +8,19 @@ import Link from "next/link";
 
 const comapnies = [
   {
-    title: "Al Talal Technical Industries Co. LLC",
+    title: "Buset Contracting and General Transport Co. LLC",
     imageURL: "/sector-portfolio.png",
   },
   {
-    title: "Wooden Art Industries L.L.C",
+    title: "Al Tala Technical Industries Co. LLC",
+    imageURL: "/sector-portfolio.png",
+  },
+  {
+    title: "Wooden Art Industries LLC",
     imageURL: "/sector-portfolio.png",
   },
   {
     title: "Electromechanical Credible Contractors LLC",
-    imageURL: "/sector-portfolio.png",
-  },
-  {
-    title: "Bused Contracting and General Transport Co. L.LC.",
     imageURL: "/sector-portfolio.png",
   },
 ];
@@ -64,19 +64,19 @@ export function SectorPortfolio() {
                     key={i}
                     className={cn(
                       i < comapnies?.length - 1 &&
-                        'after:content-[" "] after:block after:h-[1px] after:lg:h-[2px] after:w-full after:bg-secondary after:my-[30px] after:lg:my-[60px]',
+                        'after:content-[" "] after:block after:h-[1px] after:lg:h-[2px] after:w-full after:bg-secondary after:my-[30px] after:lg:my-[60px]'
                     )}
                   >
                     <button
-                      className="cursor-pointer w-full"
-                      onClick={() => setActive(i)}
+                      className=" w-full"
+                      // onClick={() => setActive(i)}
                     >
                       <p className="text-secondary font-medium heading-1 break-words text-start min-w-0">
                         {s.title}
                       </p>
                     </button>
                   </li>
-                ),
+                )
             )}
           </ol>
         </div>

@@ -4,7 +4,7 @@ export default function ContactUs() {
   return (
     <>
       <Intro />
-      <Info />
+      {/* <Info /> */}
       <ContactForm />
     </>
   );

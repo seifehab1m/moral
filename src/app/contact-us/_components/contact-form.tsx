@@ -109,7 +109,7 @@ export function ContactForm() {
               control={form.control}
               name="country"
               render={({ field }) => (
-                <FormItem className='col-span-2 lg:col-span-1'>
+                <FormItem className="col-span-2 lg:col-span-1">
                   <FormLabel>Country</FormLabel>
                   <SelectWrapper
                     onValueChange={field.onChange}
@@ -165,7 +165,6 @@ export function ContactForm() {
                       <FormLabel className="!my-0 !normal-case !leading-[1.2]">
                         I confirm that i am over 18 years of age, or over the
                         legal age of majority in my country of residence
-                        [acceptance]
                       </FormLabel>
                     </FormItem>
                   );
@@ -186,7 +185,6 @@ export function ContactForm() {
                       <FormLabel className="!my-0 !normal-case !leading-[1.2]">
                         I consent to having this website store my submitted
                         information so they can respond to my inquiry
-                        [acceptance]
                       </FormLabel>
                     </FormItem>
                   );

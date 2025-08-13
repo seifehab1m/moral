@@ -35,14 +35,14 @@ export default function FutureAndPresent() {
                 <h4 className="heading-4 font-medium">
                   Mohammed Rashed Alfalasi
                 </h4>
-                <h6 className="sub-header !text-white mt-2">Group chairman</h6>
+                <h6 className="sub-header !text-white mt-2">Group Chairman</h6>
               </div>
-              <Link
+              {/* <Link
                 href="/"
                 className="text-white bg-white p-2 rounded-[8px] self-end group transition duration-500"
               >
                 <ArrowUpRight className="text-secondary" />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

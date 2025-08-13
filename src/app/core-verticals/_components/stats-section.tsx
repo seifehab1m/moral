@@ -10,7 +10,7 @@ type StatsSectionProps = {
 export function StatsSection(props: StatsSectionProps) {
   return (
     <div className="top-rounded-section">
-      <div className="container">
+      {/* <div className="container">
         <ul className="grid lg:grid-cols-3 lg:gap-[67px]">
           {props.stats.map((s, i) => (
             <li
@@ -26,7 +26,7 @@ export function StatsSection(props: StatsSectionProps) {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

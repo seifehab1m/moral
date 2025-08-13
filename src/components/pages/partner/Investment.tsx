@@ -2,7 +2,7 @@ import React from "react";
 // import { Dirham } from "@/assets/svgs/Dirham";
 export default function Investment() {
   return (
-    <div className="top-rounded-section py-16">
+    <div className="top-rounded-section py-20">
       <div className="container flex flex-col lg:flex-row justify-between xl:gap-64 gap-5 ">
         <div className="lg:w-1/3">
           <h6 className="text-secondary text-[20px] font-medium mb-2">
@@ -15,12 +15,12 @@ export default function Investment() {
 
         <div className="lg:w-2/3 ">
           <p className="heading-4 text-light-black font-medium">
-            Vorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Curabitur tempus urna at turpis condimentum
-            lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis
-            condimentum ac, vestibulum eu nisl.
+            MRBF Holding is committed to driving exceptional investor returns by
+            combining deep insights into global opportunities with the financial
+            strength of its ADGM-housed fund. It is open to forging new
+            partnerships through joint ventures, CSR collaborations and other
+            proposals with investors, suppliers, consultants and advisors who
+            share its values.
           </p>
           {/* <div className="flex mt-14  gap-6">
             <div className="flex flex-col justify-between">

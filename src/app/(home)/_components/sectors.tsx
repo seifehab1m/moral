@@ -8,14 +8,6 @@ import Link from "next/link";
 
 const sectors = [
   {
-    title: "Financial Services & Investment Management",
-    imageURL: "/sectors.png",
-  },
-  {
-    title: "Healthcare",
-    imageURL: "/sectors.png",
-  },
-  {
     title: "Real Estate Development & Management",
     imageURL: "/sectors.png",
   },
@@ -24,13 +16,21 @@ const sectors = [
     imageURL: "/sectors.png",
   },
   {
-    title: "IT Services",
+    title: "Healthcare",
+    imageURL: "/sectors.png",
+  },
+  {
+    title: "Financial Services, IT & Investment Management",
     imageURL: "/sectors.png",
   },
   {
     title: "Hospitality",
     imageURL: "/sectors.png",
   },
+  // {
+  //   title: "IT Services",
+  //   imageURL: "/sectors.png",
+  // },
 ];
 
 export function Sectors() {
@@ -53,7 +53,7 @@ export function Sectors() {
 
         <div className="grid grid-cols-24 mt-10 lg:mt-[94px]">
           <div className="col-span-16 h-full">
-            <div >
+            <div>
               <span className="text-secondary font-medium text-base lg:text-[32px]">
                 0{active + 1}
               </span>
@@ -62,7 +62,7 @@ export function Sectors() {
               </h2>
             </div>
 
-            <div className="relative h-[80%] mt-4 lg:mt-[35px]">
+            <div className="relative h-[78%] mt-4 lg:mt-[10px]">
               <Image
                 src={sectors[active].imageURL}
                 alt={sectors[active].title}
@@ -85,7 +85,7 @@ export function Sectors() {
                     key={i}
                     className={cn(
                       i < sectors?.length - 1 &&
-                        'after:content-[" "] after:block after:h-[1px] after:lg:h-[2px] after:w-full after:bg-secondary after:mt-2 after:lg:mt-10',
+                        'after:content-[" "] after:block after:h-[1px] after:lg:h-[2px] after:w-full after:bg-secondary after:mt-2 after:lg:mt-10'
                     )}
                   >
                     <button
@@ -100,7 +100,7 @@ export function Sectors() {
                       </p>
                     </button>
                   </li>
-                ),
+                )
             )}
           </ol>
         </div>

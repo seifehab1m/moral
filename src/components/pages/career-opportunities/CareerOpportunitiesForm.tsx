@@ -55,7 +55,7 @@ export default function CareerOpportunitiesForm() {
             ]}
           />
            <div>
-            <Label variant="primary">Upload File</Label>
+            <Label variant="primary">Upload CV</Label>
             <Input id="email" type="file"  />
           </div>
           <div />
@@ -63,18 +63,18 @@ export default function CareerOpportunitiesForm() {
         <div className="flex items-center gap-2 ">
           <Checkbox />
           <Label className="pt-3 !lowercase">
-            I confirm that i am over 18 years of age, or over the legal age of
-            majority in my country of residence [acceptance]
+            <span className="!uppercase">I </span> confirm that i am over 18 years of age, or over the legal age of
+            majority in my country of residence 
           </Label>
         </div>
         <div className="flex items-center gap-2 ">
           <Checkbox />
           <Label className="pt-3 !lowercase">
-            I consent to having this website store my submitted information so
-            they can respond to my inquiry [acceptance]
+            <span className="!uppercase">I </span> consent to having this website store my submitted information so
+            they can respond to my inquiry 
           </Label>
         </div>
-        <Button className="mt-9 !lowercase">Apply Now</Button>
+        <Button className="mt-9 ">Apply Now</Button>
       </div>
     </div>
   );

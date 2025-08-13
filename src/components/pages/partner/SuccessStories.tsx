@@ -23,10 +23,10 @@ export function SuccessStories() {
           ""
         )}
       >
-        <div className="container ">
+        <div className="container flex justify-center ">
           {/* <p className="heading-6">Success stories</p> */}
           <h2 className="lg:text-[64px] text-[32px] font-medium mt-3 lg:mt-12 ">
-            A place that honours your heritage and nutures your future.
+            A place that honours <br /> your heritage and <br /> nutures your future.
           </h2>
         </div>
       </div>

@@ -27,8 +27,8 @@ export default function Page() {
           <div className=" h-full flex items-end pb-28 ">
             <div className="container flex justify-between items-center">
               <h2 className="heading-1 text-white font-semibold leading-12">
-                Shaping industries <br />
-                driving progress
+                Shaping industries, <br />
+                driving progress.
               </h2>
               {/* <Button>WATCH VIDEO</Button> */}
             </div>
