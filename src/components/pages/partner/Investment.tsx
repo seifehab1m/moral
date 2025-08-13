@@ -1,5 +1,5 @@
 import React from "react";
-import { Dirham } from "@/assets/svgs/Dirham";
+// import { Dirham } from "@/assets/svgs/Dirham";
 export default function Investment() {
   return (
     <div className="top-rounded-section py-16">
@@ -22,7 +22,7 @@ export default function Investment() {
             lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis
             condimentum ac, vestibulum eu nisl.
           </p>
-          <div className="flex mt-14  gap-6">
+          {/* <div className="flex mt-14  gap-6">
             <div className="flex flex-col justify-between">
               <div className="flex items-center gap-4">
                 <Dirham />
@@ -46,7 +46,7 @@ export default function Investment() {
                 AGGREGATE GDP
               </h6>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -204,3 +204,11 @@
     opacity: 0;
   }
 }
+
+/* input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::file-selector-button {
+  visibility: hidden;
+} */

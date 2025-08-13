@@ -5,19 +5,19 @@ import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import React from "react";
 
-export default function ContactUsPartnerForm() {
+export default function CareerOpportunitiesForm() {
   return (
     <div className="bg-grey-2 top-rounded-section">
       <div className="container">
         <div className=" grid grid-cols-2 md:gap-11 gap-4 md:pb-7 pb-4">
-          <div>
+          {/* <div>
             <Label variant="primary">First Name</Label>
             <Input />
           </div>
           <div>
             <Label variant="primary">Last Name</Label>
             <Input />
-          </div>
+          </div> */}
           <div>
             <Label variant="primary">Mobile</Label>
             <Input />
@@ -36,7 +36,7 @@ export default function ContactUsPartnerForm() {
             ]}
           /> */}
 
-          <Select
+          {/* <Select
             label="type of enquiry"
             options={[
               { label: "Option 1", value: "option1" },
@@ -44,7 +44,7 @@ export default function ContactUsPartnerForm() {
               { label: "Option 3", value: "option3" },
               { label: "Option 4", value: "option4" },
             ]}
-          />
+          /> */}
           <Select
             label="Country"
             options={[
@@ -54,6 +54,10 @@ export default function ContactUsPartnerForm() {
               { label: "Option 4", value: "option4" },
             ]}
           />
+           <div>
+            <Label variant="primary">Upload File</Label>
+            <Input id="email" type="file"  />
+          </div>
           <div />
         </div>
         <div className="flex items-center gap-2 ">
@@ -70,7 +74,7 @@ export default function ContactUsPartnerForm() {
             they can respond to my inquiry [acceptance]
           </Label>
         </div>
-        <Button className="mt-9 !lowercase">Send</Button>
+        <Button className="mt-9 !lowercase">Apply Now</Button>
       </div>
     </div>
   );

@@ -7,15 +7,15 @@ const categories = [
   "Healthcare",
   "Real Estate Development & Management",
   "Construction",
-  "IT Services",
-  "Hospitality",
+  // "IT Services",
+  // "Hospitality",
 ];
 
 export default function Categories() {
   return (
     <div className="top-rounded-section py-16">
       <div className="container">
-        <div className="grid lg:grid-cols-6 grid-cols-2 gap-y-10 ">
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-y-10 ">
           {categories.map((c, i) => (
             <div
               className={cn(

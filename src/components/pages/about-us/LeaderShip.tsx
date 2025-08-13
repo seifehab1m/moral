@@ -1,6 +1,9 @@
 import React from "react";
 import leader1 from "@/assets/images/leader-1.jpg";
 import leader2 from "@/assets/images/leader-2.jpg";
+import leader3 from "@/assets/images/leader-3.png";
+import leader4 from "@/assets/images/leader-4.png";
+
 import Image from "next/image";
 
 export default function LeaderShip() {
@@ -10,7 +13,7 @@ export default function LeaderShip() {
         <div className=" grid md:grid-cols-2 grid-cols-1">
           <div className="">
             <h6 className="text-secondary text-[20px] font-medium mb-2">
-              leadership
+              Leadership
             </h6>
           </div>
 
@@ -63,6 +66,50 @@ export default function LeaderShip() {
                 forward-thinking approach and ability to drive sustainable
                 transformation across industries.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="mt-16 grid md:grid-cols-2 grid-cols-1 font-medium">
+          <Image
+            className="h-[260px] w-[260px] object-cover object-top rounded-br-[80px]"
+            src={leader3}
+            alt=""
+            width={260}
+            height={260}
+          />
+          <div className="flex flex-col justify-between h-fit my-auto">
+            <div>
+              <h3 className="lg:text-[28px] text-base text-secondary mt-4 lg:mt-0">
+                Chief Strategy & Implementation Officer
+              </h3>
+              <h5 className="mt-10 heading-3 text-primary ">Brian Carey</h5>
+              {/* <p className="text-black mt-3">
+                A dynamic executive and strategic business leader, known for his
+                forward-thinking approach and ability to drive sustainable
+                transformation across industries.
+              </p> */}
+            </div>
+          </div>
+        </div>
+        <div className="mt-16 grid md:grid-cols-2 grid-cols-1 font-medium">
+          <Image
+            className="h-[260px] w-[260px] object-cover object-top rounded-br-[80px]"
+            src={leader4}
+            alt=""
+            width={260}
+            height={260}
+          />
+          <div className="flex flex-col justify-between h-fit my-auto">
+            <div>
+              <h3 className="lg:text-[28px] text-base text-secondary mt-4 lg:mt-0">
+                Group Chief Governance & Compliance Officer
+              </h3>
+              <h5 className="mt-10 heading-3 text-primary ">Reza Nader-Sepahi</h5>
+              {/* <p className="text-black mt-3">
+                A dynamic executive and strategic business leader, known for his
+                forward-thinking approach and ability to drive sustainable
+                transformation across industries.
+              </p> */}
             </div>
           </div>
         </div>

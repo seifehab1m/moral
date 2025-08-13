@@ -7,6 +7,7 @@ import PositiveImpact from "@/components/pages/career-opportunities/positive-imp
 import ManifestoBook from "@/components/pages/career-opportunities/ManifestoBook";
 import CareerHeader from "@/components/pages/career-opportunities/CareerHeader";
 import { useHeaderTheme } from "@/hooks/useHeaderTheme";
+import CareerOpportunitiesForm from "@/components/pages/career-opportunities/CareerOpportunitiesForm";
 
 export default function Page() {
   useHeaderTheme(true);
@@ -33,10 +34,11 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <ValuesCreator />
+        {/* <ValuesCreator /> */}
       </section>
-      <PositiveImpact />
+      {/* <PositiveImpact /> */}
       {/* <ManifestoBook /> */}
+      <CareerOpportunitiesForm />
     </>
   );
 }
