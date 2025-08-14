@@ -64,14 +64,14 @@ export default function CareerOpportunitiesForm() {
           <Checkbox />
           <Label className="pt-3 !lowercase">
             <span className="!uppercase">I </span> confirm that i am over 18 years of age, or over the legal age of
-            majority in my country of residence 
+            majority in my country of residence.
           </Label>
         </div>
         <div className="flex items-center gap-2 ">
           <Checkbox />
           <Label className="pt-3 !lowercase">
             <span className="!uppercase">I </span> consent to having this website store my submitted information so
-            they can respond to my inquiry 
+            they can respond to my inquiry.
           </Label>
         </div>
         <Button className="mt-9 ">Apply Now</Button>

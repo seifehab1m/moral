@@ -38,7 +38,7 @@ export function Verticals() {
           timeless quality.
         </p>
       </div>
-      <div className="flex flex-nowrap lg:grid lg:grid-cols-6 mt-6 lg:mt-16 gap-[7px] max-lg:overflow-x-scroll max-lg:px-[1rem] container">
+      <div className="flex flex-nowrap lg:grid lg:grid-cols-5 mt-6 lg:mt-16 gap-[7px] max-lg:overflow-x-scroll max-lg:px-[1rem] container">
         {cards.map((c, i) => (
           <Card title={c} key={i} />
         ))}

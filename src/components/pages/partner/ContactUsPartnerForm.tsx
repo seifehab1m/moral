@@ -60,7 +60,7 @@ export default function ContactUsPartnerForm() {
           <Label className="pt-3 !lowercase">
             <span className="!uppercase">I </span>confirm that i am over 18
             years of age, or over the legal age of majority in my country of
-            residence .
+            residence.
           </Label>
         </div>
         <div className="flex items-center gap-2 ">
@@ -68,7 +68,7 @@ export default function ContactUsPartnerForm() {
           <Label className="pt-3 !lowercase">
             <span className="!uppercase">I </span> consent to having this
             website store my submitted information so they can respond to my
-            inquiry .
+            inquiry.
           </Label>
         </div>
         <Button className="mt-9">Send</Button>

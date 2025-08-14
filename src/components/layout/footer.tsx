@@ -2,10 +2,11 @@
 
 import Logo from "@/assets/logos/Logo";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 type FooterNavigationLinks = {
   header: string;
-  children?: Array<{ label: string; href: string; target?: string }> | string;
+  children?: Array<{ label: string; href: string; target?: string }> | ReactNode;
 };
 
 const links: FooterNavigationLinks[] = [
@@ -37,7 +38,7 @@ const links: FooterNavigationLinks[] = [
   },
   {
     header: "Address",
-    children: "Level 22Jumeirah Emirates Towers Dubai, UAE",
+    children: <>Jumeirah Emirates Towers<br />Level 22<br />Dubai, UAE</>,
   },
 ];
 

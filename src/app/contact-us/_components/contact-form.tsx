@@ -184,7 +184,7 @@ export function ContactForm() {
                       </FormControl>
                       <FormLabel className="!my-0 !normal-case !leading-[1.2]">
                         I consent to having this website store my submitted
-                        information so they can respond to my inquiry
+                        information so they can respond to my inquiry.
                       </FormLabel>
                     </FormItem>
                   );
