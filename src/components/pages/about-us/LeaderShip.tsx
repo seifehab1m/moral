@@ -1,8 +1,8 @@
 import React from "react";
 import leader1 from "@/assets/images/leader-1.jpg";
 import leader2 from "@/assets/images/leader-2.jpg";
-import leader3 from "@/assets/images/leader-3.png";
-import leader4 from "@/assets/images/leader-4.png";
+import leader3 from "@/assets/images/leader-5.jpg";
+import leader4 from "@/assets/images/leader-6.jpg";
 
 import Image from "next/image";
 
