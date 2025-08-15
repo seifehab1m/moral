@@ -15,7 +15,7 @@ export default function CardDates({
         <h3 className="uppercase font-semibold heading-1 text-secondary group-hover:text-primary lg:max-w-[200px] relative z-10 transition-colors duration-500">
           {year}
         </h3>
-        <h6 className="uppercase sub-header text-secondary group-hover:text-primary transition-colors duration-500">
+        <h6 className=" sub-header text-secondary group-hover:text-primary transition-colors duration-500">
           {title}
         </h6>
       </div>
