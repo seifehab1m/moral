@@ -16,8 +16,8 @@ const cards = [
   },
   {
     year: 1989,
-    title:
-      "We entered the burgeoning real estate sector in Dubai and Sharjah, acquiring large parcels of land for development.",
+    title: "We entered the burgeoning real estate sector in Dubai and Sharjah, acquiring large parcels of land for development.",
+    description:""
     // description:
     //   "We entered the burgeoning real estate sector in Dubai and Sharjah, acquiring large parcels of land for development.",
   },
@@ -144,10 +144,7 @@ export default function AboutUsSection() {
           modules={[Navigation, Pagination]}
           slidesPerView={1}
           spaceBetween={20}
-          navigation={{
-            nextEl: ".custom-next",
-            prevEl: ".custom-prev",
-          }}
+          navigation
           pagination={{ clickable: true }}
           breakpoints={{
             640: { slidesPerView: 2 },
@@ -163,14 +160,6 @@ export default function AboutUsSection() {
               />
             </SwiperSlide>
           ))}
-
-          {/* Custom arrows */}
-          <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer z-10 text-3xl text-primary">
-            ←
-          </div>
-          <div className="custom-next absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer z-10 text-3xl text-primary">
-            →
-          </div>
         </Swiper>
       </div>
     </div>
