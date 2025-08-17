@@ -12,21 +12,18 @@ import gsap from "gsap";
 export function FlagshipSpotlight() {
   const textRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const logoRef = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
     gsapSplit(textRef, ".split-spotlight", {});
 
-    gsap.from(buttonRef.current!, {
-      scale: 1.1,
-      duration: 2,
-      scrollTrigger: { trigger: buttonRef.current! },
-    });
-
-    gsap.from(logoRef.current!, {
-      opacity: 0,
-      duration: 2,
-      scrollTrigger: { trigger: logoRef.current! },
+    gsap.from(buttonRef, {
+      scale: 1.2,
+      duration: 3,
+      delay: 3,
+      // scrollTrigger: {
+      //   trigger: textRef.current!,
+      //   start: "center center",
+      // },
     });
   });
 
@@ -45,20 +42,17 @@ export function FlagshipSpotlight() {
             A place that honours your heritage and nutures your future.
           </h2>
         </div>
-        <Image
-          ref={logoRef}
-          className="max-w-[262px] lg:max-w-[343px]"
-          src={logo}
-          alt=""
-        />
+        <Image className="max-w-[262px] lg:max-w-[343px]" src={logo} alt="" />
       </div>
       <Image className="object-cover" src="/53East.png" alt="" fill />
       <Button
-        ref={buttonRef}
+        id="nigger"
         className="relative z-10 lg:mb-20 lg:me-24 max-lg:self-end max-lg:mt-72 max-lg:mb-4 max-lg:me-7"
         asChild
       >
-        <Link href="/">Visit Website</Link>
+        <Link ref={buttonRef} href="/">
+          Visit Website
+        </Link>
       </Button>
     </section>
   );

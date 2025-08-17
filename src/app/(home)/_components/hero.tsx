@@ -43,7 +43,7 @@ export function Hero() {
         ref={imageRef}
         src={heroImage}
         alt="hero-image"
-        className="object-cover scale-110"
+        className="object-cover scale-115"
         fill
         quality={100}
       />

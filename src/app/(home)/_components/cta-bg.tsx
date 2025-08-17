@@ -46,7 +46,6 @@ export function CallToActionBG({
           stagger: 0.1,
           scrollTrigger: {
             trigger: headingRef.current,
-            // markers: true,
             scrub: true,
             end: "clamp(bottom center)",
             once: true,

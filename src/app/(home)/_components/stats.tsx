@@ -13,7 +13,7 @@ export function Stats() {
     const text = gsap.utils.toArray(textRef.current!);
 
     text.forEach(() => {
-      SplitText.create(".split", {
+      SplitText.create(".split-stats", {
         type: "words,lines",
         mask: "lines",
         linesClass: "line",
@@ -24,7 +24,6 @@ export function Stats() {
             stagger: 0.1,
             scrollTrigger: {
               trigger: textRef.current,
-              // markers: true,
               scrub: true,
               end: "clamp(bottom center)",
               once: true,
@@ -47,12 +46,12 @@ export function Stats() {
     <section className="top-rounded-section">
       <div className="container flex flex-col lg:flex-row gap-10 justify-between lg:items-center">
         <div ref={textRef} className="flex-[.6]">
-          <span className="sub-header split">Key Numbers</span>
-          <h2 className="text-gray-500 heading-1 mt-2 mb-[46px] lg:mt-6 font-medium split">
+          <span className="sub-header split-stats">Key Numbers</span>
+          <h2 className="text-gray-500 heading-1 mt-2 mb-[46px] lg:mt-6 font-medium split-stats">
             Building legacies, <br />
             <span className="text-primary">bettering lives</span>
           </h2>
-          <p className="text-light-black font-medium lg:text-2xl lg:max-w-[690px] lg:mt-[99px] split">
+          <p className="text-light-black font-medium lg:text-2xl lg:max-w-[690px] lg:mt-[99px] split-stats">
             MRBF Holding is a new kind of holding company. Built on 55 years of
             diversified success, and equipped with a keen sense of future
             demand, it operates with agility and intent – focused on
