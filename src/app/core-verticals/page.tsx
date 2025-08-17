@@ -1,12 +1,12 @@
 "use client";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import {
   Verticals,
   SectorPortfolio,
   CompanyDescription,
   CallToActionSection,
 } from "./_components";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // ✅ import plugin
 
@@ -14,18 +14,18 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // ✅ import plugin
 gsap.registerPlugin(ScrollToPlugin);
 
 export default function CoreVerticals() {
-  const searchParams = useSearchParams();
-  const sec = searchParams.get("sec");
+  // const searchParams = useSearchParams();
+  // const sec = searchParams.get("sec");
 
-  useEffect(() => {
-    if (sec) {
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: { y: `#${sec}`, offsetY: 100 }, // adjust offset if sticky header
-        ease: "power2.inOut",
-      });
-    }
-  }, [sec]);
+  // useEffect(() => {
+  //   if (sec) {
+  //     gsap.to(window, {
+  //       duration: 1,
+  //       scrollTo: { y: `#${sec}`, offsetY: 100 }, // adjust offset if sticky header
+  //       ease: "power2.inOut",
+  //     });
+  //   }
+  // }, [sec]);
 
   return (
     <>
