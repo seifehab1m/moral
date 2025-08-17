@@ -89,8 +89,8 @@ export function Sectors() {
                     )}
                   >
                     <button
-                      className="cursor-pointer flex flex-col gap-2 items-start"
-                      onClick={() => setActive(i)}
+                      className=" flex flex-col gap-2 items-start"
+                     // onClick={() => setActive(i)}
                     >
                       <span className="text-secondary font-medium text-base lg:text-[32px]">
                         0{i + 1}

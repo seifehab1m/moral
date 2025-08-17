@@ -8,11 +8,13 @@ type CompanyDescriptionProps = {
   companyLogo?: string;
   className?: string;
   rounded?: boolean;
+  id?: string;
 };
 
 export function CompanyDescription(props: CompanyDescriptionProps) {
   return (
     <div
+      id={props.id}
       className={cn("max-lg:my-[16px]", props.rounded && "top-rounded-section")}
     >
       <div

@@ -25,11 +25,11 @@ const comapnies = [
   },
 ];
 
-export function SectorPortfolio() {
+export function SectorPortfolio({id}:{id:string}) {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-white top-rounded-section">
+    <section id={id} className="bg-white top-rounded-section">
       <div className="container">
         <span className="lg:text-[32px] text-secondary">Construction</span>
 

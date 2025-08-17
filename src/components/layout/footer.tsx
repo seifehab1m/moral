@@ -6,7 +6,9 @@ import { ReactNode } from "react";
 
 type FooterNavigationLinks = {
   header: string;
-  children?: Array<{ label: string; href: string; target?: string }> | ReactNode;
+  children?:
+    | Array<{ label: string|ReactNode; href: string; target?: string }>
+    | ReactNode;
 };
 
 const links: FooterNavigationLinks[] = [
@@ -38,7 +40,21 @@ const links: FooterNavigationLinks[] = [
   },
   {
     header: "Address",
-    children: <>Jumeirah Emirates Towers<br />Level 22<br />Dubai, UAE</>,
+    children: [
+      {
+        label: (
+          <>
+            Jumeirah Emirates Towers
+            <br />
+            Level 22
+            <br />
+            Dubai, UAE
+          </>
+        ),
+        href: "https://maps.app.goo.gl/baN2yVNL823pjpKV8",
+        target: "_blank",
+      },
+    ],
   },
 ];
 
@@ -46,9 +62,9 @@ export function Footer() {
   return (
     <footer className="bg-primary relative z-10 px-4 py-8 lg:py-[42px]">
       <div className="container flex flex-col lg:flex-row lg:justify-between lg:gap-32">
-        <div className="flex-[.3]">
+        <Link href={"/"} className="flex-[.3]">
           <Logo className="text-grey-2 max-w-[148px] lg:max-w-[393px]" />
-        </div>
+        </Link>
         <div className="flex-[.7] text-grey-2 grid grid-cols-3 lg:gap-10 mt-5 lg:mt-0">
           {links.map((c, i) =>
             Array.isArray(c.children) ? (

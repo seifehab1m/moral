@@ -16,7 +16,7 @@ export function CallToActionSection(props: CallToActionSectionProps) {
       <Image className="object-cover" alt={""} src={props.bgURL} fill />
       <div className="container text-white relative z-10 flex flex-col items-end justify-end h-full pb-14 lg:pb-20">
         <Button asChild>
-          <Link href={props.href}>{props.text}</Link>
+          <Link  href={props.href} target="_blank">{props.text}</Link>
         </Button>
       </div>
     </div>

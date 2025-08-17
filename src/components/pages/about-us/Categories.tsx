@@ -1,13 +1,17 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const categories = [
-  "Real Estate Development & Management",
-  "Construction",
-  "Healthcare",
-  "Financial Services, IT & Investment Management",
-  "Hospitality",
+  { name: "Real Estate Development & Management", id: "real-estate" },
+  { name: "Construction", id: "construction" },
+  { name: "Healthcare", id: "healthcare" },
+  {
+    name: "Financial Services, IT & Investment Management",
+    id: "financial-services",
+  },
+  { name: "Hospitality", id: "hospitality" },
 ];
 
 export default function Categories() {
@@ -16,7 +20,9 @@ export default function Categories() {
       <div className="container">
         <div className="grid lg:grid-cols-5 grid-cols-2 gap-y-10 ">
           {categories.map((c, i) => (
-            <div
+            <Link
+              href={`/core-verticals?sec=${c?.id}`}
+              key={i}
               className={cn(
                 "flex items-start justify-between uppercase w-full border-e border-e-[#D8D8D6] pe-8",
                 i !== 0 && "lg:ps-8",
@@ -24,10 +30,10 @@ export default function Categories() {
               )}
             >
               <h4 className="text-sm lg:text-[clamp(14px,1vw,18px)] font-medium text-primary w-full">
-                {c}
+                {c?.name}
               </h4>
               <ArrowUpRight className="text-primary shrink-0 text-5xl" />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
