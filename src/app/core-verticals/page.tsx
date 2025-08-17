@@ -14,7 +14,7 @@ export default function CoreVerticals() {
         className="mt-8 lg:mt-[71px]"
         sectorName="Real Estate"
         companyLogo="/hotel-logo-light.svg"
-        description="MRBF Development (Fifty Three East) is a boutique developer that leverages deep market insight to deliver experiential living through thoughtfully designed, customer-centric communities — all shaped by its innovative next-generation development model."
+        description="A boutique developer that leverages deep market insight to deliver experiential living through thoughtfully designed, customer-centric communities — all shaped by its innovative next-generation development model."
       />
       <CallToActionSection bgURL="/hotel-2.png" text="Visit Website" href="/" />
 
@@ -23,7 +23,7 @@ export default function CoreVerticals() {
         className="lg:mt-[71px]"
         sectorName="Healthcare"
         companyName="Canadian Specialist Hospital LLC"
-        description="MRBF Healthcare (Canadian Specialist Hospital) invests strategically in advanced technologies and world-class facilities, delivering exceptional care today while anticipating the evolving needs of patients tomorrow."
+        description="Invests strategically in advanced technologies and world-class facilities, delivering exceptional care today while anticipating the evolving needs of patients tomorrow."
       />
       <CallToActionSection bgURL="/csh.png" text="Visit Website" href="/" />
       <CompanyDescription
@@ -51,7 +51,7 @@ export default function CoreVerticals() {
         className="lg:my-[91px]"
         sectorName="Hospitality"
         companyName="Yashar Palace Restaurant"
-        description="MRBF Hospitality (Yashar Palace) including its B6 travel and tourism agency, curates with craft, working with partners to realize market-leading, guest-centric experiences designed to evolve with the needs of tomorrow’s discerning consumer."
+        description="Including its B6 travel and tourism agency, curates with craft, working with partners to realize market-leading, guest-centric experiences designed to evolve with the needs of tomorrow’s discerning consumer."
       />
       <CallToActionSection
         bgURL="/resturant.png"
