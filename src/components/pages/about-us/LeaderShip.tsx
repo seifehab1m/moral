@@ -79,10 +79,10 @@ export default function LeaderShip() {
           />
           <div className="flex flex-col justify-between h-fit my-auto">
             <div>
-              <h5 className="mt-10 heading-3 text-primary ">Brian Carey</h5>
-              <p className="text-black mt-3">
+              <h3 className="lg:text-[28px] text-base text-secondary mt-4 lg:mt-0">
                 Chief Strategy & Implementation Officer
-              </p>
+              </h3>
+              <h5 className="mt-10 heading-3 text-primary ">Brian Carey</h5>
             </div>
           </div>
         </div>
@@ -97,12 +97,12 @@ export default function LeaderShip() {
           <div className="flex flex-col justify-between h-fit my-auto">
             <div className="flex flex-col justify-between h-fit my-auto">
               <div>
+                <h3 className="lg:text-[28px] text-base text-secondary mt-4 lg:mt-0">
+                  Group Chief Governance & Compliance Officer
+                </h3>
                 <h5 className="mt-10 heading-3 text-primary ">
                   Reza Nader-Sepahi
                 </h5>
-                <p className="text-black mt-3">
-                  Group Chief Governance & Compliance Officer
-                </p>
               </div>
             </div>
           </div>
