@@ -121,7 +121,7 @@ export default function AboutUsSection() {
         <br />
         <span className="block pt-3">
           Today, as a diversified international holding, it combines an
-          innovative \$1 billion ADGM-housed fund with a relentless drive to
+          innovative ADGM-housed fund with a relentless drive to
           deliver enduring social and commercial value.
         </span>
       </p>
