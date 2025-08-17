@@ -10,7 +10,7 @@ export function FlagshipSpotlight() {
       <div
         className={cn(
           "relative z-10 px-4 py-6 lg:ps-[160px] lg:pe-[148px] lg:py-20 bg-primary min-h-[402px] lg:min-h-[850px] rounded-ee-[52px] lg:rounded-ee-[200px] lg:w-1/2",
-          "flex flex-col justify-between overflow-hidden"
+          "flex flex-col justify-between overflow-hidden",
         )}
       >
         <div>

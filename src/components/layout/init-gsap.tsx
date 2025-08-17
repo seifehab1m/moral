@@ -6,14 +6,24 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from "gsap/SplitText";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useRef } from "react";
-import { Cursor } from "../ui";
+import { useSearchParams } from "next/navigation";
+// import { Cursor } from "../ui";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
+gsap.registerPlugin(
+  useGSAP,
+  ScrollTrigger,
+  ScrollSmoother,
+  SplitText,
+  ScrollToPlugin,
+);
 
 export function InitGSAP({ children }: React.PropsWithChildren) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const scrollTo = useSearchParams().get("sec");
 
   useGSAP(() => {
     ScrollSmoother.create({
@@ -26,12 +36,19 @@ export function InitGSAP({ children }: React.PropsWithChildren) {
 
     ScrollTrigger.create({
       trigger: contentRef.current!,
-      // pin: true,
       start: "top center",
-      // end: "+=300",
-      // markers: true,
     });
   }, []);
+
+  useGSAP(() => {
+    const smoother = ScrollSmoother.get();
+    const target = document.querySelector<HTMLElement>("#" + scrollTo);
+
+    if (!scrollTo || !smoother || !target) return;
+
+    const y = target.getBoundingClientRect().top + smoother.scrollTop();
+    smoother.scrollTo(y - 200, true);
+  }, [scrollTo]);
 
   return (
     <>
