@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from "gsap/SplitText";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 // import { Cursor } from "../ui";
 
@@ -20,6 +20,14 @@ gsap.registerPlugin(
 );
 
 export function InitGSAP({ children }: React.PropsWithChildren) {
+  return (
+    <Suspense>
+      <InitGSAPMain>{children}</InitGSAPMain>
+    </Suspense>
+  );
+}
+
+export function InitGSAPMain({ children }: React.PropsWithChildren) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 

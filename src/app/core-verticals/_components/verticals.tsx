@@ -5,10 +5,6 @@ import { ArrowUpRight } from "lucide-react";
 import cardImg from "../../../../public/core-vertical-card.png";
 import Image from "next/image";
 import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-// Register GSAP plugin
-gsap.registerPlugin(ScrollToPlugin);
 
 const cards = [
   { name: "Real Estate Development & Management", id: "real-estate" },
@@ -64,7 +60,7 @@ function Card({ title, id }: CardProps) {
   const handleScroll = () => {
     gsap.to(window, {
       duration: 1,
-      scrollTo: { y: `#${id}`, offsetY: 100 }, // adjust offset if sticky header
+      scrollTo: { y: `#${id}`, offsetY: 100 },
       ease: "power2.inOut",
     });
   };
