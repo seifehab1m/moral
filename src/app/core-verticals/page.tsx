@@ -48,7 +48,7 @@ export default function CoreVerticals() {
         className="lg:mt-[71px]"
         sectorName="Healthcare"
         companyName="Canadian Specialist Hospital LLC"
-        description="Invests strategically in advanced technologies and world-class facilities, delivering exceptional care today while anticipating the evolving needs of patients tomorrow."
+        description="MRBF Healthcare Invests strategically in advanced technologies and world-class facilities, delivering exceptional care today while anticipating the evolving needs of patients tomorrow."
         id="healthcare"
       />
       <CallToActionSection
@@ -82,7 +82,7 @@ export default function CoreVerticals() {
         className="lg:my-[91px]"
         sectorName="Hospitality"
         companyName="Yashar Palace Restaurant"
-        description="Including its B6 travel and tourism agency, curates with craft, working with partners to realize market-leading, guest-centric experiences designed to evolve with the needs of tomorrow’s discerning consumer."
+        description="MRBF Hospitality Including its B6 travel and tourism agency, curates with craft, working with partners to realize market-leading, guest-centric experiences designed to evolve with the needs of tomorrow’s discerning consumer."
         id="hospitality"
       />
       <CallToActionSection
