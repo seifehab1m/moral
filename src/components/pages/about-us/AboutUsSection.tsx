@@ -1,10 +1,12 @@
 "use client";
+
 import React from "react";
 import CardDates from "./CardDates";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
+import { useHeaderTheme } from "@/hooks";
 
 // Timeline data based on your images
 const cards = [
@@ -93,19 +95,22 @@ const cards = [
 
   {
     year: "2021-2023",
-    title: "n 2021 We expanded the capacity of Canadian Specialist Hospital by 33%. In 2022, extend the investment to financial markets and maintained a portfolio of USD 70 M. Completed USD 600 M real estate project with whopping profits in 2023. Started restructuring of the group and added highly respected and qualified industry experts as leadership of the group in 2023",
+    title:
+      "n 2021 We expanded the capacity of Canadian Specialist Hospital by 33%. In 2022, extend the investment to financial markets and maintained a portfolio of USD 70 M. Completed USD 600 M real estate project with whopping profits in 2023. Started restructuring of the group and added highly respected and qualified industry experts as leadership of the group in 2023",
     description:
       "We expanded the capacity of Canadian Specialist Hospital by 30% in 2021, seeking the industry’s highest standards and maintained a portfolio of more than 700M.",
   },
   {
     year: "2024",
-    title: "We launched Moraal Holding as a global identity and established an ADGM-approved multi-strategy investment  fund to consolidate and manage our assets. This strategy has granted us access to global investments and preferential relationships with leading financial institutions worldwide",
+    title:
+      "We launched Moraal Holding as a global identity and established an ADGM-approved multi-strategy investment  fund to consolidate and manage our assets. This strategy has granted us access to global investments and preferential relationships with leading financial institutions worldwide",
     description:
       "We launched Moradi Holding as a global investment company with a multi-tiered investment fund, significantly expanding the group’s asset base and access to global capital. Created a global presence for healthcare assets and established relations with leading financial institutions worldwide.",
   },
 ];
 
 export default function AboutUsSection() {
+  useHeaderTheme(true);
   return (
     <div>
       <h1 className="sub-header">About Us</h1>
@@ -121,8 +126,8 @@ export default function AboutUsSection() {
         <br />
         <span className="block pt-3">
           Today, as a diversified international holding, it combines an
-          innovative ADGM-housed fund with a relentless drive to
-          deliver enduring social and commercial value.
+          innovative ADGM-housed fund with a relentless drive to deliver
+          enduring social and commercial value.
         </span>
       </p>
 
