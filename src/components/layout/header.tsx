@@ -7,7 +7,7 @@ import { useWindowScroll } from "@/hooks/useWindowScroll";
 import { cn } from "@/lib/utils";
 import { useHeaderContext } from "../providers/header-context";
 import { useRef, useState } from "react";
-import { useScrollLock } from "@/hooks";
+import { useDisableScrolling } from "@/hooks";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { getFixedPosition } from "@/lib/utils";
@@ -27,7 +27,7 @@ export function Header() {
   const { forceDark } = useHeaderContext();
   const navRef = useRef<HTMLDivElement>(null);
   const openButtonRef = useRef<HTMLButtonElement>(null);
-  useScrollLock(open);
+  useDisableScrolling(open);
 
   const isScrolled = (scroll?.y ?? 0) > 10;
 

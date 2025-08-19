@@ -35,14 +35,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} `}
       >
-        <InitGSAP>
-          <HeaderProvider>
-            <Header />
+        <HeaderProvider>
+          <Header />
+          <InitGSAP>
             {children}
             <ContactUs />
             <Footer />
-          </HeaderProvider>
-        </InitGSAP>
+          </InitGSAP>
+        </HeaderProvider>
       </body>
     </html>
   );
