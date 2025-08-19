@@ -94,7 +94,7 @@ export function Header() {
           >
             <XIcon className="size-7 lg:size-10" />
           </button>
-          <ul className="h-full flex flex-col md:justify-end justify-center text-xl gap-2 lg:text-5xl lg:gap-5">
+          <ul className="h-full flex flex-col md:justify-end justify-center text-xl gap-2 lg:text-4xl lg:gap-5">
             {links.map((link) => (
               <li key={link.name} onClick={() => setOpen(false)}>
                 <Link

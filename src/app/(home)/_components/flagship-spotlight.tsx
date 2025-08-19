@@ -36,7 +36,7 @@ export function FlagshipSpotlight() {
         ref={textRef}
         className={cn(
           "relative z-10 px-4 py-6 lg:ps-[160px] lg:pe-[148px] lg:py-20 bg-primary min-h-[402px] lg:min-h-[850px] rounded-ee-[52px] lg:rounded-ee-[200px] lg:w-1/2",
-          "flex flex-col justify-between overflow-hidden",
+          "flex flex-col justify-between overflow-hidden"
         )}
       >
         <div>
@@ -58,7 +58,7 @@ export function FlagshipSpotlight() {
         className="relative z-10 lg:mb-20 lg:me-24 max-lg:self-end max-lg:mt-72 max-lg:mb-4 max-lg:me-7"
         asChild
       >
-        <Link href="/">Visit Website</Link>
+        <Link href={`/core-verticals?sec=real-estate`}>Visit Website</Link>
       </Button>
     </section>
   );
