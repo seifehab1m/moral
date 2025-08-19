@@ -49,7 +49,7 @@ export function SectorPortfolio({ id }: { id: string }) {
                 fill
               />
               <Button asChild className="absolute bottom-8 right-8">
-                <Link href="/https://buset.ae" target="_blank">visit Website</Link>
+                <Link href="https://buset.ae" target="_blank">visit Website</Link>
               </Button>
             </div>
           </div>
