@@ -6,3 +6,4 @@ export * from "./label";
 export * from "./select";
 export * from "./textarea";
 export * from "./cursor";
+export * from "./phone-input";
