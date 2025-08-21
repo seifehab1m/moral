@@ -4,6 +4,7 @@ import { HeaderProvider } from "@/components/providers/header-context";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Loader } from "@/components/layout/loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} `}
       >
+        <Loader />
         <HeaderProvider>
           <Header />
           <InitGSAP>
