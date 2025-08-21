@@ -39,6 +39,7 @@ export function gsapSplit(
           stagger: 0.2,
           scrollTrigger: {
             trigger: ref.current!,
+            ...(vars?.scrollTrigger ?? {}),
           },
         });
       },
