@@ -24,25 +24,21 @@ export function gsapSplit(
   target: gsap.DOMTarget,
   vars?: gsap.TweenVars,
 ) {
-  const text = gsap.utils.toArray(ref.current!);
-
-  text.forEach(() => {
-    SplitText.create(target, {
-      type: "words,lines",
-      mask: "lines",
-      linesClass: "line",
-      autoSplit: true,
-      onSplit: (instance) => {
-        return gsap.from(instance.lines, {
-          ...(vars ?? {}),
-          yPercent: 150,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: ref.current!,
-            ...(vars?.scrollTrigger ?? {}),
-          },
-        });
-      },
-    });
+  return SplitText.create(target, {
+    type: "words,lines",
+    mask: "lines",
+    linesClass: "line",
+    autoSplit: true,
+    onSplit: (instance) => {
+      return gsap.from(instance.lines, {
+        ...(vars ?? {}),
+        yPercent: 120,
+        stagger: 0.25,
+        scrollTrigger: {
+          trigger: ref.current!,
+          ...(vars?.scrollTrigger ?? {}),
+        },
+      });
+    },
   });
 }
