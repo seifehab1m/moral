@@ -13,7 +13,7 @@ export default function CoreVerticals() {
         className="mt-8 lg:mt-[71px]"
         sectorName="Real Estate"
         companyLogo="/hotel-logo-light.svg"
-        description="Fifty three east is a boutique developer that leverages deep market insight to deliver experiential living through thoughtfully designed, customer-centric communities — all shaped by its innovative next-generation development model."
+        description="Fifty Three East is a boutique developer that leverages deep market insight to deliver experiential living through thoughtfully designed, customer-centric communities — all shaped by its innovative next-generation development model."
         id="real-estate"
       />
       <CallToActionSection
@@ -27,7 +27,7 @@ export default function CoreVerticals() {
         className="lg:mt-[71px]"
         sectorName="Healthcare"
         companyName="Canadian Specialist Hospital LLC"
-        description="Canadian specialist hospital invests strategically in advanced technologies and world-class facilities, delivering exceptional care today while anticipating the evolving needs of patients tomorrow."
+        description="Canadian Specialist Hospital invests strategically in advanced technologies and world-class facilities, delivering exceptional care today while anticipating the evolving needs of patients tomorrow."
         id="healthcare"
       />
       <CallToActionSection
@@ -53,7 +53,7 @@ export default function CoreVerticals() {
         className="lg:mt-[91px]"
         sectorName="Hospitality"
         companyName="Yashar Palace Restaurant"
-        description="Yashar palace including its B6 travel and tourism agency, curates with craft, working with partners to realize market-leading, guest-centric experiences designed to evolve with the needs of tomorrow’s discerning consumer."
+        description="Yashar Palace including its B6 travel and tourism agency, curates with craft, working with partners to realize market-leading, guest-centric experiences designed to evolve with the needs of tomorrow’s discerning consumer."
         id="hospitality"
       />
       <CallToActionSection
