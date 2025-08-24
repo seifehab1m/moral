@@ -1,14 +1,83 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import CardDates from "./CardDates";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import { useHeaderTheme } from "@/hooks";
+import { useGSAP } from "@gsap/react";
+import { gsapSplit } from "@/lib";
+import gsap from "gsap";
 
-// Timeline data based on your images
+export default function AboutUsSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  useHeaderTheme(true);
+
+  useGSAP(() => {
+    gsapSplit(containerRef, ".about-us");
+    gsap.from(sliderRef.current, {
+      duration: 1.3,
+      opacity: 0,
+      delay: 2,
+    });
+  });
+
+  return (
+    <div ref={containerRef}>
+      <h1 className="sub-header about-us">About Us</h1>
+      <h2 className="heading-1 font-medium text-secondary lg:max-w-[700px] mt-3 lg:mt-8 about-us">
+        Building legacies, <br />
+        <span className="text-primary">bettering lives.</span>
+      </h2>
+      <p className="heading-4 text-black font-medium mt-8 about-us">
+        MRBF Holding grew in the UAE as a respected family enterprise with an
+        ambition for innovation, quality and community enhancement. For nearly
+        half a century, it has expanded across sectors and regions, shaping
+        vital industries and investing in purposeful transformation.
+        <br />
+        <span className="block pt-3">
+          Today, as a diversified international holding, it combines an
+          innovative ADGM-housed fund with a relentless drive to deliver
+          enduring social and commercial value.
+        </span>
+      </p>
+
+      <div ref={sliderRef} className="mt-6 lg:mt-16 container">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          slidesPerView={1}
+          spaceBetween={20}
+          navigation={{
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+          }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 5 },
+          }}
+        >
+          {cards.map((c, i) => (
+            <SwiperSlide key={i}>
+              <CardDates title={c.title} year={c.year} />
+            </SwiperSlide>
+          ))}
+
+          <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer z-10 text-3xl text-primary">
+            ←
+          </div>
+          <div className="custom-next absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer z-10 text-3xl text-primary">
+            →
+          </div>
+        </Swiper>
+      </div>
+    </div>
+  );
+}
+
 const cards = [
   {
     year: "1979",
@@ -96,7 +165,7 @@ const cards = [
   {
     year: "2021-2023",
     title:
-      "n 2021 We expanded the capacity of Canadian Specialist Hospital by 33%. In 2022, extend the investment to financial markets and maintained a portfolio of USD 70 M. Completed USD 600 M real estate project with whopping profits in 2023. Started restructuring of the group and added highly respected and qualified industry experts as leadership of the group in 2023",
+      "In 2021 We expanded the capacity of Canadian Specialist Hospital by 33%. In 2022, extend the investment to financial markets and maintained a portfolio of USD 70 M. Completed USD 600 M real estate project with whopping profits in 2023. Started restructuring of the group and added highly respected and qualified industry experts as leadership of the group in 2023",
     description:
       "We expanded the capacity of Canadian Specialist Hospital by 30% in 2021, seeking the industry’s highest standards and maintained a portfolio of more than 700M.",
   },
@@ -108,63 +177,3 @@ const cards = [
       "We launched Moradi Holding as a global investment company with a multi-tiered investment fund, significantly expanding the group’s asset base and access to global capital. Created a global presence for healthcare assets and established relations with leading financial institutions worldwide.",
   },
 ];
-
-export default function AboutUsSection() {
-  useHeaderTheme(true);
-  return (
-    <div>
-      <h1 className="sub-header">About Us</h1>
-      <h2 className="heading-1 font-medium text-secondary lg:max-w-[700px] mt-3 lg:mt-8">
-        Building legacies, <br />
-        <span className="text-primary">bettering lives.</span>
-      </h2>
-      <p className="heading-4 text-black font-medium  mt-8">
-        MRBF Holding grew in the UAE as a respected family enterprise with an
-        ambition for innovation, quality and community enhancement. For nearly
-        half a century, it has expanded across sectors and regions, shaping
-        vital industries and investing in purposeful transformation.
-        <br />
-        <span className="block pt-3">
-          Today, as a diversified international holding, it combines an
-          innovative ADGM-housed fund with a relentless drive to deliver
-          enduring social and commercial value.
-        </span>
-      </p>
-
-      <div className="mt-6 lg:mt-16 container">
-        <Swiper
-          modules={[Navigation, Pagination]}
-          slidesPerView={1}
-          spaceBetween={20}
-          navigation={{
-            nextEl: ".custom-next",
-            prevEl: ".custom-prev",
-          }}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 5 },
-          }}
-        >
-          {cards.map((c, i) => (
-            <SwiperSlide key={i}>
-              <CardDates
-                title={c.title}
-                year={c.year}
-                // description={c.description}
-              />
-            </SwiperSlide>
-          ))}
-
-          {/* Custom arrows */}
-          <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer z-10 text-3xl text-primary">
-            ←
-          </div>
-          <div className="custom-next absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer z-10 text-3xl text-primary">
-            →
-          </div>
-        </Swiper>
-      </div>
-    </div>
-  );
-}

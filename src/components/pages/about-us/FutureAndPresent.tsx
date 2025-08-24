@@ -1,25 +1,56 @@
+"use client";
+
 import React from "react";
 import img from "@/assets/images/futeure.png";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import gsap from "gsap";
+import { gsapSplit } from "@/lib";
 
+// py-12 lg:py-[158px]
 export default function FutureAndPresent() {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.from(imgRef.current, {
+      scale: 1.2,
+      duration: 2.5,
+      scrollTrigger: {
+        trigger: imgRef.current,
+        start: "top 60%",
+      },
+    });
+
+    gsapSplit(containerRef, ".ceo-word", {
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 60%",
+      },
+    });
+  });
+
   return (
     <div
-      style={{
-        backgroundImage: `url(${img?.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      className="w-full mt-14 min-h-screen py-12 lg:py-28 bg-no-repeat bg-cover bg-center"
+      ref={containerRef}
+      className="w-full mt-14 py-12 lg:py-[158px] bg-no-repeat bg-cover bg-center relative"
     >
-      <div className="flex items-center h-full">
+      <Image
+        ref={imgRef}
+        className="object-cover object-[80%] lg:object-top"
+        quality={100}
+        src={img}
+        alt=""
+        fill
+      />
+      <div className="relative flex items-center h-full">
         <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
           <div className="max-w-[690px]">
-            <h2 className="heading-1 text-white font-semibold leading-12">
+            <h2 className="heading-1 text-white font-semibold leading-12 ceo-word">
               Future, Present.
             </h2>
-            <p className="heading-4 text-white lg:mt-8 mt-3">
+            <p className="heading-4 text-white lg:mt-8 mt-3 ceo-word">
               Like our home, the UAE, MRBF Holding thinks long-term, acts
               decisively and moves with precision. Over the years, our family
               business has evolved to deliver exceptional investor returns and
@@ -32,10 +63,12 @@ export default function FutureAndPresent() {
             </p>
             <div className="flex justify-between text-white mt-18 flex-wrap gap-4">
               <div>
-                <h4 className="heading-4 font-medium">
+                <h4 className="heading-4 font-medium ceo-word">
                   Mohammed Rashed Alfalasi
                 </h4>
-                <h6 className="sub-header !text-white mt-2">Group Chairman</h6>
+                <h6 className="sub-header !text-white mt-2 ceo-word">
+                  Group Chairman
+                </h6>
               </div>
               {/* <Link
                 href="/"
