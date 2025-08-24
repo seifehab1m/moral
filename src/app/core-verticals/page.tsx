@@ -43,7 +43,6 @@ export default function CoreVerticals() {
         id="financial-services"
       />
       <CallToActionSection
-        // className="lg:mt-0"
         hideBtn={true}
         bgURL="/people-working.png"
         text="Visit Website"
@@ -51,7 +50,7 @@ export default function CoreVerticals() {
       />
 
       <CompanyDescription
-        className="lg:my-[91px]"
+        className="lg:mt-[91px]"
         sectorName="Hospitality"
         companyName="Yashar Palace Restaurant"
         description="Yashar palace including its B6 travel and tourism agency, curates with craft, working with partners to realize market-leading, guest-centric experiences designed to evolve with the needs of tomorrow’s discerning consumer."
