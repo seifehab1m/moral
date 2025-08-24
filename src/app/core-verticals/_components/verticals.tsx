@@ -82,8 +82,8 @@ function Card({ title, id }: CardProps) {
   const imageRef = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
-    const duration = 0.69;
-    const ease = "power2.inOut";
+    const duration = 0.9;
+    const ease = "circ.inOut";
 
     if (hoverd) {
       gsap.fromTo(

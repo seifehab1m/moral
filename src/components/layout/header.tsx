@@ -47,7 +47,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "py-7 lg:py-[52px] transition-all fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between duration-500 w-full",
+        "py-7 lg:py-[52px] transition-all fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between duration-1300 ease-in-out w-full",
         isScrolled && "bg-white shadow lg:py-7",
       )}
     >
