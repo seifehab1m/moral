@@ -49,14 +49,6 @@ export default function CoreVerticals() {
         text="Visit Website"
         href="/"
       />
-      {/* <CompanyDescription
-        className="mt-8 lg:mt-[71px]"
-        sectorName="IT Service"
-        companyName="KIMIT Innovation Technology"
-        // companyLogo="/hotel-logo-light.svg"
-        description="MRBF IT Services is spearheaded by KIMIT, a leading-edge digital transformation company offering a suite of smart, scalable software solutions that empower businesses and drive growth. KIMIT specialises in supporting brand and marketing businesses in Egypt, Saudi Arabia and the UAE."
-      />
-      <CallToActionSection bgURL="/kimit.png" text="Visit Website" href="/" /> */}
 
       <CompanyDescription
         className="lg:my-[91px]"
@@ -70,34 +62,6 @@ export default function CoreVerticals() {
         text="Visit Website"
         href="https://yasharpalace.ae/"
       />
-
-      {/* <StatsSection
-        stats={[
-          { description: "Lorem ipsum", number: "106+" },
-          { description: "Lorem ipsum", number: "200+" },
-          { description: "Lorem ipsum", number: "750+" },
-        ]}
-      /> */}
-
-      {/* <StatsSection
-        stats={[
-          { description: "Lorem ipsum", number: "106+" },
-          { description: "Lorem ipsum", number: "200+" },
-          { description: "Lorem ipsum", number: "750+" },
-        ]}
-      /> */}
-
-      {/* <StatsSection
-        stats={[
-          { description: "Lorem ipsum", number: "106+" },
-          { description: "Lorem ipsum", number: "200+" },
-          { description: "Lorem ipsum", number: "750+" },
-        ]}
-      /> */}
-
-      {/* ------------------------- */}
-
-      {/* ------------------------- */}
     </>
   );
 }
