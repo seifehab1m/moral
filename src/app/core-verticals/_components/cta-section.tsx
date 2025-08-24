@@ -32,7 +32,6 @@ export function CallToActionSection({
       scrollTrigger: {
         trigger: ref.current,
         start: "top 50%",
-        markers: true,
       },
     });
   });
