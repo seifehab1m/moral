@@ -13,16 +13,15 @@ import { useGSAP } from "@gsap/react";
 import { getFixedPosition } from "@/lib/utils";
 
 const links = [
-  { name: "Home", shortName: "Home", href: "/" },
-  { name: "About Us", shortName: "About", href: "/about-us" },
-  { name: "What We Do", shortName: "Verticals", href: "/core-verticals" },
-  { name: "Partner With Us", shortName: "Partnership", href: "/partnership" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about-us" },
+  { name: "What We Do", href: "/core-verticals" },
+  { name: "Partner With Us", href: "/partnership" },
   {
     name: "Careers & Opportunities",
-    shortName: "Careers",
     href: "/carrer-opportunities",
   },
-  { name: "Contact Us", shortName: "Contact", href: "/contact-us" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 export function Header() {
@@ -66,7 +65,7 @@ export function Header() {
           <ul className="hidden lg:flex items-center gap-5 text-primary font-medium">
             {links.map((link) => (
               <li key={link.name}>
-                <Link href={link.href}>{link.shortName}</Link>
+                <Link href={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
