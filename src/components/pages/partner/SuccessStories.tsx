@@ -1,35 +1,29 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-import img from "@/assets/images/success.png";
-import img2 from "@/assets/images/success2.jpg";
+import img from "@/assets/images/success-lg.jpg";
+import img2 from "@/assets/images/success.png";
 
 export function SuccessStories() {
   return (
-    <section className="relative z-10 flex flex-col-reverse lg:flex-row lg:items-end justify-between text-white overflow-hidden ">
+    <section className="relative z-10 flex flex-col lg:flex-row justify-between text-white overflow-hidden">
+      <div className="relative pb-[156px] pt-[59px] lg:pt-[143px] lg:pe-[80px] lg:pb-[236px] bg-primary rounded-ee-[52px] lg:rounded-ee-[200px] basis-1/2 self-stretch z-10">
+        <h2 className="container-start lg:text-[64px] text-[32px] font-medium">
+          A place that honours <br /> your heritage and <br /> nutures your
+          future.
+        </h2>
+      </div>
+
       <Image
-        className="hidden lg:block object-cover ms-auto"
+        className="hidden lg:block object-cover ms-auto object-[80%]"
         src={img}
+        fill
         alt=""
       />
 
       <Image
-        className="block lg:hidden object-cover w-full "
+        className="block lg:hidden object-cover w-full -mt-[52px]"
         src={img2}
         alt=""
       />
-      <div
-        className={cn(
-          "lg:absolute top-0 bottom-0 lg:translate-y-0 translate-y-42 !pb-20  z-10 px-4 py-12 bg-primary  rounded-ee-[52px] lg:rounded-ee-[200px] lg:w-1/2",
-          ""
-        )}
-      >
-        <div className="container flex justify-center ">
-          {/* <p className="heading-6">Success stories</p> */}
-          <h2 className="lg:text-[64px] text-[32px] font-medium mt-3 lg:mt-12 ">
-            A place that honours <br /> your heritage and <br /> nutures your future.
-          </h2>
-        </div>
-      </div>
     </section>
   );
 }

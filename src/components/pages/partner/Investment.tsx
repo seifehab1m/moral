@@ -1,53 +1,23 @@
-import React from "react";
-// import { Dirham } from "@/assets/svgs/Dirham";
+
 export default function Investment() {
   return (
-    <div className="top-rounded-section py-20">
-      <div className="container flex flex-col lg:flex-row justify-between xl:gap-64 gap-5 ">
-        <div className="lg:w-1/3">
-          <h6 className="text-secondary text-[20px] font-medium mb-2">
-            Partnership
-          </h6>
-          <h2 className="text-primary font-medium heading-1">
+    <div className="top-rounded-section">
+      <div className="container flex flex-col lg:flex-row justify-between lg:gap-60">
+        <div className="lg:min-w-fit shrink-0 grow">
+          <p className="sub-header">Partnership</p>
+          <h2 className="text-primary font-medium heading-1 mt-3 ">
             Your investment <br /> partner of choice
           </h2>
         </div>
 
-        <div className="lg:w-2/3 ">
-          <p className="heading-4 text-light-black font-medium">
-            MRBF Holding is committed to driving exceptional investor returns by
-            combining deep insights into global opportunities with the financial
-            strength of its ADGM-housed fund. It is open to forging new
-            partnerships through joint ventures, CSR collaborations and other
-            proposals with investors, suppliers, consultants and advisors who
-            share its values.
-          </p>
-          {/* <div className="flex mt-14  gap-6">
-            <div className="flex flex-col justify-between">
-              <div className="flex items-center gap-4">
-                <Dirham />
-                <h5 className="md:text-[92px] text-[24px] font-medium text-primary">
-                  4.2tn
-                </h5>
-              </div>
-              <h6 className="text-primary font-medium sub-header pt-3">
-                AGGREGATE GDP
-              </h6>
-            </div>
-            <div className="w-[2px] bg-secondary" />
-            <div className="flex flex-col justify-between">
-              <div className="flex items-center gap-4">
-                <Dirham />
-                <h5 className="md:text-[92px] text-[24px] font-medium text-primary">
-                  4.2tn
-                </h5>
-              </div>
-              <h6 className="text-primary font-medium sub-header">
-                AGGREGATE GDP
-              </h6>
-            </div>
-          </div> */}
-        </div>
+        <p className="heading-4 text-light-black font-medium mt-4">
+          MRBF Holding is committed to driving exceptional investor returns by
+          combining deep insights into global opportunities with the financial
+          strength of its ADGM-housed fund. It is open to forging new
+          partnerships through joint ventures, CSR collaborations and other
+          proposals with investors, suppliers, consultants and advisors who
+          share its values.
+        </p>
       </div>
     </div>
   );
