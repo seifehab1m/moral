@@ -7,9 +7,9 @@ import React from "react";
 
 export default function ContactUsPartnerForm() {
   return (
-    <div className="bg-grey-2 top-rounded-section">
+    <div className="!bg-grey-2 py-7 lg:top-rounded-section">
       <div className="container">
-        <div className=" grid grid-cols-2 md:gap-11 gap-4 md:pb-7 pb-4">
+        <div className="grid grid-cols-2 md:gap-11 gap-4 md:pb-7 pb-4">
           <div>
             <Label variant="primary">First Name</Label>
             <Input />

@@ -1,5 +1,6 @@
 "use client";
 
+import { useInjectContainerStylesIntoRoot } from "@/hooks";
 import {
   type Dispatch,
   type SetStateAction,
@@ -15,6 +16,7 @@ export const HeaderContext = createContext<{
 
 export function HeaderProvider({ children }: React.PropsWithChildren) {
   const [forceDark, setForceDark] = useState(false);
+  useInjectContainerStylesIntoRoot();
 
   return (
     <HeaderContext.Provider value={{ forceDark, setForceDark }}>
