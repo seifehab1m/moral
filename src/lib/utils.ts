@@ -33,7 +33,7 @@ export function gsapSplit(
       return gsap.from(instance.lines, {
         ...(vars ?? {}),
         yPercent: 120,
-        stagger: 0.25,
+        stagger: 0.30,
         scrollTrigger: {
           trigger: ref.current!,
           ...(vars?.scrollTrigger ?? {}),
