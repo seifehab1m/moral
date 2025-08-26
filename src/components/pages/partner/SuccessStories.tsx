@@ -1,12 +1,28 @@
 import Image from "next/image";
 import img from "@/assets/images/success-lg.jpg";
 import img2 from "@/assets/images/success.png";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { gsapSplit } from "@/lib";
 
 export function SuccessStories() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsapSplit(containerRef, ".success-stories", {
+      scrollTrigger: {
+        start: "top 50%",
+      },
+    });
+  });
+
   return (
-    <section className="relative z-10 flex flex-col lg:flex-row justify-between text-white overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative z-10 flex flex-col lg:flex-row justify-between text-white overflow-hidden"
+    >
       <div className="relative pb-[156px] pt-[59px] lg:pt-[143px] lg:pe-[80px] lg:pb-[236px] bg-primary rounded-ee-[52px] lg:rounded-ee-[200px] basis-1/2 self-stretch z-10">
-        <h2 className="container-start lg:text-[64px] text-[32px] font-medium">
+        <h2 className="container-start lg:text-[64px] text-[32px] font-medium success-stories">
           A place that honours <br /> your heritage and <br /> nutures your
           future.
         </h2>
