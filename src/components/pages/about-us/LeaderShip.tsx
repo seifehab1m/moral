@@ -35,7 +35,6 @@ export default function LeaderShip() {
         scrollTrigger: {
           trigger: l,
           start: "top 80%",
-          markers: true,
         },
       });
     });

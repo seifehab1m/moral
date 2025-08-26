@@ -27,7 +27,6 @@ export default function FutureAndPresent() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 60%",
-        markers: true,
       },
     });
   });
