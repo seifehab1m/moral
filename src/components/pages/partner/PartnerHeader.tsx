@@ -20,7 +20,7 @@ export default function PartnerHeader() {
       <Image
         aria-hidden
         src={img}
-        className="w-full h-full bg-red-500 aspect-[1.52] lg:aspect-[2] object-cover mt-8 lg:mt-12"
+        className="w-full h-full aspect-[1.52] lg:aspect-[2] object-cover mt-8 lg:mt-12"
         alt=""
       />
     </section>
