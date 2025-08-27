@@ -1,15 +1,33 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 
 export default function CareerOpportunitiesForm() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.from(ref.current, {
+      opacity: 0,
+      duration: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ref.current,
+        start: "top 80%",
+      },
+    });
+  });
+
   return (
-    <div className="bg-grey-2 top-rounded-section">
-      <div className="container">
-        <div className=" grid grid-cols-2 md:gap-11 gap-4 md:pb-7 pb-4">
+    <section className="bg-grey-2 top-rounded-section">
+      <div ref={ref} className="container">
+        <div className="grid grid-cols-2 md:gap-11 gap-4 md:pb-7 pb-4">
           {/* <div>
             <Label variant="primary">First Name</Label>
             <Input />
@@ -54,28 +72,30 @@ export default function CareerOpportunitiesForm() {
               { label: "Option 4", value: "option4" },
             ]}
           />
-           <div>
+          <div>
             <Label variant="primary">Upload CV</Label>
-            <Input id="email" type="file"  />
+            <Input id="email" type="file" />
           </div>
           <div />
         </div>
         <div className="flex items-center gap-2 ">
           <Checkbox />
           <Label className="pt-3 !lowercase">
-            <span className="!uppercase">I </span> confirm that i am over 18 years of age, or over the legal age of
-            majority in my country of residence.
+            <span className="!uppercase">I </span> confirm that i am over 18
+            years of age, or over the legal age of majority in my country of
+            residence.
           </Label>
         </div>
         <div className="flex items-center gap-2 ">
           <Checkbox />
           <Label className="pt-3 !lowercase">
-            <span className="!uppercase">I </span> consent to having this website store my submitted information so
-            they can respond to my inquiry.
+            <span className="!uppercase">I </span> consent to having this
+            website store my submitted information so they can respond to my
+            inquiry.
           </Label>
         </div>
         <Button className="mt-9 ">Apply Now</Button>
       </div>
-    </div>
+    </section>
   );
 }
