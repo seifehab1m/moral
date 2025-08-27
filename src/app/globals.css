@@ -158,10 +158,10 @@
   }
 
   .sub-header {
-    @apply text-[12px] lg:text-[20px] leading-[1.2] text-secondary font-medium;
+    @apply block text-[12px] lg:text-[20px] leading-[1.2] text-secondary font-medium;
   }
 
-  .top-rounded-card {
+  .rounded-card {
     @apply bg-primary text-white rounded-ee-[48px] lg:rounded-ee-[80px] lg:rounded-[8px]  min-h-[250px] lg:min-h-[450px] p-[16px] pe-[49px] lg:px-[42px] lg:pt-[48px] lg:pb-[70px] flex flex-col;
   }
 }
