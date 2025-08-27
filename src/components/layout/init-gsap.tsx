@@ -51,7 +51,9 @@ export function InitGSAPMain({ children }: React.PropsWithChildren) {
   }, [scrollTo]);
 
   useLayoutEffect(() => {
-    if (pathname === "/contact-us") ScrollSmoother.get()?.kill();
+    const smoother = ScrollSmoother.get();
+    if (!scrollTo) smoother?.scrollTo(0);
+    if (pathname === "/contact-us") smoother?.kill();
     return () => {
       if (!ScrollSmoother.get()) createScrollSmoother(wrapperRef, contentRef);
     };

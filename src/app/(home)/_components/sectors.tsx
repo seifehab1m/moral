@@ -12,51 +12,75 @@ export function Sectors() {
   const [active, setActive] = useState(0);
   const headingRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
-    const headingText = gsap.utils.toArray(headingRef.current!);
-
-    headingText.forEach(() => {
-      SplitText.create(".split-sectors-heading", {
-        type: "words,lines",
-        mask: "lines",
-        linesClass: "line",
-        autoSplit: true,
-        onSplit: (instance) => {
-          return gsap.from(instance.lines, {
-            yPercent: 150,
-            stagger: 0.2,
-            scrollTrigger: {
-              trigger: headingRef.current,
-              // scrub: true,
-              // end: "clamp(500px)",
-              once: true,
-            },
-          });
-        },
-      });
+    SplitText.create(".split-sectors-heading", {
+      type: "words,lines",
+      mask: "lines",
+      linesClass: "line",
+      autoSplit: true,
+      onSplit: (instance) => {
+        return gsap.from(instance.lines, {
+          yPercent: 150,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: headingRef.current,
+            once: true,
+          },
+        });
+      },
     });
 
-    const bodyText = gsap.utils.toArray(bodyRef.current!);
+    SplitText.create(".split-sectors-body", {
+      type: "words,lines",
+      mask: "lines",
+      linesClass: "line",
+      autoSplit: true,
+      onSplit: (instance) => {
+        return gsap.from(instance.lines, {
+          yPercent: 120,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: bodyRef.current,
+            start: "center bottom",
+            once: true,
+          },
+        });
+      },
+    });
 
-    bodyText.forEach(() => {
-      SplitText.create(".split-sectors-body", {
-        type: "words,lines",
-        mask: "lines",
-        linesClass: "line",
-        autoSplit: true,
-        onSplit: (instance) => {
-          return gsap.from(instance.lines, {
-            yPercent: 120,
-            stagger: 0.2,
-            scrollTrigger: {
-              trigger: bodyRef.current,
-              start: "center bottom",
-              once: true,
-            },
-          });
-        },
-      });
+    gsap.from(".sector-border", {
+      scaleX: 0,
+      duration: 1,
+      transformOrigin: "left",
+      scrollTrigger: {
+        trigger: bodyRef.current,
+        start: "center bottom",
+        once: true,
+      },
+    });
+
+    gsap.from(".sector-vertical-border", {
+      scaleY: 0,
+      duration: 1,
+      transformOrigin: "top",
+      scrollTrigger: {
+        trigger: bodyRef.current,
+        start: "center bottom",
+        once: true,
+      },
+    });
+
+    gsap.from(imageRef.current, {
+      opacity: 0,
+      yPercent: 10,
+      duration: 0.8,
+      ease: "none",
+      scrollTrigger: {
+        trigger: bodyRef.current,
+        start: "center bottom",
+      },
     });
   });
 
@@ -88,29 +112,25 @@ export function Sectors() {
             </div>
 
             <Image
+              ref={imageRef}
               src={img}
               alt={sectors[active].title}
               className="object-cover rounded mt-4 lg:mt-[35px]"
             />
           </div>
 
-          <div className="w-[1px] lg:w-[2px] bg-secondary col-span-1 justify-self-center" />
+          <div
+            role="presentation"
+            aria-hidden
+            className="w-[1px] lg:w-[2px] bg-secondary col-span-1 justify-self-center sector-vertical-border"
+          />
 
-          <ol className="col-span-7 space-y-2 lg:space-y-7 lg:pt-4">
+          <ul className="col-span-7 space-y-2 lg:space-y-7 lg:pt-4">
             {sectors?.map(
               (s, i) =>
                 i !== active && (
-                  <li
-                    key={i}
-                    className={cn(
-                      i < sectors?.length - 1 &&
-                        'after:content-[" "] after:block after:h-[1px] after:lg:h-[2px] after:w-full after:bg-secondary after:mt-2 after:lg:mt-10',
-                    )}
-                  >
-                    <button
-                      className="flex flex-col gap-2 items-start split-sectors-body max-w-[30ch]"
-                      // onClick={() => setActive(i)}
-                    >
+                  <li key={i}>
+                    <button className="flex flex-col gap-2 items-start split-sectors-body max-w-[30ch]">
                       <span className="text-secondary font-medium text-base lg:text-[32px]">
                         0{i + 1}
                       </span>
@@ -118,10 +138,13 @@ export function Sectors() {
                         {s.title}
                       </p>
                     </button>
+                    {i < sectors?.length - 1 && (
+                      <div className="h-[1px] lg:h-[2px] w-full bg-secondary mt-2 lg:mt-10 sector-border" />
+                    )}
                   </li>
                 ),
             )}
-          </ol>
+          </ul>
         </div>
       </div>
     </section>
