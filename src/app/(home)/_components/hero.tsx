@@ -1,15 +1,19 @@
 "use client";
 
 import Image from "next/image";
-// import heroImage from "../../../../public/hero-image.png";
 import heroImage from "../../../../public/hero-2.jpg";
 import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import { useRef } from "react";
+import { HomeHeroComponent } from "@/cms/Api";
 
-export function Hero() {
+type Props = {
+  hero: HomeHeroComponent;
+};
+
+export function Hero({ hero }: Props) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
 
@@ -56,7 +60,7 @@ export function Hero() {
           ref={headingRef}
           className="text-[32px] lg:text-[52px] text-grey-2 font-medium"
         >
-          Future, Present.
+          {hero.header}
         </h1>
       </div>
     </main>

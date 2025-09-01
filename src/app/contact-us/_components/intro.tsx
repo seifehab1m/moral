@@ -1,5 +1,6 @@
 "use client";
 
+import { env } from "@/env";
 import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 
@@ -11,9 +12,6 @@ export function Intro() {
       <div className="container">
         <span className="sub-header font-medium">Contact Us</span>
         <h1 className="heading-1 text-secondary font-medium mt-3 lg:max-w-[650px] lg:mt-10">
-          {/* A 40-year legacy
-          <br />
-          of */}
           <span className="text-primary"> Connect with MRBF Holding</span>
         </h1>
         <p className="lg:text-2xl font-medium mt-3 lg:mt-10">
@@ -23,9 +21,9 @@ export function Intro() {
           reach out shortly.
         </p>
       </div>
-      <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_JS_MAPS_API_KEY!}>
+      <APIProvider apiKey={env.NEXT_PUBLIC_GOOGLE_JS_MAPS_API_KEY}>
         <Map
-          mapId={process.env.NEXT_PUBLIC_GOOGLE_JS_MAPS_STYLE_ID}
+          mapId={env.NEXT_PUBLIC_GOOGLE_JS_MAPS_STYLE_ID}
           className="h-[274px] lg:h-[864px] mt-7 lg:mt-[60px]"
           defaultZoom={12}
           defaultCenter={{
