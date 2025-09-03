@@ -1,28 +1,19 @@
-import { Api } from "@/cms/Api";
-import {
-  Hero,
-  Stats,
-  CallToActionBG,
-  Sectors,
-  FlagshipSpotlight,
-} from "./_components";
-import { client } from "@/cms/client";
+import * as c from "./_components";
+import { getHome } from "@/cms/home";
+import { notFound } from "next/navigation";
 
 export default async function HomePage() {
-  const { data } = await client.home.getHome({
-    populate: "*",
-  });
+  const [result, err] = await getHome();
+
+  if (err) notFound();
+
   return (
     <>
-      <Hero hero={data.data?.hero} />
-      <Stats />
-      <CallToActionBG
-        imageURL="/cta-image-2.png"
-        headerText="Shaping industries, driving progress."
-        className="pb-10"
-      />
-      <Sectors />
-      <FlagshipSpotlight />
+      <c.Hero hero={result.data?.hero} />
+      <c.StatSection section={result.data?.statSection} />
+      <c.CallToActionBG section={result.data?.imageSection} className="pb-10" />
+      <c.Sectors sectors={result.data?.sectors} />
+      <c.FlagshipSpotlight spotlight={result.data?.spotlight} />
     </>
   );
 }

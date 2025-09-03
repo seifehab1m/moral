@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 import { env } from "./src/env";
 
-console.log(new URL(env.NEXT_PUBLIC_CMS_URL));
-
 const nextConfig: NextConfig = {
   /* config options here */
   eslint: {
@@ -18,9 +16,5 @@ const nextConfig: NextConfig = {
     ],
   },
 };
-
-console.dir(nextConfig, {
-  depth: null,
-});
 
 export default nextConfig;

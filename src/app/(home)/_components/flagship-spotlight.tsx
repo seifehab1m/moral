@@ -1,15 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import logo from "../../../../public/53-east.svg";
 import { cn, gsapSplit } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
+import { HomeSpotlightComponent } from "@/cms/Api";
+import { StrapiImage } from "@/components/ui";
 
-export function FlagshipSpotlight() {
+type Props = {
+  spotlight: HomeSpotlightComponent | undefined;
+};
+
+export function FlagshipSpotlight({ spotlight }: Props) {
   const textRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
@@ -34,6 +38,8 @@ export function FlagshipSpotlight() {
     });
   });
 
+  if (!spotlight) return null;
+
   return (
     <section className="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between text-white">
       <div
@@ -44,26 +50,31 @@ export function FlagshipSpotlight() {
         )}
       >
         <div>
-          <p className="text-xl split-spotlight">Flagship Spotlight</p>
+          <p className="text-xl split-spotlight">{spotlight.subHeader}</p>
           <h2 className="heading-2 font-medium mt-3 lg:mt-12 max-w-[496px] split-spotlight">
-            A place that honours your heritage and nutures your future.
+            {spotlight.header}
           </h2>
         </div>
-        <Image
-          ref={logoRef}
-          className="max-w-[262px] lg:max-w-[343px]"
-          src={logo}
-          alt=""
-        />
+        {spotlight.logo && (
+          <StrapiImage
+            ref={logoRef}
+            className="max-w-[262px] lg:max-w-[343px]"
+            image={spotlight.logo}
+          />
+        )}
       </div>
-      <Image className="object-cover" src="/53East.png" alt="" fill />
-      <Button
-        ref={buttonRef}
-        className="relative z-10 lg:mb-20 lg:me-24 max-lg:self-end max-lg:mt-72 max-lg:mb-4 max-lg:me-7"
-        asChild
-      >
-        <Link href={`/core-verticals?sec=real-estate`}>Visit Website</Link>
-      </Button>
+      <StrapiImage className="object-cover" image={spotlight.background} fill />
+      {spotlight.callToAction && (
+        <Button
+          ref={buttonRef}
+          className="relative z-10 lg:mb-20 lg:me-24 max-lg:self-end max-lg:mt-72 max-lg:mb-4 max-lg:me-7"
+          asChild
+        >
+          <Link href={spotlight.callToAction.href!}>
+            {spotlight.callToAction.label}
+          </Link>
+        </Button>
+      )}
     </section>
   );
 }

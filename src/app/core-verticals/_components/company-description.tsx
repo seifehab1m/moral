@@ -21,8 +21,6 @@ export function CompanyDescription(props: CompanyDescriptionProps) {
   const logoRef = useRef<HTMLImageElement>(null);
   const uniqueClassname = props.id + "-company-description";
 
-  console.log({ uniqueClassname });
-
   useGSAP(() => {
     const start = "top 80%";
     gsap.from(logoRef.current, {
@@ -56,7 +54,10 @@ export function CompanyDescription(props: CompanyDescriptionProps) {
   return (
     <div
       id={props.id}
-      className={cn("relative max-lg:my-[16px] bg-white z-10", props.rounded && "top-rounded-section")}
+      className={cn(
+        "relative max-lg:my-[16px] bg-white z-10",
+        props.rounded && "top-rounded-section",
+      )}
     >
       <div
         className={cn(

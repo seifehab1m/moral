@@ -8,9 +8,11 @@ import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import { useRef } from "react";
 import { HomeHeroComponent } from "@/cms/Api";
+import { env } from "@/env";
+import { StrapiImage } from "@/components/ui";
 
 type Props = {
-  hero: HomeHeroComponent;
+  hero: HomeHeroComponent | undefined;
 };
 
 export function Hero({ hero }: Props) {
@@ -41,18 +43,19 @@ export function Hero({ hero }: Props) {
       },
     });
   });
+
+  if (!hero) return null;
+
   return (
     <main className="relative">
-      <Image
+      <StrapiImage
         ref={imageRef}
-        src={heroImage}
-        alt="hero-image"
+        image={hero.background!}
         className="object-cover scale-115"
-        fill
         quality={100}
+        fill
       />
 
-      {/* Overlay Layer */}
       <div className="absolute inset-0 bg-black/40 z-[5]" />
 
       <div className="grid place-items-center relative z-10 h-screen max-h-[800px] lg:max-h-screen">

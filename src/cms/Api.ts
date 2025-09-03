@@ -418,6 +418,10 @@ export interface SharedSeoComponent {
 export interface HomeRequest {
   data: {
     hero?: HomeHeroComponent;
+    statSection?: HomeStatSectionComponent;
+    imageSection?: SharedImageSectionComponent;
+    sectors?: HomeSectorsComponent;
+    spotlight?: HomeSpotlightComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -441,6 +445,10 @@ export interface Home {
   id?: number;
   documentId?: string;
   hero?: HomeHeroComponent;
+  statSection?: HomeStatSectionComponent;
+  imageSection?: SharedImageSectionComponent;
+  sectors?: HomeSectorsComponent;
+  spotlight?: HomeSpotlightComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -460,6 +468,10 @@ export interface Home {
     id?: number;
     documentId?: string;
     hero?: HomeHeroComponent;
+    statSection?: HomeStatSectionComponent;
+    imageSection?: SharedImageSectionComponent;
+    sectors?: HomeSectorsComponent;
+    spotlight?: HomeSpotlightComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -537,6 +549,238 @@ export interface HomeHeroComponent {
       documentId?: string;
     }[];
   };
+}
+
+export interface SharedStatComponent {
+  id?: number;
+  amount?: string;
+  description?: string;
+}
+
+export interface HomeStatSectionComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: string;
+  stat?: SharedStatComponent;
+}
+
+export interface SharedImageSectionComponent {
+  id?: number;
+  header?: string;
+  background?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+}
+
+export interface HomeSectorItemComponent {
+  id?: number;
+  name?: string;
+  image?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+}
+
+export interface HomeSectorsComponent {
+  id?: number;
+  subHeader?: string;
+  paragraph?: string;
+  sectorItem?: HomeSectorItemComponent[];
+}
+
+export interface SharedLinkComponent {
+  id?: number;
+  label?: string;
+  href?: string;
+}
+
+export interface HomeSpotlightComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  logo?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  background?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  callToAction?: SharedLinkComponent;
 }
 
 export interface UploadFile {

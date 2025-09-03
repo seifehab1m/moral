@@ -1,14 +1,17 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import img from "../../../../public/sectors.png";
+import { HomeSectorsComponent } from "@/cms/Api";
+import { StrapiImage } from "@/components/ui";
 
-export function Sectors() {
+type Props = {
+  sectors: HomeSectorsComponent | undefined;
+};
+
+export function Sectors({ sectors }: Props) {
   const [active, setActive] = useState(0);
   const headingRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -84,92 +87,71 @@ export function Sectors() {
     });
   });
 
+  if (!sectors) return null;
+
   return (
     <section className="bg-[#CFCECD] top-rounded-section">
       <div className="container">
         <div ref={headingRef}>
           <span className="sub-header font-medium split-sectors-heading">
-            Our Sectors
+            {sectors?.subHeader}
           </span>
           <p className="mt-3 lg:mt-12 lg:text-2xl font-medium text-light-black split-sectors-heading">
-            MRBF Holding manages sizeable assets across investment and financial
-            services, healthcare, real estate, construction, IT services and
-            hospitality. It delivers experiences at the forefront of market
-            expectation – all fuelled by an unwavering dedication to innovation,
-            customer-centricity and sustainable quality.
+            {sectors?.paragraph}
           </p>
         </div>
 
-        <div ref={bodyRef} className="grid grid-cols-24 mt-10 lg:mt-[94px]">
-          <div className="col-span-16 self-stretch">
-            <div>
-              <span className="text-secondary font-medium text-base lg:text-[32px] split-sectors-body">
-                0{active + 1}
-              </span>
-              <h2 className="text-primary font-medium heading-3 lg:max-w-[410px] mt-1 lg:mt-2 split-sectors-body">
-                {sectors[active].title}
-              </h2>
+        {!!sectors?.sectorItem?.length && (
+          <div ref={bodyRef} className="grid grid-cols-24 mt-10 lg:mt-[94px]">
+            <div className="col-span-16 self-stretch">
+              <div>
+                <span className="text-secondary font-medium text-base lg:text-[32px] split-sectors-body">
+                  0{active + 1}
+                </span>
+                <h2 className="text-primary font-medium heading-3 lg:max-w-[410px] mt-1 lg:mt-2 split-sectors-body">
+                  {sectors?.sectorItem?.[active].name}
+                </h2>
+              </div>
+
+              <StrapiImage
+                ref={imageRef}
+                image={sectors?.sectorItem?.[active].image}
+                className="object-cover rounded mt-4 lg:mt-[35px] w-full"
+              />
             </div>
 
-            <Image
-              ref={imageRef}
-              src={img}
-              alt={sectors[active].title}
-              className="object-cover rounded mt-4 lg:mt-[35px]"
+            <div
+              role="presentation"
+              aria-hidden
+              className="w-[1px] lg:w-[2px] bg-secondary col-span-1 justify-self-center sector-vertical-border"
             />
+
+            <ul className="col-span-7 space-y-2 lg:space-y-7 lg:pt-4">
+              {sectors?.sectorItem?.map(
+                (s, i) =>
+                  i !== active && (
+                    <li
+                      key={i}
+                      className="border-b lg:border-b-2 border-b-secondary pb-3 lg:pb-10 last:border-b-transparent "
+                    >
+                      <button
+                        onClick={() => setActive(i)}
+                        className="flex flex-col gap-2 items-start split-sectors-body max-w-[30ch] cursor-pointer"
+                      >
+                        <span className="text-secondary font-medium text-base lg:text-[32px]">
+                          0{i + 1}
+                        </span>
+                        <p className="text-primary font-medium heading-3 text-start">
+                          {s?.name}
+                        </p>
+                      </button>
+                    </li>
+                  ),
+              )}
+            </ul>
           </div>
-
-          <div
-            role="presentation"
-            aria-hidden
-            className="w-[1px] lg:w-[2px] bg-secondary col-span-1 justify-self-center sector-vertical-border"
-          />
-
-          <ul className="col-span-7 space-y-2 lg:space-y-7 lg:pt-4">
-            {sectors?.map(
-              (s, i) =>
-                i !== active && (
-                  <li key={i}>
-                    <button className="flex flex-col gap-2 items-start split-sectors-body max-w-[30ch]">
-                      <span className="text-secondary font-medium text-base lg:text-[32px]">
-                        0{i + 1}
-                      </span>
-                      <p className="text-primary font-medium heading-3 text-start">
-                        {s.title}
-                      </p>
-                    </button>
-                    {i < sectors?.length - 1 && (
-                      <div className="h-[1px] lg:h-[2px] w-full bg-secondary mt-2 lg:mt-10 sector-border" />
-                    )}
-                  </li>
-                ),
-            )}
-          </ul>
-        </div>
+        )}
       </div>
     </section>
   );
 }
-
-const sectors = [
-  {
-    title: "Real Estate Development & Management",
-    imageURL: "/sectors.png",
-  },
-  {
-    title: "Construction",
-    imageURL: "/sectors.png",
-  },
-  {
-    title: "Healthcare",
-    imageURL: "/sectors.png",
-  },
-  {
-    title: "Financial Services, IT & Investment Management",
-    imageURL: "/sectors.png",
-  },
-  {
-    title: "Hospitality",
-    imageURL: "/sectors.png",
-  },
-];

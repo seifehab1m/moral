@@ -4,8 +4,13 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
+import { HomeStatSectionComponent } from "@/cms/Api";
 
-export function Stats() {
+type Props = {
+  section: HomeStatSectionComponent | undefined;
+};
+
+export function StatSection({ section }: Props) {
   const textRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -42,15 +47,19 @@ export function Stats() {
     });
   });
 
+  if (!section) return null;
+
   return (
     <section className="top-rounded-section">
       <div className="container flex flex-col lg:flex-row gap-10 justify-between lg:items-center">
         <div ref={textRef} className="flex-[.6]">
-          <span className="sub-header split-stats">Key Numbers</span>
-          <h2 className="text-gray-500 heading-1 mt-2 mb-[46px] lg:mt-6 font-medium split-stats">
-            Building legacies, <br />
-            <span className="text-primary">bettering lives</span>
-          </h2>
+          {section.subHeader && (
+            <span className="sub-header split-stats">{section.subHeader}</span>
+          )}
+          <h2
+            className="text-gray-500 heading-1 mt-2 mb-[46px] lg:mt-6 font-medium split-stats [&_b]:text-primary [&_b]:font-medium"
+            dangerouslySetInnerHTML={{ __html: section.header! }}
+          />
           <p className="text-light-black font-medium lg:text-2xl lg:max-w-[690px] lg:mt-[99px] split-stats">
             MRBF Holding is a new kind of holding company. Built on 55 years of
             diversified success, and equipped with a keen sense of future
@@ -59,17 +68,21 @@ export function Stats() {
             genuine impact for communities.
           </p>
         </div>
-        <div
-          ref={cardRef}
-          className="rounded-card flex-[.4] translate-y-full opacity-0"
-        >
-          <div>
-            <p className="text-[24px] lg:text-[72px] font-medium">+1,850</p>
-            <p className="mt-0 mb-10 text-xs lg:text-xl">
-              Employees across the world
-            </p>
+        {!!section?.stat && (
+          <div
+            ref={cardRef}
+            className="rounded-card flex-[.4] translate-y-full opacity-0"
+          >
+            <div>
+              <p className="text-[24px] lg:text-[72px] font-medium">
+                {section.stat.amount}
+              </p>
+              <p className="mt-0 mb-10 text-xs lg:text-xl">
+                {section.stat.description}
+              </p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
