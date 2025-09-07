@@ -14,9 +14,12 @@ export async function fromCMS<T>({ path, init = {}, query = {} }: Options) {
   init.next = { tags: [TAG], ...init.next };
 
   const q = qs.stringify(query, { encodeValuesOnly: true }) ?? "";
-  const url = new URL("/api" + path, env.NEXT_PUBLIC_CMS_URL).toString() + "?" + q;
+
+  const url =
+    new URL("/api" + path, env.NEXT_PUBLIC_CMS_URL).toString() + "?" + q;
+
   const response = await fetch(url.toString(), init);
-  const json = (await response.json()) as Record<string, string>;
+  const json = await response.json();
 
   if (!response.ok) {
     const error = new Error(json.message);

@@ -132,7 +132,7 @@ export function Sectors({ sectors }: Props) {
                   i !== active && (
                     <li
                       key={i}
-                      className="border-b lg:border-b-2 border-b-secondary pb-3 lg:pb-10 last:border-b-transparent "
+                      className="border-b lg:border-b-2 border-b-secondary pb-3 lg:pb-10 last:border-b-transparent"
                     >
                       <button
                         onClick={() => setActive(i)}

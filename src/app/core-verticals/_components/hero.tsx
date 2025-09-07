@@ -2,25 +2,19 @@
 
 import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 import { ArrowUpRight } from "lucide-react";
-import cardImg from "../../../../public/core-vertical-card.png";
-import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import { gsapSplit } from "@/lib";
+import { WhatWeDoHeroComponent } from "@/cms/Api";
+import { CMSStrapiImage } from "@/types";
+import { StrapiImage } from "@/components/ui";
 
-const cards = [
-  { name: "Real Estate Development & Management", id: "real-estate" },
-  { name: "Construction", id: "construction" },
-  { name: "Healthcare", id: "healthcare" },
-  {
-    name: "Financial Services, IT & Investment Management",
-    id: "financial-services",
-  },
-  { name: "Hospitality", id: "hospitality" },
-];
+type Props = {
+  hero: WhatWeDoHeroComponent | undefined;
+};
 
-export function Verticals() {
+export function Hero({ hero }: Props) {
   const textRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   useHeaderTheme(true);
@@ -37,25 +31,18 @@ export function Verticals() {
     });
   });
 
+  if (!hero) return null;
+
   return (
     <main className="pt-[92px] lg:pt-[230px] bg-white">
       <div ref={textRef} className="container">
-        <h1 className="sub-header vertical">What We Do</h1>
-        <h2 className="heading-1 font-medium text-secondary lg:max-w-[700px] mt-3 lg:mt-8 vertical">
-          Delivering{" "}
-          <span className="text-primary">
-            exceptional <br /> returns,
-          </span>{" "}
-          by building{" "}
-          <span className="text-primary">exceptional businesses.</span>
-        </h2>
+        <h1 className="sub-header vertical">{hero?.subHeader}</h1>
+        <h2
+          className="heading-1 font-medium text-secondary lg:max-w-[700px] mt-3 lg:mt-8 vertical [&_b]:text-primary [&_b]:font-medium"
+          dangerouslySetInnerHTML={{ __html: hero?.header! }}
+        />
         <p className="text-xs lg:text-2xl mt-3 lg:font-medium lg:mt-12 text-light-black vertical">
-          MRBF Holding is committed to sectors that deliver sustainable returns
-          and have a genuine impact on wider communities. Overseeing a pool of
-          successful entities across financial services, healthcare, real
-          estate, construction, hospitality and IT, it delivers premium
-          experiences that evolve ahead of global trends, while maintaining
-          timeless quality.
+          {hero?.paragraph}
         </p>
       </div>
 
@@ -63,8 +50,8 @@ export function Verticals() {
         ref={cardsRef}
         className="flex flex-nowrap lg:grid lg:grid-cols-5 mt-6 lg:mt-16 gap-[7px] max-lg:overflow-x-scroll max-lg:px-[1rem] container"
       >
-        {cards?.map((c, i) => (
-          <Card title={c?.name} key={i} id={c?.id} />
+        {hero?.sectorCards?.map((c, i) => (
+          <Card title={c?.title!} key={i} id={c?.ref!} image={c?.image!} />
         ))}
       </div>
     </main>
@@ -74,9 +61,10 @@ export function Verticals() {
 type CardProps = {
   title: string;
   id: string;
+  image: CMSStrapiImage;
 };
 
-function Card({ title, id }: CardProps) {
+function Card({ title, id, image }: CardProps) {
   const [hoverd, setHoverd] = useState(false);
   const cover_1 = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -165,12 +153,11 @@ function Card({ title, id }: CardProps) {
         className="absolute bg-[#D8D8D6] inset-0 size-full rounded cover-1 z-10"
       />
 
-      <Image
-        src={cardImg}
+      <StrapiImage
+        image={image}
         ref={imageRef}
         className="object-cover rounded"
         quality={100}
-        alt="Card Image"
         fill
       />
 

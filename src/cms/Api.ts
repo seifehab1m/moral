@@ -20,6 +20,294 @@ export interface Error {
   };
 }
 
+export interface AboutRequest {
+  data: {
+    about?: AboutHeroComponent;
+    chairman?: AboutChairmanWordComponent;
+    leadership?: AboutLeadershipComponent;
+    values?: AboutValuesComponent;
+    sectors?: AboutSectorsComponent;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface AboutListResponse {
+  data?: About[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface About {
+  id?: number;
+  documentId?: string;
+  about?: AboutHeroComponent;
+  chairman?: AboutChairmanWordComponent;
+  leadership?: AboutLeadershipComponent;
+  values?: AboutValuesComponent;
+  sectors?: AboutSectorsComponent;
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    about?: AboutHeroComponent;
+    chairman?: AboutChairmanWordComponent;
+    leadership?: AboutLeadershipComponent;
+    values?: AboutValuesComponent;
+    sectors?: AboutSectorsComponent;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface AboutResponse {
+  data?: About;
+  meta?: object;
+}
+
+export interface AboutTimelineItemComponent {
+  id?: number;
+  year?: number;
+  paragraph?: string;
+}
+
+export interface AboutHeroComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: any;
+  timeline?: AboutTimelineItemComponent[];
+}
+
+export interface AboutChairmanWordComponent {
+  id?: number;
+  background?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  header?: string;
+  paragraph?: string;
+  name?: string;
+  position?: string;
+}
+
+export interface AboutLeaderComponent {
+  id?: number;
+  image?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  position?: string;
+  name?: string;
+  paragraph?: string;
+}
+
+export interface AboutLeadershipComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  leaders?: AboutLeaderComponent[];
+}
+
+export interface AboutValuesItemComponent {
+  id?: number;
+  title?: string;
+  paragraph?: string;
+}
+
+export interface AboutValuesComponent {
+  id?: number;
+  subHeader?: string;
+  list?: AboutValuesItemComponent[];
+}
+
+export interface AboutSectorItemComponent {
+  id?: number;
+  label?: string;
+  href?: string;
+  ref?: string;
+}
+
+export interface AboutSectorsComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: string;
+  background?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  list?: AboutSectorItemComponent[];
+}
+
 export interface GlobalRequest {
   data: {
     siteName: string;
@@ -783,6 +1071,337 @@ export interface HomeSpotlightComponent {
   callToAction?: SharedLinkComponent;
 }
 
+export interface WhatWeDoRequest {
+  data: {
+    hero?: WhatWeDoHeroComponent;
+    sections?: BaseNull &
+      (
+        | BaseNullComponentMapping<
+            "what-we-do.sector-browser",
+            WhatWeDoSectorBrowserComponent
+          >
+        | BaseNullComponentMapping<
+            "what-we-do.company-section",
+            WhatWeDoCompanySectionComponent
+          >
+      );
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface WhatWeDoListResponse {
+  data?: WhatWeDo[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface WhatWeDo {
+  id?: number;
+  documentId?: string;
+  hero?: WhatWeDoHeroComponent;
+  sections?: AbstractNull &
+    (
+      | AbstractNullComponentMapping<
+          "what-we-do.sector-browser",
+          WhatWeDoSectorBrowserComponent
+        >
+      | AbstractNullComponentMapping<
+          "what-we-do.company-section",
+          WhatWeDoCompanySectionComponent
+        >
+    );
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    hero?: WhatWeDoHeroComponent;
+    sections?: DiscriminatorNull &
+      (
+        | DiscriminatorNullComponentMapping<
+            "what-we-do.sector-browser",
+            WhatWeDoSectorBrowserComponent
+          >
+        | DiscriminatorNullComponentMapping<
+            "what-we-do.company-section",
+            WhatWeDoCompanySectionComponent
+          >
+      );
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface WhatWeDoResponse {
+  data?: WhatWeDo;
+  meta?: object;
+}
+
+export interface WhatWeDoSectorCardComponent {
+  id?: number;
+  title?: string;
+  image?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  ref?: string;
+}
+
+export interface WhatWeDoHeroComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: string;
+  sectorCards?: WhatWeDoSectorCardComponent[];
+}
+
+export interface WhatWeDoSectorBrowserItemComponent {
+  id?: number;
+  companyName?: string;
+  image?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  ctaLink?: string;
+}
+
+export interface WhatWeDoSectorBrowserComponent {
+  id?: number;
+  __component?: "what-we-do.sector-browser";
+  ref?: string;
+  sectorTitle?: string;
+  items?: WhatWeDoSectorBrowserItemComponent[];
+}
+
+export interface WhatWeDoCompanySectionComponent {
+  id?: number;
+  __component?: "what-we-do.company-section";
+  ref?: string;
+  sectorTitle?: string;
+  logo?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  name?: string;
+  paragraph?: string;
+  ctaBackground?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  ctaLink?: string;
+}
+
 export interface UploadFile {
   id?: number;
   name?: string;
@@ -866,6 +1485,33 @@ export type UsersPermissionsPermissionsTree = Record<
     >;
   }
 >;
+
+type BaseNull = (
+  | WhatWeDoSectorBrowserComponent
+  | WhatWeDoCompanySectionComponent
+)[];
+
+type BaseNullComponentMapping<Key, Type> = {
+  __component: Key;
+} & Type;
+
+type AbstractNull = (
+  | WhatWeDoSectorBrowserComponent
+  | WhatWeDoCompanySectionComponent
+)[];
+
+type AbstractNullComponentMapping<Key, Type> = {
+  __component: Key;
+} & Type;
+
+type DiscriminatorNull = (
+  | WhatWeDoSectorBrowserComponent
+  | WhatWeDoCompanySectionComponent
+)[];
+
+type DiscriminatorNullComponentMapping<Key, Type> = {
+  __component: Key;
+} & Type;
 
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
@@ -1133,6 +1779,85 @@ export class HttpClient<SecurityDataType = unknown> {
 export class Api<
   SecurityDataType extends unknown,
 > extends HttpClient<SecurityDataType> {
+  about = {
+    /**
+     * No description
+     *
+     * @tags About
+     * @name GetAbout
+     * @request GET:/about
+     * @secure
+     */
+    getAbout: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<AboutResponse, Error>({
+        path: `/about`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags About
+     * @name PutAbout
+     * @request PUT:/about
+     * @secure
+     */
+    putAbout: (data: AboutRequest, params: RequestParams = {}) =>
+      this.request<AboutResponse, Error>({
+        path: `/about`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags About
+     * @name DeleteAbout
+     * @request DELETE:/about
+     * @secure
+     */
+    deleteAbout: (params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/about`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
   global = {
     /**
      * No description
@@ -1285,6 +2010,85 @@ export class Api<
     deleteHome: (params: RequestParams = {}) =>
       this.request<number, Error>({
         path: `/home`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  whatWeDo = {
+    /**
+     * No description
+     *
+     * @tags What-we-do
+     * @name GetWhatWeDo
+     * @request GET:/what-we-do
+     * @secure
+     */
+    getWhatWeDo: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<WhatWeDoResponse, Error>({
+        path: `/what-we-do`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags What-we-do
+     * @name PutWhatWeDo
+     * @request PUT:/what-we-do
+     * @secure
+     */
+    putWhatWeDo: (data: WhatWeDoRequest, params: RequestParams = {}) =>
+      this.request<WhatWeDoResponse, Error>({
+        path: `/what-we-do`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags What-we-do
+     * @name DeleteWhatWeDo
+     * @request DELETE:/what-we-do
+     * @secure
+     */
+    deleteWhatWeDo: (params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/what-we-do`,
         method: "DELETE",
         secure: true,
         format: "json",
