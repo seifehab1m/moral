@@ -249,7 +249,6 @@ export interface AboutValuesComponent {
 export interface AboutSectorItemComponent {
   id?: number;
   label?: string;
-  href?: string;
   ref?: string;
 }
 
@@ -1069,6 +1068,253 @@ export interface HomeSpotlightComponent {
     }[];
   };
   callToAction?: SharedLinkComponent;
+}
+
+export interface PartnershipRequest {
+  data: {
+    hero?: PartnershipHeroComponent;
+    partnership?: PartnershipPartnershipComponent;
+    imageSection?: PartnershipImageSectionComponent;
+    contact?: PartnershipContactComponent;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface PartnershipListResponse {
+  data?: Partnership[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface Partnership {
+  id?: number;
+  documentId?: string;
+  hero?: PartnershipHeroComponent;
+  partnership?: PartnershipPartnershipComponent;
+  imageSection?: PartnershipImageSectionComponent;
+  contact?: PartnershipContactComponent;
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    hero?: PartnershipHeroComponent;
+    partnership?: PartnershipPartnershipComponent;
+    imageSection?: PartnershipImageSectionComponent;
+    contact?: PartnershipContactComponent;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface PartnershipResponse {
+  data?: Partnership;
+  meta?: object;
+}
+
+export interface PartnershipHeroComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: string;
+  background?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+}
+
+export interface PartnershipPartnershipComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: string;
+}
+
+export interface PartnershipImageSectionComponent {
+  id?: number;
+  header?: string;
+  backgroundLg?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  backgroundSm?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+}
+
+export interface PartnershipContactComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
 }
 
 export interface WhatWeDoRequest {
@@ -2010,6 +2256,85 @@ export class Api<
     deleteHome: (params: RequestParams = {}) =>
       this.request<number, Error>({
         path: `/home`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  partnership = {
+    /**
+     * No description
+     *
+     * @tags Partnership
+     * @name GetPartnership
+     * @request GET:/partnership
+     * @secure
+     */
+    getPartnership: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<PartnershipResponse, Error>({
+        path: `/partnership`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Partnership
+     * @name PutPartnership
+     * @request PUT:/partnership
+     * @secure
+     */
+    putPartnership: (data: PartnershipRequest, params: RequestParams = {}) =>
+      this.request<PartnershipResponse, Error>({
+        path: `/partnership`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Partnership
+     * @name DeletePartnership
+     * @request DELETE:/partnership
+     * @secure
+     */
+    deletePartnership: (params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/partnership`,
         method: "DELETE",
         secure: true,
         format: "json",

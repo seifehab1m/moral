@@ -1,3 +1,5 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import { gsapSplit } from "@/lib";
 import { useRef } from "react";
@@ -7,8 +9,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import gsap from "gsap";
+import { PartnershipContactComponent } from "@/cms/Api";
 
-export default function ContactUsPartner() {
+type Props = {
+  section: PartnershipContactComponent | undefined;
+};
+
+export default function ContactUsPartner({ section }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -29,14 +36,18 @@ export default function ContactUsPartner() {
     });
   });
 
+  if (!section) return null;
+
   return (
     <section ref={containerRef}>
       <div className="container py-[42px] lg:py-[90px]">
-        <h6 className="sub-header pb-5 contact-us-partner">Contact Us</h6>
-        <h2 className="text-primary font-medium heading-1 md:max-w-[768px] contact-us-partner">
-          If you would like to know more about MRBF and opportunities,{} please
-          complete the form below
-        </h2>
+        <h6 className="sub-header pb-5 contact-us-partner">
+          {section.subHeader}
+        </h6>
+        <h2
+          className="text-secondary font-medium heading-1 md:max-w-[768px] contact-us-partner [&_b]:text-primary [&_b]:font-medium"
+          dangerouslySetInnerHTML={{ __html: section.header! }}
+        />
       </div>
       <form ref={formRef} className="!bg-grey-2 py-7 lg:top-rounded-section">
         <div className="container">
