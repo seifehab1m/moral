@@ -1317,6 +1317,187 @@ export interface PartnershipContactComponent {
   header?: string;
 }
 
+export interface PartnershipFormRequest {
+  data: {
+    firstName: string;
+    lastName: string;
+    mobile: string;
+    /** @format email */
+    email: string;
+    enquiryType?: "Partnership" | "Support" | "Other";
+    country: string;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface PartnershipFormListResponse {
+  data?: PartnershipForm[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface PartnershipForm {
+  id?: number;
+  documentId?: string;
+  firstName: string;
+  lastName: string;
+  mobile: string;
+  /** @format email */
+  email: string;
+  enquiryType?: "Partnership" | "Support" | "Other";
+  country: string;
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+    firstname?: string;
+    lastname?: string;
+    username?: string;
+    /** @format email */
+    email?: string;
+    resetPasswordToken?: string;
+    registrationToken?: string;
+    isActive?: boolean;
+    roles?: {
+      id?: number;
+      documentId?: string;
+      name?: string;
+      code?: string;
+      description?: string;
+      users?: {
+        id?: number;
+        documentId?: string;
+      }[];
+      permissions?: {
+        id?: number;
+        documentId?: string;
+        action?: string;
+        actionParameters?: any;
+        subject?: string;
+        properties?: any;
+        conditions?: any;
+        role?: {
+          id?: number;
+          documentId?: string;
+        };
+        /** @format date-time */
+        createdAt?: string;
+        /** @format date-time */
+        updatedAt?: string;
+        /** @format date-time */
+        publishedAt?: string;
+        createdBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        updatedBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        locale?: string;
+        localizations?: {
+          id?: number;
+          documentId?: string;
+        }[];
+      }[];
+      /** @format date-time */
+      createdAt?: string;
+      /** @format date-time */
+      updatedAt?: string;
+      /** @format date-time */
+      publishedAt?: string;
+      createdBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      updatedBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      locale?: string;
+      localizations?: {
+        id?: number;
+        documentId?: string;
+      }[];
+    }[];
+    blocked?: boolean;
+    preferedLanguage?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    firstName?: string;
+    lastName?: string;
+    mobile?: string;
+    /** @format email */
+    email?: string;
+    enquiryType?: "Partnership" | "Support" | "Other";
+    country?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface PartnershipFormResponse {
+  data?: PartnershipForm;
+  meta?: object;
+}
+
 export interface WhatWeDoRequest {
   data: {
     hero?: WhatWeDoHeroComponent;
@@ -2335,6 +2516,128 @@ export class Api<
     deletePartnership: (params: RequestParams = {}) =>
       this.request<number, Error>({
         path: `/partnership`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  partnershipForms = {
+    /**
+     * No description
+     *
+     * @tags Partnership-form
+     * @name GetPartnershipForms
+     * @request GET:/partnership-forms
+     * @secure
+     */
+    getPartnershipForms: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<PartnershipFormListResponse, Error>({
+        path: `/partnership-forms`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Partnership-form
+     * @name PostPartnershipForms
+     * @request POST:/partnership-forms
+     * @secure
+     */
+    postPartnershipForms: (
+      data: PartnershipFormRequest,
+      params: RequestParams = {},
+    ) =>
+      this.request<PartnershipFormResponse, Error>({
+        path: `/partnership-forms`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Partnership-form
+     * @name GetPartnershipFormsId
+     * @request GET:/partnership-forms/{id}
+     * @secure
+     */
+    getPartnershipFormsId: (id: number, params: RequestParams = {}) =>
+      this.request<PartnershipFormResponse, Error>({
+        path: `/partnership-forms/${id}`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Partnership-form
+     * @name PutPartnershipFormsId
+     * @request PUT:/partnership-forms/{id}
+     * @secure
+     */
+    putPartnershipFormsId: (
+      id: number,
+      data: PartnershipFormRequest,
+      params: RequestParams = {},
+    ) =>
+      this.request<PartnershipFormResponse, Error>({
+        path: `/partnership-forms/${id}`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Partnership-form
+     * @name DeletePartnershipFormsId
+     * @request DELETE:/partnership-forms/{id}
+     * @secure
+     */
+    deletePartnershipFormsId: (id: number, params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/partnership-forms/${id}`,
         method: "DELETE",
         secure: true,
         format: "json",

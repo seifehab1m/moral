@@ -53,7 +53,7 @@ export function InitGSAPMain({ children }: React.PropsWithChildren) {
   useLayoutEffect(() => {
     const smoother = ScrollSmoother.get();
     if (!scrollTo) smoother?.scrollTo(0);
-    if (pathname === "/contact-us") smoother?.kill();
+    if (disabledSmootherPaths.includes(pathname)) smoother?.kill();
     return () => {
       if (!ScrollSmoother.get()) createScrollSmoother(wrapperRef, contentRef);
     };
@@ -83,3 +83,5 @@ function createScrollSmoother(
     smoothTouch: true,
   });
 }
+
+const disabledSmootherPaths = ["/partnership", "/contact-us"];

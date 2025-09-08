@@ -169,19 +169,21 @@ export default function ContactUsPartner({ section }: Props) {
                   name="enquiryType"
                   render={({ field }) => (
                     <FormItem className="col-span-2 lg:col-span-1">
-                      <FormLabel>Enquiry Type</FormLabel>
-                      <SelectWrapper onValueChange={field.onChange}>
+                      <FormLabel>Country</FormLabel>
+                      <SelectWrapper onValueChange={field.onChange}
+                        // defaultValue={field.value}
+                      >
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="PLEASE SELECT" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="Partnership">
-                            Partnership
-                          </SelectItem>
-                          <SelectItem value="Support">Support</SelectItem>
-                          <SelectItem value="Other">Other</SelectItem>
+                          {COUNTRIES.map((c) => (
+                            <SelectItem key={c.code} value={c.name}>
+                              {c.name}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </SelectWrapper>
                       <FormMessage />
