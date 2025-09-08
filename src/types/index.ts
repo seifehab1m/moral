@@ -45,3 +45,11 @@ export type CMSStrapiImage = {
     documentId?: string;
   }[];
 };
+
+export type JSONRichText = Array<{
+  type: "paragraph" | string;
+  children: Array<{
+    type: "text" | string;
+    text: string;
+  }>;
+}>;

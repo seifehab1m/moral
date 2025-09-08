@@ -1,5 +1,5 @@
 type CardDatesProps = {
-  year: string;
+  year: string | number;
   title: string;
   description?: string;
 };

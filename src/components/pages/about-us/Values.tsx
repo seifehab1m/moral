@@ -1,18 +1,24 @@
 "use client";
 
+import gsap from "gsap";
 import { useId, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsapSplit } from "@/lib";
-import gsap from "gsap";
+import { AboutValuesComponent, AboutValuesItemComponent } from "@/cms/Api";
 
-export default function Values() {
+type Props = {
+  section: AboutValuesComponent | undefined;
+};
+
+export default function Values({ section }: Props) {
+  if (!section) return null;
   return (
     <div className="bg-[#CFCECD]">
       <div className="container py-16">
-        <span className="block sub-header mb-11">Values</span>
+        <span className="block sub-header mb-11">{section.subHeader}</span>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-18">
-          {values.map((v) => (
-            <ValueCard key={v.name} {...v} />
+          {section?.list?.map((i) => (
+            <ValueCard key={i.title} {...i} />
           ))}
         </div>
       </div>
@@ -20,13 +26,7 @@ export default function Values() {
   );
 }
 
-function ValueCard({
-  name,
-  description,
-}: {
-  name: string;
-  description: string;
-}) {
+function ValueCard({ title, paragraph }: AboutValuesItemComponent) {
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
 
@@ -53,10 +53,10 @@ function ValueCard({
   return (
     <div ref={ref}>
       <h2 className={`heading-2 text-primary font-medium ${className}`}>
-        {name}
+        {title}
       </h2>
       <p className={`mt-6 text-sm md:text-base font-medium ${className}`}>
-        {description}
+        {paragraph}
       </p>
       <div
         aria-hidden
@@ -66,26 +66,3 @@ function ValueCard({
     </div>
   );
 }
-
-const values = [
-  {
-    name: "Agility and Intent",
-    description:
-      "An investment strategy that moves decisively in the considered pursuit of dynamic opportunities and innovative synergies across verticals.",
-  },
-  {
-    name: "Sustainable Impact",
-    description:
-      "An ethical belief in using the power of investment to generate more than just dividends – providing sustainable returns for shareholders and real impact for communities.",
-  },
-  {
-    name: "Quality and Excellence",
-    description:
-      "Robust standards, high-calibre partners and careful consideration of customers’ needs ensure that MRBH Holding delivers at the apex of market expectation.",
-  },
-  {
-    name: "Strategic Foresight",
-    description:
-      "Perfectly attuned to the market, MRBF Holding invests and develops with foresight to strike long and short-term opportunities at the right time to maximise returns.",
-  },
-];
