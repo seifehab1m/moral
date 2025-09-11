@@ -1,12 +1,10 @@
 "use client";
 
+import gsap from "gsap";
 import { useHeaderTheme } from "@/hooks/useHeaderTheme";
 import { gsapSplit } from "@/lib";
 import { useGSAP } from "@gsap/react";
 import React, { useRef } from "react";
-import img from "@/assets/images/carrerHero.png";
-import Image from "next/image";
-import gsap from "gsap";
 import { CareersSectionComponent } from "@/cms/Api";
 import { StrapiImage } from "@/components/ui";
 
@@ -36,8 +34,6 @@ export default function CareerHeader({ section }: Props) {
   });
 
   if (!section) return null;
-
-  console.log(section.paragraph);
 
   return (
     <section ref={containerRef} className="pt-[90px] lg:pt-[230px]">

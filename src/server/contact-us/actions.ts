@@ -3,6 +3,7 @@
 import { actionClient } from "../client";
 import { contactFormSchema } from "./schemas";
 import { mailer } from "@/lib/mailer";
+import { client } from "@/cms";
 
 export const contactFormAction = actionClient
   .inputSchema(contactFormSchema)
@@ -19,6 +20,17 @@ export const contactFormAction = actionClient
           <p>Country: ${parsedInput.country}</p>
           <p>Message: ${parsedInput.message}</p>
       `,
+    });
+
+    client.contactForms.postContactForms({
+      data: {
+        firstName: parsedInput.firstName,
+        lastName: parsedInput.lastName,
+        phone: parsedInput.mobile,
+        email: parsedInput.email,
+        country: parsedInput.country,
+        message: parsedInput.message,
+      },
     });
 
     return {

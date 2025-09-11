@@ -784,6 +784,368 @@ export interface CareerFormResponse {
   meta?: object;
 }
 
+export interface ContactRequest {
+  data: {
+    hero?: ContactHeroComponent;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface ContactListResponse {
+  data?: Contact[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface Contact {
+  id?: number;
+  documentId?: string;
+  hero?: ContactHeroComponent;
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+    firstname?: string;
+    lastname?: string;
+    username?: string;
+    /** @format email */
+    email?: string;
+    resetPasswordToken?: string;
+    registrationToken?: string;
+    isActive?: boolean;
+    roles?: {
+      id?: number;
+      documentId?: string;
+      name?: string;
+      code?: string;
+      description?: string;
+      users?: {
+        id?: number;
+        documentId?: string;
+      }[];
+      permissions?: {
+        id?: number;
+        documentId?: string;
+        action?: string;
+        actionParameters?: any;
+        subject?: string;
+        properties?: any;
+        conditions?: any;
+        role?: {
+          id?: number;
+          documentId?: string;
+        };
+        /** @format date-time */
+        createdAt?: string;
+        /** @format date-time */
+        updatedAt?: string;
+        /** @format date-time */
+        publishedAt?: string;
+        createdBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        updatedBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        locale?: string;
+        localizations?: {
+          id?: number;
+          documentId?: string;
+        }[];
+      }[];
+      /** @format date-time */
+      createdAt?: string;
+      /** @format date-time */
+      updatedAt?: string;
+      /** @format date-time */
+      publishedAt?: string;
+      createdBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      updatedBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      locale?: string;
+      localizations?: {
+        id?: number;
+        documentId?: string;
+      }[];
+    }[];
+    blocked?: boolean;
+    preferedLanguage?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    hero?: ContactHeroComponent;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface ContactResponse {
+  data?: Contact;
+  meta?: object;
+}
+
+export interface ContactMapCordsComponent {
+  id?: number;
+  /** @format float */
+  lat?: number;
+  /** @format float */
+  lng?: number;
+  markerLink?: string;
+  markerTitle?: string;
+}
+
+export interface ContactHeroComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: string;
+  map?: ContactMapCordsComponent;
+}
+
+export interface ContactFormRequest {
+  data: {
+    firstName: string;
+    lastName: string;
+    phone: string;
+    /** @format email */
+    email: string;
+    country: string;
+    message: string;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface ContactFormListResponse {
+  data?: ContactForm[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface ContactForm {
+  id?: number;
+  documentId?: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  /** @format email */
+  email: string;
+  country: string;
+  message: string;
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+    firstname?: string;
+    lastname?: string;
+    username?: string;
+    /** @format email */
+    email?: string;
+    resetPasswordToken?: string;
+    registrationToken?: string;
+    isActive?: boolean;
+    roles?: {
+      id?: number;
+      documentId?: string;
+      name?: string;
+      code?: string;
+      description?: string;
+      users?: {
+        id?: number;
+        documentId?: string;
+      }[];
+      permissions?: {
+        id?: number;
+        documentId?: string;
+        action?: string;
+        actionParameters?: any;
+        subject?: string;
+        properties?: any;
+        conditions?: any;
+        role?: {
+          id?: number;
+          documentId?: string;
+        };
+        /** @format date-time */
+        createdAt?: string;
+        /** @format date-time */
+        updatedAt?: string;
+        /** @format date-time */
+        publishedAt?: string;
+        createdBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        updatedBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        locale?: string;
+        localizations?: {
+          id?: number;
+          documentId?: string;
+        }[];
+      }[];
+      /** @format date-time */
+      createdAt?: string;
+      /** @format date-time */
+      updatedAt?: string;
+      /** @format date-time */
+      publishedAt?: string;
+      createdBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      updatedBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      locale?: string;
+      localizations?: {
+        id?: number;
+        documentId?: string;
+      }[];
+    }[];
+    blocked?: boolean;
+    preferedLanguage?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    firstName?: string;
+    lastName?: string;
+    phone?: string;
+    /** @format email */
+    email?: string;
+    country?: string;
+    message?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface ContactFormResponse {
+  data?: ContactForm;
+  meta?: object;
+}
+
 export interface GlobalRequest {
   data: {
     siteName: string;
@@ -2954,6 +3316,204 @@ export class Api<
     deleteCareerFormsId: (id: number, params: RequestParams = {}) =>
       this.request<number, Error>({
         path: `/career-forms/${id}`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  contact = {
+    /**
+     * No description
+     *
+     * @tags Contact
+     * @name GetContact
+     * @request GET:/contact
+     * @secure
+     */
+    getContact: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<ContactResponse, Error>({
+        path: `/contact`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Contact
+     * @name PutContact
+     * @request PUT:/contact
+     * @secure
+     */
+    putContact: (data: ContactRequest, params: RequestParams = {}) =>
+      this.request<ContactResponse, Error>({
+        path: `/contact`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Contact
+     * @name DeleteContact
+     * @request DELETE:/contact
+     * @secure
+     */
+    deleteContact: (params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/contact`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  contactForms = {
+    /**
+     * No description
+     *
+     * @tags Contact-form
+     * @name GetContactForms
+     * @request GET:/contact-forms
+     * @secure
+     */
+    getContactForms: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<ContactFormListResponse, Error>({
+        path: `/contact-forms`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Contact-form
+     * @name PostContactForms
+     * @request POST:/contact-forms
+     * @secure
+     */
+    postContactForms: (data: ContactFormRequest, params: RequestParams = {}) =>
+      this.request<ContactFormResponse, Error>({
+        path: `/contact-forms`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Contact-form
+     * @name GetContactFormsId
+     * @request GET:/contact-forms/{id}
+     * @secure
+     */
+    getContactFormsId: (id: number, params: RequestParams = {}) =>
+      this.request<ContactFormResponse, Error>({
+        path: `/contact-forms/${id}`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Contact-form
+     * @name PutContactFormsId
+     * @request PUT:/contact-forms/{id}
+     * @secure
+     */
+    putContactFormsId: (
+      id: number,
+      data: ContactFormRequest,
+      params: RequestParams = {},
+    ) =>
+      this.request<ContactFormResponse, Error>({
+        path: `/contact-forms/${id}`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Contact-form
+     * @name DeleteContactFormsId
+     * @request DELETE:/contact-forms/{id}
+     * @secure
+     */
+    deleteContactFormsId: (id: number, params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/contact-forms/${id}`,
         method: "DELETE",
         secure: true,
         format: "json",

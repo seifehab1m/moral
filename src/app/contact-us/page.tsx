@@ -1,9 +1,13 @@
-import { Intro, ContactForm } from "./_components";
+import { getContactPage } from "@/cms/contact";
+import { Hero, ContactForm } from "./_components";
+import { notFound } from "next/navigation";
 
-export default function ContactUs() {
+export default async function ContactUs() {
+  const [page, err] = await getContactPage();
+  if (err) notFound();
   return (
     <>
-      <Intro />
+      <Hero section={page.data?.hero} />
       <ContactForm />
     </>
   );
