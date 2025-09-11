@@ -53,3 +53,35 @@ export type JSONRichText = Array<{
     text: string;
   }>;
 }>;
+
+export type MIMEType =
+  | "image/*"
+  | "audio/*"
+  | "video/*"
+  | "application/json"
+  | "application/pdf"
+  | "application/zip"
+  | "application/xml"
+  | "application/javascript"
+  | "application/x-www-form-urlencoded"
+  | "application/msword"
+  | "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  | "application/vnd.ms-excel"
+  | "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  | "application/vnd.ms-powerpoint"
+  | "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+  | "text/plain"
+  | "text/html"
+  | "text/css"
+  | "text/csv"
+  | "image/png"
+  | "image/jpeg"
+  | "image/webp"
+  | "image/gif"
+  | "image/svg+xml"
+  | "audio/mpeg"
+  | "audio/wav"
+  | "video/mp4"
+  | "video/webm"
+  | "video/ogg"
+  | "multipart/form-data";

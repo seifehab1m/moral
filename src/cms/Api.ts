@@ -307,6 +307,483 @@ export interface AboutSectorsComponent {
   list?: AboutSectorItemComponent[];
 }
 
+export interface CareerRequest {
+  data: {
+    section?: CareersSectionComponent;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface CareerListResponse {
+  data?: Career[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface Career {
+  id?: number;
+  documentId?: string;
+  section?: CareersSectionComponent;
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    section?: CareersSectionComponent;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface CareerResponse {
+  data?: Career;
+  meta?: object;
+}
+
+export interface CareersBigImageSectionComponent {
+  id?: number;
+  background?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  header?: string;
+}
+
+export interface CareersSectionComponent {
+  id?: number;
+  subHeader?: string;
+  header?: string;
+  paragraph?: string;
+  imageSection?: CareersBigImageSectionComponent;
+}
+
+export interface CareerFormRequest {
+  data: {
+    /** @format email */
+    email: string;
+    country: string;
+    phone: string;
+    /** @example "string or id" */
+    attachment: number | string;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface CareerFormListResponse {
+  data?: CareerForm[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface CareerForm {
+  id?: number;
+  documentId?: string;
+  /** @format email */
+  email: string;
+  country: string;
+  phone: string;
+  attachment: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+      name?: string;
+      pathId?: number;
+      parent?: {
+        id?: number;
+        documentId?: string;
+      };
+      children?: {
+        id?: number;
+        documentId?: string;
+      }[];
+      files?: {
+        id?: number;
+        documentId?: string;
+        name?: string;
+        alternativeText?: string;
+        caption?: string;
+        width?: number;
+        height?: number;
+        formats?: any;
+        hash?: string;
+        ext?: string;
+        mime?: string;
+        /** @format float */
+        size?: number;
+        url?: string;
+        previewUrl?: string;
+        provider?: string;
+        provider_metadata?: any;
+        related?: {
+          id?: number;
+          documentId?: string;
+        }[];
+        folder?: {
+          id?: number;
+          documentId?: string;
+        };
+        folderPath?: string;
+        /** @format date-time */
+        createdAt?: string;
+        /** @format date-time */
+        updatedAt?: string;
+        /** @format date-time */
+        publishedAt?: string;
+        createdBy?: {
+          id?: number;
+          documentId?: string;
+          firstname?: string;
+          lastname?: string;
+          username?: string;
+          /** @format email */
+          email?: string;
+          resetPasswordToken?: string;
+          registrationToken?: string;
+          isActive?: boolean;
+          roles?: {
+            id?: number;
+            documentId?: string;
+            name?: string;
+            code?: string;
+            description?: string;
+            users?: {
+              id?: number;
+              documentId?: string;
+            }[];
+            permissions?: {
+              id?: number;
+              documentId?: string;
+              action?: string;
+              actionParameters?: any;
+              subject?: string;
+              properties?: any;
+              conditions?: any;
+              role?: {
+                id?: number;
+                documentId?: string;
+              };
+              /** @format date-time */
+              createdAt?: string;
+              /** @format date-time */
+              updatedAt?: string;
+              /** @format date-time */
+              publishedAt?: string;
+              createdBy?: {
+                id?: number;
+                documentId?: string;
+              };
+              updatedBy?: {
+                id?: number;
+                documentId?: string;
+              };
+              locale?: string;
+              localizations?: {
+                id?: number;
+                documentId?: string;
+              }[];
+            }[];
+            /** @format date-time */
+            createdAt?: string;
+            /** @format date-time */
+            updatedAt?: string;
+            /** @format date-time */
+            publishedAt?: string;
+            createdBy?: {
+              id?: number;
+              documentId?: string;
+            };
+            updatedBy?: {
+              id?: number;
+              documentId?: string;
+            };
+            locale?: string;
+            localizations?: {
+              id?: number;
+              documentId?: string;
+            }[];
+          }[];
+          blocked?: boolean;
+          preferedLanguage?: string;
+          /** @format date-time */
+          createdAt?: string;
+          /** @format date-time */
+          updatedAt?: string;
+          /** @format date-time */
+          publishedAt?: string;
+          createdBy?: {
+            id?: number;
+            documentId?: string;
+          };
+          updatedBy?: {
+            id?: number;
+            documentId?: string;
+          };
+          locale?: string;
+          localizations?: {
+            id?: number;
+            documentId?: string;
+          }[];
+        };
+        updatedBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        locale?: string;
+        localizations?: {
+          id?: number;
+          documentId?: string;
+        }[];
+      }[];
+      path?: string;
+      /** @format date-time */
+      createdAt?: string;
+      /** @format date-time */
+      updatedAt?: string;
+      /** @format date-time */
+      publishedAt?: string;
+      createdBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      updatedBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      locale?: string;
+      localizations?: {
+        id?: number;
+        documentId?: string;
+      }[];
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    /** @format email */
+    email?: string;
+    country?: string;
+    phone?: string;
+    attachment?: {
+      id?: number;
+      documentId?: string;
+      name?: string;
+      alternativeText?: string;
+      caption?: string;
+      width?: number;
+      height?: number;
+      formats?: any;
+      hash?: string;
+      ext?: string;
+      mime?: string;
+      /** @format float */
+      size?: number;
+      url?: string;
+      previewUrl?: string;
+      provider?: string;
+      provider_metadata?: any;
+      related?: {
+        id?: number;
+        documentId?: string;
+      }[];
+      folder?: {
+        id?: number;
+        documentId?: string;
+      };
+      folderPath?: string;
+      /** @format date-time */
+      createdAt?: string;
+      /** @format date-time */
+      updatedAt?: string;
+      /** @format date-time */
+      publishedAt?: string;
+      createdBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      updatedBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      locale?: string;
+      localizations?: {
+        id?: number;
+        documentId?: string;
+      }[];
+    };
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface CareerFormResponse {
+  data?: CareerForm;
+  meta?: object;
+}
+
 export interface GlobalRequest {
   data: {
     siteName: string;
@@ -2279,6 +2756,204 @@ export class Api<
     deleteAbout: (params: RequestParams = {}) =>
       this.request<number, Error>({
         path: `/about`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  career = {
+    /**
+     * No description
+     *
+     * @tags Career
+     * @name GetCareer
+     * @request GET:/career
+     * @secure
+     */
+    getCareer: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<CareerResponse, Error>({
+        path: `/career`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Career
+     * @name PutCareer
+     * @request PUT:/career
+     * @secure
+     */
+    putCareer: (data: CareerRequest, params: RequestParams = {}) =>
+      this.request<CareerResponse, Error>({
+        path: `/career`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Career
+     * @name DeleteCareer
+     * @request DELETE:/career
+     * @secure
+     */
+    deleteCareer: (params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/career`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  careerForms = {
+    /**
+     * No description
+     *
+     * @tags Career-form
+     * @name GetCareerForms
+     * @request GET:/career-forms
+     * @secure
+     */
+    getCareerForms: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<CareerFormListResponse, Error>({
+        path: `/career-forms`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Career-form
+     * @name PostCareerForms
+     * @request POST:/career-forms
+     * @secure
+     */
+    postCareerForms: (data: CareerFormRequest, params: RequestParams = {}) =>
+      this.request<CareerFormResponse, Error>({
+        path: `/career-forms`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Career-form
+     * @name GetCareerFormsId
+     * @request GET:/career-forms/{id}
+     * @secure
+     */
+    getCareerFormsId: (id: number, params: RequestParams = {}) =>
+      this.request<CareerFormResponse, Error>({
+        path: `/career-forms/${id}`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Career-form
+     * @name PutCareerFormsId
+     * @request PUT:/career-forms/{id}
+     * @secure
+     */
+    putCareerFormsId: (
+      id: number,
+      data: CareerFormRequest,
+      params: RequestParams = {},
+    ) =>
+      this.request<CareerFormResponse, Error>({
+        path: `/career-forms/${id}`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Career-form
+     * @name DeleteCareerFormsId
+     * @request DELETE:/career-forms/{id}
+     * @secure
+     */
+    deleteCareerFormsId: (id: number, params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/career-forms/${id}`,
         method: "DELETE",
         secure: true,
         format: "json",

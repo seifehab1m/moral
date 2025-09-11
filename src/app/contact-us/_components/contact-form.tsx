@@ -37,10 +37,6 @@ export function ContactForm() {
     setSubmitted(false);
   };
 
-  useLayoutEffect(() => {
-    const smoother = ScrollSmoother.get();
-  }, []);
-
   return (
     <section className="top-rounded-section bg-grey-2 max-lg:!py-7">
       <div className="container">

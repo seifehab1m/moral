@@ -45,6 +45,3 @@ export function safeParsePhone(phone: string): Result {
   }
 }
 
-export const zPhone = z
-  .string({ error: "Please enter a valid phone number" })
-  .refine((value) => safeParsePhone(value).success, "Invalid Phone Number");

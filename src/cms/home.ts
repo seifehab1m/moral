@@ -1,4 +1,4 @@
-import { fromCMS } from ".";
+import { strapi } from ".";
 import { safeTry } from "@/lib/safeTry";
 import { HomeResponse } from "./Api";
 
@@ -14,5 +14,5 @@ export function getHome() {
     ],
   };
 
-  return safeTry(() => fromCMS<HomeResponse>({ path: "/home", query }));
+  return safeTry(() => strapi<HomeResponse>({ path: "/home", query }));
 }

@@ -10,7 +10,7 @@ type Options = {
   query?: Record<string, any>;
 };
 
-export async function fromCMS<T>({ path, init = {}, query = {} }: Options) {
+export async function strapi<T>({ path, init = {}, query = {} }: Options) {
   init.next = { tags: [TAG], ...init.next };
 
   const q = qs.stringify(query, { encodeValuesOnly: true }) ?? "";
@@ -25,7 +25,7 @@ export async function fromCMS<T>({ path, init = {}, query = {} }: Options) {
     const error = new Error(json.message);
     (error as any).statusCode = response.status;
     (error as any).statusText = response.statusText;
-    throw error;
+    throw { ...response, ...json };
   }
 
   return json as T;

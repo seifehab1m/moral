@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zPhone } from "@/lib/phone";
+import { zPhone } from "@/lib/schemas";
 
 export const contactFormSchema = z.object({
   firstName: z.string({ error: "Please enter your first name" }).min(3),

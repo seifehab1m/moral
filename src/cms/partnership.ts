@@ -1,10 +1,10 @@
-import { fromCMS } from ".";
+import { strapi } from ".";
 import { safeTry } from "@/lib/safeTry";
 import { PartnershipResponse } from "./Api";
 
 export function getPartnershipPage() {
   return safeTry(() =>
-    fromCMS<PartnershipResponse>({
+    strapi<PartnershipResponse>({
       path: "/partnership",
       query: {
         populate: [

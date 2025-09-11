@@ -7,8 +7,14 @@ import React, { useRef } from "react";
 import img from "@/assets/images/carrerHero.png";
 import Image from "next/image";
 import gsap from "gsap";
+import { CareersSectionComponent } from "@/cms/Api";
+import { StrapiImage } from "@/components/ui";
 
-export default function CareerHeader() {
+type Props = {
+  section: CareersSectionComponent | undefined;
+};
+
+export default function CareerHeader({ section }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const h2Ref = useRef<HTMLHeadingElement>(null);
@@ -29,44 +35,41 @@ export default function CareerHeader() {
     gsapSplit(h2Ref, ".career-header-2");
   });
 
+  if (!section) return null;
+
+  console.log(section.paragraph);
+
   return (
     <section ref={containerRef} className="pt-[90px] lg:pt-[230px]">
       <div className="container">
-        <span className="sub-header career-header">
-          Careers & Opportunities
-        </span>
-        <h1 className="mt-3 lg:mt-8 font-medium heading-1 text-secondary md:max-w-[750px] career-header">
-          Build a better future,
-          <br />
-          <span className="text-primary career-header">
-            {" "}
-            inspired by the pursuit of <br /> opportunities.
-          </span>
-        </h1>
+        <span className="sub-header career-header">{section.subHeader}</span>
+        <h1
+          className="mt-3 lg:mt-8 font-medium heading-1 text-secondary md:max-w-[750px] career-header [&_b]:text-primary [&_b]:font-medium"
+          dangerouslySetInnerHTML={{ __html: section.header! }}
+        />
         <p className="heading-4 text-black font-medium mt-3 lg:mt-12 career-header">
-          Join us in contributing to the future of the UAE and beyond,
-          maximising your talent across sectors including financial services,
-          healthcare, real estate, hospitality, and IT services.
+          {section.paragraph}
         </p>
       </div>
-      <div className="relative w-full lg:max-h-[864px] mt-6 lg:mt-[72px] overflow-hidden aspect-[1.52] lg:asepct-[2]">
-        <Image
-          ref={imageRef}
-          src={img}
-          className="object-cover object-bottom"
-          fill
-          alt=""
-        />
-        <div className="container flex flex-col justify-end h-full py-[40px] lg:py-[120px]">
-          <h2
-            ref={h2Ref}
-            className="relative heading-1 text-white font-semibold career-header-2"
-          >
-            Shaping industries, <br />
-            driving progress.
-          </h2>
+      {section?.imageSection && (
+        <div className="relative w-full lg:max-h-[864px] mt-6 lg:mt-[72px] overflow-hidden aspect-[1.52] lg:asepct-[2]">
+          <StrapiImage
+            ref={imageRef}
+            image={section.imageSection?.background}
+            className="object-cover object-bottom"
+            fill
+          />
+          <div className="container flex flex-col justify-end h-full py-[40px] lg:py-[120px]">
+            <h2
+              ref={h2Ref}
+              className="relative heading-1 text-white font-semibold career-header-2"
+              dangerouslySetInnerHTML={{
+                __html: section.imageSection?.header!,
+              }}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

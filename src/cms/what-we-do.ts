@@ -1,10 +1,10 @@
-import { fromCMS } from ".";
+import { strapi } from ".";
 import { safeTry } from "@/lib/safeTry";
 import { type WhatWeDo, WhatWeDoResponse } from "./Api";
 
 export async function getWhatWeDoPage() {
   return safeTry(() =>
-    fromCMS<WhatWeDoResponse>({
+    strapi<WhatWeDoResponse>({
       path: "/what-we-do",
       query: {
         populate: {
