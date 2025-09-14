@@ -2337,6 +2337,175 @@ export interface PartnershipFormResponse {
   meta?: object;
 }
 
+export interface PrivacyPolicyRequest {
+  data: {
+    item?: PrivacyItemComponent[];
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface PrivacyPolicyListResponse {
+  data?: PrivacyPolicy[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface PrivacyPolicy {
+  id?: number;
+  documentId?: string;
+  item?: PrivacyItemComponent[];
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+    firstname?: string;
+    lastname?: string;
+    username?: string;
+    /** @format email */
+    email?: string;
+    resetPasswordToken?: string;
+    registrationToken?: string;
+    isActive?: boolean;
+    roles?: {
+      id?: number;
+      documentId?: string;
+      name?: string;
+      code?: string;
+      description?: string;
+      users?: {
+        id?: number;
+        documentId?: string;
+      }[];
+      permissions?: {
+        id?: number;
+        documentId?: string;
+        action?: string;
+        actionParameters?: any;
+        subject?: string;
+        properties?: any;
+        conditions?: any;
+        role?: {
+          id?: number;
+          documentId?: string;
+        };
+        /** @format date-time */
+        createdAt?: string;
+        /** @format date-time */
+        updatedAt?: string;
+        /** @format date-time */
+        publishedAt?: string;
+        createdBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        updatedBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        locale?: string;
+        localizations?: {
+          id?: number;
+          documentId?: string;
+        }[];
+      }[];
+      /** @format date-time */
+      createdAt?: string;
+      /** @format date-time */
+      updatedAt?: string;
+      /** @format date-time */
+      publishedAt?: string;
+      createdBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      updatedBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      locale?: string;
+      localizations?: {
+        id?: number;
+        documentId?: string;
+      }[];
+    }[];
+    blocked?: boolean;
+    preferedLanguage?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    item?: PrivacyItemComponent[];
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface PrivacyPolicyResponse {
+  data?: PrivacyPolicy;
+  meta?: object;
+}
+
+export interface PrivacyItemComponent {
+  id?: number;
+  header?: string;
+  content?: any;
+}
+
 export interface WhatWeDoRequest {
   data: {
     hero?: WhatWeDoHeroComponent;
@@ -3873,6 +4042,88 @@ export class Api<
     deletePartnershipFormsId: (id: number, params: RequestParams = {}) =>
       this.request<number, Error>({
         path: `/partnership-forms/${id}`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  privacyPolicy = {
+    /**
+     * No description
+     *
+     * @tags Privacy-policy
+     * @name GetPrivacyPolicy
+     * @request GET:/privacy-policy
+     * @secure
+     */
+    getPrivacyPolicy: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<PrivacyPolicyResponse, Error>({
+        path: `/privacy-policy`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Privacy-policy
+     * @name PutPrivacyPolicy
+     * @request PUT:/privacy-policy
+     * @secure
+     */
+    putPrivacyPolicy: (
+      data: PrivacyPolicyRequest,
+      params: RequestParams = {},
+    ) =>
+      this.request<PrivacyPolicyResponse, Error>({
+        path: `/privacy-policy`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Privacy-policy
+     * @name DeletePrivacyPolicy
+     * @request DELETE:/privacy-policy
+     * @secure
+     */
+    deletePrivacyPolicy: (params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/privacy-policy`,
         method: "DELETE",
         secure: true,
         format: "json",

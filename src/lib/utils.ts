@@ -33,7 +33,7 @@ export function gsapSplit(
       return gsap.from(instance.lines, {
         ...(vars ?? {}),
         yPercent: 120,
-        stagger: 0.30,
+        stagger: 0.3,
         scrollTrigger: {
           trigger: ref.current!,
           ...(vars?.scrollTrigger ?? {}),
@@ -41,4 +41,8 @@ export function gsapSplit(
       });
     },
   });
+}
+
+export function toTwoDigits(num: number) {
+  return num < 10 ? `0${num}` : num;
 }
