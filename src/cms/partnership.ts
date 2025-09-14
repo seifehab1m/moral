@@ -2,7 +2,7 @@ import { strapi } from ".";
 import { safeTry } from "@/lib/safeTry";
 import { PartnershipResponse } from "./Api";
 
-export function getPartnershipPage() {
+export function getPartnership() {
   return safeTry(() =>
     strapi<PartnershipResponse>({
       path: "/partnership",
@@ -13,6 +13,7 @@ export function getPartnershipPage() {
           "imageSection.backgroundSm",
           "partnership",
           "contact",
+          "seo.shareImage",
         ],
       },
     }),

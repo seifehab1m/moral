@@ -27,6 +27,7 @@ export interface AboutRequest {
     leadership?: AboutLeadershipComponent;
     values?: AboutValuesComponent;
     sectors?: AboutSectorsComponent;
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -54,6 +55,7 @@ export interface About {
   leadership?: AboutLeadershipComponent;
   values?: AboutValuesComponent;
   sectors?: AboutSectorsComponent;
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -77,6 +79,7 @@ export interface About {
     leadership?: AboutLeadershipComponent;
     values?: AboutValuesComponent;
     sectors?: AboutSectorsComponent;
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -307,9 +310,67 @@ export interface AboutSectorsComponent {
   list?: AboutSectorItemComponent[];
 }
 
+export interface SharedSeoComponent {
+  id?: number;
+  metaTitle?: string;
+  metaDescription?: string;
+  shareImage?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  keywords?: string;
+  canonicalURL?: string;
+  structuredData?: any;
+  metaRobots?: string;
+}
+
 export interface CareerRequest {
   data: {
     section?: CareersSectionComponent;
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -333,6 +394,7 @@ export interface Career {
   id?: number;
   documentId?: string;
   section?: CareersSectionComponent;
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -352,6 +414,7 @@ export interface Career {
     id?: number;
     documentId?: string;
     section?: CareersSectionComponent;
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -787,6 +850,7 @@ export interface CareerFormResponse {
 export interface ContactRequest {
   data: {
     hero?: ContactHeroComponent;
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -810,6 +874,7 @@ export interface Contact {
   id?: number;
   documentId?: string;
   hero?: ContactHeroComponent;
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -819,97 +884,6 @@ export interface Contact {
   createdBy?: {
     id?: number;
     documentId?: string;
-    firstname?: string;
-    lastname?: string;
-    username?: string;
-    /** @format email */
-    email?: string;
-    resetPasswordToken?: string;
-    registrationToken?: string;
-    isActive?: boolean;
-    roles?: {
-      id?: number;
-      documentId?: string;
-      name?: string;
-      code?: string;
-      description?: string;
-      users?: {
-        id?: number;
-        documentId?: string;
-      }[];
-      permissions?: {
-        id?: number;
-        documentId?: string;
-        action?: string;
-        actionParameters?: any;
-        subject?: string;
-        properties?: any;
-        conditions?: any;
-        role?: {
-          id?: number;
-          documentId?: string;
-        };
-        /** @format date-time */
-        createdAt?: string;
-        /** @format date-time */
-        updatedAt?: string;
-        /** @format date-time */
-        publishedAt?: string;
-        createdBy?: {
-          id?: number;
-          documentId?: string;
-        };
-        updatedBy?: {
-          id?: number;
-          documentId?: string;
-        };
-        locale?: string;
-        localizations?: {
-          id?: number;
-          documentId?: string;
-        }[];
-      }[];
-      /** @format date-time */
-      createdAt?: string;
-      /** @format date-time */
-      updatedAt?: string;
-      /** @format date-time */
-      publishedAt?: string;
-      createdBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      updatedBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      locale?: string;
-      localizations?: {
-        id?: number;
-        documentId?: string;
-      }[];
-    }[];
-    blocked?: boolean;
-    preferedLanguage?: string;
-    /** @format date-time */
-    createdAt?: string;
-    /** @format date-time */
-    updatedAt?: string;
-    /** @format date-time */
-    publishedAt?: string;
-    createdBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    updatedBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    locale?: string;
-    localizations?: {
-      id?: number;
-      documentId?: string;
-    }[];
   };
   updatedBy?: {
     id?: number;
@@ -920,6 +894,7 @@ export interface Contact {
     id?: number;
     documentId?: string;
     hero?: ContactHeroComponent;
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -1151,6 +1126,7 @@ export interface GlobalRequest {
     defaultSeo?: SharedSeoComponent;
     header?: GlobalHeaderComponent;
     footer?: GlobalFooterComponent;
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -1176,6 +1152,7 @@ export interface Global {
   defaultSeo?: SharedSeoComponent;
   header?: GlobalHeaderComponent;
   footer?: GlobalFooterComponent;
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -1197,6 +1174,7 @@ export interface Global {
     defaultSeo?: SharedSeoComponent;
     header?: GlobalHeaderComponent;
     footer?: GlobalFooterComponent;
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -1222,59 +1200,6 @@ export interface Global {
 export interface GlobalResponse {
   data?: Global;
   meta?: object;
-}
-
-export interface SharedSeoComponent {
-  id?: number;
-  metaTitle?: string;
-  metaDescription?: string;
-  shareImage?: {
-    id?: number;
-    documentId?: string;
-    name?: string;
-    alternativeText?: string;
-    caption?: string;
-    width?: number;
-    height?: number;
-    formats?: any;
-    hash?: string;
-    ext?: string;
-    mime?: string;
-    /** @format float */
-    size?: number;
-    url?: string;
-    previewUrl?: string;
-    provider?: string;
-    provider_metadata?: any;
-    related?: {
-      id?: number;
-      documentId?: string;
-    }[];
-    folder?: {
-      id?: number;
-      documentId?: string;
-    };
-    folderPath?: string;
-    /** @format date-time */
-    createdAt?: string;
-    /** @format date-time */
-    updatedAt?: string;
-    /** @format date-time */
-    publishedAt?: string;
-    createdBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    updatedBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    locale?: string;
-    localizations?: {
-      id?: number;
-      documentId?: string;
-    }[];
-  };
 }
 
 export interface SharedLinkComponent {
@@ -1401,6 +1326,7 @@ export interface HomeRequest {
     imageSection?: SharedImageSectionComponent;
     sectors?: HomeSectorsComponent;
     spotlight?: HomeSpotlightComponent;
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -1428,6 +1354,7 @@ export interface Home {
   imageSection?: SharedImageSectionComponent;
   sectors?: HomeSectorsComponent;
   spotlight?: HomeSpotlightComponent;
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -1451,6 +1378,7 @@ export interface Home {
     imageSection?: SharedImageSectionComponent;
     sectors?: HomeSectorsComponent;
     spotlight?: HomeSpotlightComponent;
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -1762,6 +1690,7 @@ export interface PartnershipRequest {
     partnership?: PartnershipPartnershipComponent;
     imageSection?: PartnershipImageSectionComponent;
     contact?: PartnershipContactComponent;
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -1788,6 +1717,7 @@ export interface Partnership {
   partnership?: PartnershipPartnershipComponent;
   imageSection?: PartnershipImageSectionComponent;
   contact?: PartnershipContactComponent;
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -1810,6 +1740,7 @@ export interface Partnership {
     partnership?: PartnershipPartnershipComponent;
     imageSection?: PartnershipImageSectionComponent;
     contact?: PartnershipContactComponent;
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -2187,6 +2118,7 @@ export interface PartnershipFormResponse {
 export interface PrivacyPolicyRequest {
   data: {
     item?: PrivacyItemComponent[];
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -2210,6 +2142,7 @@ export interface PrivacyPolicy {
   id?: number;
   documentId?: string;
   item?: PrivacyItemComponent[];
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -2219,97 +2152,6 @@ export interface PrivacyPolicy {
   createdBy?: {
     id?: number;
     documentId?: string;
-    firstname?: string;
-    lastname?: string;
-    username?: string;
-    /** @format email */
-    email?: string;
-    resetPasswordToken?: string;
-    registrationToken?: string;
-    isActive?: boolean;
-    roles?: {
-      id?: number;
-      documentId?: string;
-      name?: string;
-      code?: string;
-      description?: string;
-      users?: {
-        id?: number;
-        documentId?: string;
-      }[];
-      permissions?: {
-        id?: number;
-        documentId?: string;
-        action?: string;
-        actionParameters?: any;
-        subject?: string;
-        properties?: any;
-        conditions?: any;
-        role?: {
-          id?: number;
-          documentId?: string;
-        };
-        /** @format date-time */
-        createdAt?: string;
-        /** @format date-time */
-        updatedAt?: string;
-        /** @format date-time */
-        publishedAt?: string;
-        createdBy?: {
-          id?: number;
-          documentId?: string;
-        };
-        updatedBy?: {
-          id?: number;
-          documentId?: string;
-        };
-        locale?: string;
-        localizations?: {
-          id?: number;
-          documentId?: string;
-        }[];
-      }[];
-      /** @format date-time */
-      createdAt?: string;
-      /** @format date-time */
-      updatedAt?: string;
-      /** @format date-time */
-      publishedAt?: string;
-      createdBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      updatedBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      locale?: string;
-      localizations?: {
-        id?: number;
-        documentId?: string;
-      }[];
-    }[];
-    blocked?: boolean;
-    preferedLanguage?: string;
-    /** @format date-time */
-    createdAt?: string;
-    /** @format date-time */
-    updatedAt?: string;
-    /** @format date-time */
-    publishedAt?: string;
-    createdBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    updatedBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    locale?: string;
-    localizations?: {
-      id?: number;
-      documentId?: string;
-    }[];
   };
   updatedBy?: {
     id?: number;
@@ -2320,6 +2162,7 @@ export interface PrivacyPolicy {
     id?: number;
     documentId?: string;
     item?: PrivacyItemComponent[];
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -2367,6 +2210,7 @@ export interface WhatWeDoRequest {
             WhatWeDoCompanySectionComponent
           >
       );
+    seo?: SharedSeoComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -2401,6 +2245,7 @@ export interface WhatWeDo {
           WhatWeDoCompanySectionComponent
         >
     );
+  seo?: SharedSeoComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -2431,6 +2276,7 @@ export interface WhatWeDo {
             WhatWeDoCompanySectionComponent
           >
       );
+    seo?: SharedSeoComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */

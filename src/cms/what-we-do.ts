@@ -1,16 +1,15 @@
 import { strapi } from ".";
 import { safeTry } from "@/lib/safeTry";
-import { type WhatWeDo, WhatWeDoResponse } from "./Api";
+import { WhatWeDoResponse } from "./Api";
 
-export async function getWhatWeDoPage() {
+export function getWhatWeDo() {
   return safeTry(() =>
     strapi<WhatWeDoResponse>({
       path: "/what-we-do",
       query: {
         populate: {
-          hero: {
-            populate: "sectorCards.image",
-          },
+          hero: { populate: "sectorCards.image" },
+          seo: { populate: "shareImage" },
           sections: {
             on: {
               "what-we-do.sector-browser": {

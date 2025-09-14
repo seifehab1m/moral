@@ -2,11 +2,17 @@ import PartnerHeader from "@/components/pages/partner/PartnerHeader";
 import Investment from "@/components/pages/partner/Investment";
 import { SuccessStories } from "@/components/pages/partner/SuccessStories";
 import ContactUsPartner from "@/components/pages/partner/ContactUsPartner";
-import { getPartnershipPage } from "@/cms/partnership";
+import { getPartnership } from "@/cms/partnership";
 import { notFound } from "next/navigation";
+import { createMetadata } from "@/lib/seo";
+
+export async function generateMetadata() {
+  const [page] = await getPartnership();
+  return createMetadata(page?.data?.seo);
+}
 
 export default async function Page() {
-  const [page, err] = await getPartnershipPage();
+  const [page, err] = await getPartnership();
 
   if (err) notFound();
 

@@ -2,6 +2,12 @@ import { getPrivacyPolicy } from "@/cms/privacy";
 import { notFound } from "next/navigation";
 import { toTwoDigits } from "@/lib/utils";
 import { StrapiBlocksRenderer } from "@/components/helpers";
+import { createMetadata } from "@/lib/seo";
+
+export async function generateMetadata() {
+  const [page] = await getPrivacyPolicy();
+  return createMetadata((page?.data as any)?.seo);
+}
 
 export default async function page() {
   const [page, err] = await getPrivacyPolicy();

@@ -2,7 +2,7 @@ import { strapi } from ".";
 import { safeTry } from "@/lib/safeTry";
 import { AboutResponse } from "./Api";
 
-export function getAboutPage() {
+export function getAbout() {
   return safeTry(() =>
     strapi<AboutResponse>({
       path: "/about",
@@ -14,6 +14,7 @@ export function getAboutPage() {
           "values.list",
           "sectors.background",
           "sectors.list",
+          "seo.shareImage",
         ],
       },
     }),

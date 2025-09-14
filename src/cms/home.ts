@@ -11,6 +11,7 @@ export function getHome() {
       "sectors.sectorItem.image",
       "spotlight.logo",
       "spotlight.background",
+      "seo.shareImage",
     ],
   };
 
