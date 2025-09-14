@@ -1127,6 +1127,7 @@ export interface GlobalRequest {
     header?: GlobalHeaderComponent;
     footer?: GlobalFooterComponent;
     seo?: SharedSeoComponent;
+    contact?: GlobalGlobalContactSectionComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -1153,6 +1154,7 @@ export interface Global {
   header?: GlobalHeaderComponent;
   footer?: GlobalFooterComponent;
   seo?: SharedSeoComponent;
+  contact?: GlobalGlobalContactSectionComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -1175,6 +1177,7 @@ export interface Global {
     header?: GlobalHeaderComponent;
     footer?: GlobalFooterComponent;
     seo?: SharedSeoComponent;
+    contact?: GlobalGlobalContactSectionComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -1317,6 +1320,13 @@ export interface GlobalFooterComponent {
     }[];
   };
   links?: SharedLinkListComponent[];
+}
+
+export interface GlobalGlobalContactSectionComponent {
+  id?: number;
+  header?: string;
+  paragraph?: string;
+  cta?: SharedLinkComponent;
 }
 
 export interface HomeRequest {

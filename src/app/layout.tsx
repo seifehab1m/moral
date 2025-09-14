@@ -27,7 +27,7 @@ export default async function RootLayout({
           <Layout.Header header={global?.data?.header} />
           <Layout.InitGSAP>
             {children}
-            <Layout.ContactUs />
+            <Layout.ContactUs contact={global?.data?.contact} />
             <Layout.Footer footer={global?.data?.footer} />
           </Layout.InitGSAP>
         </HeaderProvider>

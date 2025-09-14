@@ -13,6 +13,7 @@ export function getGlobal() {
           "header.links",
           "footer.logo",
           "footer.links.items",
+          "contact.cta",
         ],
       },
     }),
