@@ -11,25 +11,19 @@ import { useDisableScrolling } from "@/hooks";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { getFixedPosition } from "@/lib/utils";
+import { GlobalHeaderComponent } from "@/cms/Api";
 
-const links = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about-us" },
-  { name: "What We Do", href: "/core-verticals" },
-  { name: "Partner With Us", href: "/partnership" },
-  {
-    name: "Careers & Opportunities",
-    href: "/carrer-opportunities",
-  },
-  { name: "Contact Us", href: "/contact-us" },
-];
+type Props = {
+  header: GlobalHeaderComponent | undefined;
+};
 
-export function Header() {
+export function Header({ header }: Props) {
   const [open, setOpen] = useState(false);
   const [scroll] = useWindowScroll();
   const { forceDark } = useHeaderContext();
   const navRef = useRef<HTMLDivElement>(null);
   const openButtonRef = useRef<HTMLButtonElement>(null);
+
   useDisableScrolling(open);
 
   const isScrolled = (scroll?.y ?? 0) > 10;
@@ -43,6 +37,8 @@ export function Header() {
       duration: 0.5,
     });
   }, [open]);
+
+  if (!header) return null;
 
   return (
     <header
@@ -63,9 +59,9 @@ export function Header() {
         </Link>
         <nav className={cn(!isScrolled && "lg:hidden")}>
           <ul className="hidden lg:flex items-center gap-5 text-primary font-medium">
-            {links.map((link) => (
-              <li key={link.name}>
-                <Link href={link.href}>{link.name}</Link>
+            {header?.links?.map((link) => (
+              <li key={link.label}>
+                <Link href={link.href!}>{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -107,13 +103,13 @@ export function Header() {
             <XIcon className="size-7 lg:size-10" />
           </button>
           <ul className="h-full flex flex-col md:justify-end justify-center text-xl gap-2 lg:text-4xl lg:gap-5">
-            {links.map((link) => (
-              <li key={link.name} onClick={() => setOpen(false)}>
+            {header?.links?.map((link) => (
+              <li key={link.href} onClick={() => setOpen(false)}>
                 <Link
-                  href={link.href}
+                  href={link.href!}
                   className="text-grey-2 duration-600 lg:hover:font-semibold"
                 >
-                  {link.name}
+                  {link.label}
                 </Link>
               </li>
             ))}

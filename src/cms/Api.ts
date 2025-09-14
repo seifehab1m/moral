@@ -1148,11 +1148,9 @@ export interface ContactFormResponse {
 
 export interface GlobalRequest {
   data: {
-    siteName: string;
-    /** @example "string or id" */
-    favicon?: number | string;
-    siteDescription: string;
     defaultSeo?: SharedSeoComponent;
+    header?: GlobalHeaderComponent;
+    footer?: GlobalFooterComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -1175,224 +1173,9 @@ export interface GlobalListResponse {
 export interface Global {
   id?: number;
   documentId?: string;
-  siteName: string;
-  favicon?: {
-    id?: number;
-    documentId?: string;
-    name?: string;
-    alternativeText?: string;
-    caption?: string;
-    width?: number;
-    height?: number;
-    formats?: any;
-    hash?: string;
-    ext?: string;
-    mime?: string;
-    /** @format float */
-    size?: number;
-    url?: string;
-    previewUrl?: string;
-    provider?: string;
-    provider_metadata?: any;
-    related?: {
-      id?: number;
-      documentId?: string;
-    }[];
-    folder?: {
-      id?: number;
-      documentId?: string;
-      name?: string;
-      pathId?: number;
-      parent?: {
-        id?: number;
-        documentId?: string;
-      };
-      children?: {
-        id?: number;
-        documentId?: string;
-      }[];
-      files?: {
-        id?: number;
-        documentId?: string;
-        name?: string;
-        alternativeText?: string;
-        caption?: string;
-        width?: number;
-        height?: number;
-        formats?: any;
-        hash?: string;
-        ext?: string;
-        mime?: string;
-        /** @format float */
-        size?: number;
-        url?: string;
-        previewUrl?: string;
-        provider?: string;
-        provider_metadata?: any;
-        related?: {
-          id?: number;
-          documentId?: string;
-        }[];
-        folder?: {
-          id?: number;
-          documentId?: string;
-        };
-        folderPath?: string;
-        /** @format date-time */
-        createdAt?: string;
-        /** @format date-time */
-        updatedAt?: string;
-        /** @format date-time */
-        publishedAt?: string;
-        createdBy?: {
-          id?: number;
-          documentId?: string;
-          firstname?: string;
-          lastname?: string;
-          username?: string;
-          /** @format email */
-          email?: string;
-          resetPasswordToken?: string;
-          registrationToken?: string;
-          isActive?: boolean;
-          roles?: {
-            id?: number;
-            documentId?: string;
-            name?: string;
-            code?: string;
-            description?: string;
-            users?: {
-              id?: number;
-              documentId?: string;
-            }[];
-            permissions?: {
-              id?: number;
-              documentId?: string;
-              action?: string;
-              actionParameters?: any;
-              subject?: string;
-              properties?: any;
-              conditions?: any;
-              role?: {
-                id?: number;
-                documentId?: string;
-              };
-              /** @format date-time */
-              createdAt?: string;
-              /** @format date-time */
-              updatedAt?: string;
-              /** @format date-time */
-              publishedAt?: string;
-              createdBy?: {
-                id?: number;
-                documentId?: string;
-              };
-              updatedBy?: {
-                id?: number;
-                documentId?: string;
-              };
-              locale?: string;
-              localizations?: {
-                id?: number;
-                documentId?: string;
-              }[];
-            }[];
-            /** @format date-time */
-            createdAt?: string;
-            /** @format date-time */
-            updatedAt?: string;
-            /** @format date-time */
-            publishedAt?: string;
-            createdBy?: {
-              id?: number;
-              documentId?: string;
-            };
-            updatedBy?: {
-              id?: number;
-              documentId?: string;
-            };
-            locale?: string;
-            localizations?: {
-              id?: number;
-              documentId?: string;
-            }[];
-          }[];
-          blocked?: boolean;
-          preferedLanguage?: string;
-          /** @format date-time */
-          createdAt?: string;
-          /** @format date-time */
-          updatedAt?: string;
-          /** @format date-time */
-          publishedAt?: string;
-          createdBy?: {
-            id?: number;
-            documentId?: string;
-          };
-          updatedBy?: {
-            id?: number;
-            documentId?: string;
-          };
-          locale?: string;
-          localizations?: {
-            id?: number;
-            documentId?: string;
-          }[];
-        };
-        updatedBy?: {
-          id?: number;
-          documentId?: string;
-        };
-        locale?: string;
-        localizations?: {
-          id?: number;
-          documentId?: string;
-        }[];
-      }[];
-      path?: string;
-      /** @format date-time */
-      createdAt?: string;
-      /** @format date-time */
-      updatedAt?: string;
-      /** @format date-time */
-      publishedAt?: string;
-      createdBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      updatedBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      locale?: string;
-      localizations?: {
-        id?: number;
-        documentId?: string;
-      }[];
-    };
-    folderPath?: string;
-    /** @format date-time */
-    createdAt?: string;
-    /** @format date-time */
-    updatedAt?: string;
-    /** @format date-time */
-    publishedAt?: string;
-    createdBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    updatedBy?: {
-      id?: number;
-      documentId?: string;
-    };
-    locale?: string;
-    localizations?: {
-      id?: number;
-      documentId?: string;
-    }[];
-  };
-  siteDescription: string;
   defaultSeo?: SharedSeoComponent;
+  header?: GlobalHeaderComponent;
+  footer?: GlobalFooterComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -1411,56 +1194,9 @@ export interface Global {
   localizations?: {
     id?: number;
     documentId?: string;
-    siteName?: string;
-    favicon?: {
-      id?: number;
-      documentId?: string;
-      name?: string;
-      alternativeText?: string;
-      caption?: string;
-      width?: number;
-      height?: number;
-      formats?: any;
-      hash?: string;
-      ext?: string;
-      mime?: string;
-      /** @format float */
-      size?: number;
-      url?: string;
-      previewUrl?: string;
-      provider?: string;
-      provider_metadata?: any;
-      related?: {
-        id?: number;
-        documentId?: string;
-      }[];
-      folder?: {
-        id?: number;
-        documentId?: string;
-      };
-      folderPath?: string;
-      /** @format date-time */
-      createdAt?: string;
-      /** @format date-time */
-      updatedAt?: string;
-      /** @format date-time */
-      publishedAt?: string;
-      createdBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      updatedBy?: {
-        id?: number;
-        documentId?: string;
-      };
-      locale?: string;
-      localizations?: {
-        id?: number;
-        documentId?: string;
-      }[];
-    };
-    siteDescription?: string;
     defaultSeo?: SharedSeoComponent;
+    header?: GlobalHeaderComponent;
+    footer?: GlobalFooterComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -1539,6 +1275,123 @@ export interface SharedSeoComponent {
       documentId?: string;
     }[];
   };
+}
+
+export interface SharedLinkComponent {
+  id?: number;
+  label?: string;
+  href?: string;
+  type?: "default" | "phone" | "address";
+}
+
+export interface GlobalHeaderComponent {
+  id?: number;
+  logo?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  links?: SharedLinkComponent[];
+}
+
+export interface SharedLinkListComponent {
+  id?: number;
+  header?: string;
+  items?: SharedLinkComponent[];
+}
+
+export interface GlobalFooterComponent {
+  id?: number;
+  logo?: {
+    id?: number;
+    documentId?: string;
+    name?: string;
+    alternativeText?: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    formats?: any;
+    hash?: string;
+    ext?: string;
+    mime?: string;
+    /** @format float */
+    size?: number;
+    url?: string;
+    previewUrl?: string;
+    provider?: string;
+    provider_metadata?: any;
+    related?: {
+      id?: number;
+      documentId?: string;
+    }[];
+    folder?: {
+      id?: number;
+      documentId?: string;
+    };
+    folderPath?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  links?: SharedLinkListComponent[];
 }
 
 export interface HomeRequest {
@@ -1800,12 +1653,6 @@ export interface HomeSectorsComponent {
   subHeader?: string;
   paragraph?: string;
   sectorItem?: HomeSectorItemComponent[];
-}
-
-export interface SharedLinkComponent {
-  id?: number;
-  label?: string;
-  href?: string;
 }
 
 export interface HomeSpotlightComponent {

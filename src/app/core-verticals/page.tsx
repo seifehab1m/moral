@@ -10,7 +10,6 @@ export default async function CoreVerticals() {
   return (
     <>
       <Hero hero={page?.data?.hero} />
-
       {page?.data?.sections?.map((s) => {
         if (s.__component === "what-we-do.company-section")
           return <CompanySection key={s.id} company={s} />;
