@@ -1126,8 +1126,8 @@ export interface GlobalRequest {
     defaultSeo?: SharedSeoComponent;
     header?: GlobalHeaderComponent;
     footer?: GlobalFooterComponent;
-    seo?: SharedSeoComponent;
     contact?: GlobalGlobalContactSectionComponent;
+    robots?: GlobalRobotsComponent;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -1153,8 +1153,8 @@ export interface Global {
   defaultSeo?: SharedSeoComponent;
   header?: GlobalHeaderComponent;
   footer?: GlobalFooterComponent;
-  seo?: SharedSeoComponent;
   contact?: GlobalGlobalContactSectionComponent;
+  robots?: GlobalRobotsComponent;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -1176,8 +1176,8 @@ export interface Global {
     defaultSeo?: SharedSeoComponent;
     header?: GlobalHeaderComponent;
     footer?: GlobalFooterComponent;
-    seo?: SharedSeoComponent;
     contact?: GlobalGlobalContactSectionComponent;
+    robots?: GlobalRobotsComponent;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -1327,6 +1327,30 @@ export interface GlobalGlobalContactSectionComponent {
   header?: string;
   paragraph?: string;
   cta?: SharedLinkComponent;
+}
+
+export interface SharedTextItemComponent {
+  id?: number;
+  text?: string;
+}
+
+export interface GlobalUserAgentComponent {
+  id?: number;
+  name?: string;
+  /**
+   * @pattern ^\d*$
+   * @example "123456789"
+   */
+  crawlDelay?: string;
+  allow?: SharedTextItemComponent[];
+  disallow?: SharedTextItemComponent[];
+}
+
+export interface GlobalRobotsComponent {
+  id?: number;
+  userAgents?: GlobalUserAgentComponent[];
+  sitemaps?: SharedTextItemComponent[];
+  host?: string;
 }
 
 export interface HomeRequest {
@@ -2219,7 +2243,7 @@ export interface SitemapRequest {
       | "never";
     /** @format float */
     priority?: number;
-    /** @format date-time */
+    /** @format date */
     lastmod?: string;
     locale?: string;
     localizations?: (number | string)[];
@@ -2254,7 +2278,7 @@ export interface Sitemap {
     | "never";
   /** @format float */
   priority?: number;
-  /** @format date-time */
+  /** @format date */
   lastmod?: string;
   /** @format date-time */
   createdAt?: string;
@@ -2376,7 +2400,7 @@ export interface Sitemap {
       | "never";
     /** @format float */
     priority?: number;
-    /** @format date-time */
+    /** @format date */
     lastmod?: string;
     /** @format date-time */
     createdAt?: string;
