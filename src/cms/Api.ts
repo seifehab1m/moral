@@ -2206,6 +2206,205 @@ export interface PrivacyItemComponent {
   content?: any;
 }
 
+export interface SitemapRequest {
+  data: {
+    location: string;
+    changefreq?:
+      | "always"
+      | "hourly"
+      | "daily"
+      | "weekly"
+      | "monthly"
+      | "yearly"
+      | "never";
+    /** @format float */
+    priority?: number;
+    /** @format date-time */
+    lastmod?: string;
+    locale?: string;
+    localizations?: (number | string)[];
+  };
+}
+
+export interface SitemapListResponse {
+  data?: Sitemap[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /** @min 25 */
+      pageSize?: number;
+      /** @max 1 */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+}
+
+export interface Sitemap {
+  id?: number;
+  documentId?: string;
+  location: string;
+  changefreq?:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
+  /** @format float */
+  priority?: number;
+  /** @format date-time */
+  lastmod?: string;
+  /** @format date-time */
+  createdAt?: string;
+  /** @format date-time */
+  updatedAt?: string;
+  /** @format date-time */
+  publishedAt?: string;
+  createdBy?: {
+    id?: number;
+    documentId?: string;
+    firstname?: string;
+    lastname?: string;
+    username?: string;
+    /** @format email */
+    email?: string;
+    resetPasswordToken?: string;
+    registrationToken?: string;
+    isActive?: boolean;
+    roles?: {
+      id?: number;
+      documentId?: string;
+      name?: string;
+      code?: string;
+      description?: string;
+      users?: {
+        id?: number;
+        documentId?: string;
+      }[];
+      permissions?: {
+        id?: number;
+        documentId?: string;
+        action?: string;
+        actionParameters?: any;
+        subject?: string;
+        properties?: any;
+        conditions?: any;
+        role?: {
+          id?: number;
+          documentId?: string;
+        };
+        /** @format date-time */
+        createdAt?: string;
+        /** @format date-time */
+        updatedAt?: string;
+        /** @format date-time */
+        publishedAt?: string;
+        createdBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        updatedBy?: {
+          id?: number;
+          documentId?: string;
+        };
+        locale?: string;
+        localizations?: {
+          id?: number;
+          documentId?: string;
+        }[];
+      }[];
+      /** @format date-time */
+      createdAt?: string;
+      /** @format date-time */
+      updatedAt?: string;
+      /** @format date-time */
+      publishedAt?: string;
+      createdBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      updatedBy?: {
+        id?: number;
+        documentId?: string;
+      };
+      locale?: string;
+      localizations?: {
+        id?: number;
+        documentId?: string;
+      }[];
+    }[];
+    blocked?: boolean;
+    preferedLanguage?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  };
+  updatedBy?: {
+    id?: number;
+    documentId?: string;
+  };
+  locale?: string;
+  localizations?: {
+    id?: number;
+    documentId?: string;
+    location?: string;
+    changefreq?:
+      | "always"
+      | "hourly"
+      | "daily"
+      | "weekly"
+      | "monthly"
+      | "yearly"
+      | "never";
+    /** @format float */
+    priority?: number;
+    /** @format date-time */
+    lastmod?: string;
+    /** @format date-time */
+    createdAt?: string;
+    /** @format date-time */
+    updatedAt?: string;
+    /** @format date-time */
+    publishedAt?: string;
+    createdBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    updatedBy?: {
+      id?: number;
+      documentId?: string;
+    };
+    locale?: string;
+    localizations?: {
+      id?: number;
+      documentId?: string;
+    }[];
+  }[];
+}
+
+export interface SitemapResponse {
+  data?: Sitemap;
+  meta?: object;
+}
+
 export interface WhatWeDoRequest {
   data: {
     hero?: WhatWeDoHeroComponent;
@@ -3827,6 +4026,125 @@ export class Api<
     deletePrivacyPolicy: (params: RequestParams = {}) =>
       this.request<number, Error>({
         path: `/privacy-policy`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+  };
+  sitemaps = {
+    /**
+     * No description
+     *
+     * @tags Sitemap
+     * @name GetSitemaps
+     * @request GET:/sitemaps
+     * @secure
+     */
+    getSitemaps: (
+      query?: {
+        /** Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** Fields to return (ex: title,author) */
+        fields?: string;
+        /** Relations to return */
+        populate?: string;
+        /** Filters to apply */
+        filters?: Record<string, any>;
+        /** Locale to apply */
+        locale?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<SitemapListResponse, Error>({
+        path: `/sitemaps`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sitemap
+     * @name PostSitemaps
+     * @request POST:/sitemaps
+     * @secure
+     */
+    postSitemaps: (data: SitemapRequest, params: RequestParams = {}) =>
+      this.request<SitemapResponse, Error>({
+        path: `/sitemaps`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sitemap
+     * @name GetSitemapsId
+     * @request GET:/sitemaps/{id}
+     * @secure
+     */
+    getSitemapsId: (id: number, params: RequestParams = {}) =>
+      this.request<SitemapResponse, Error>({
+        path: `/sitemaps/${id}`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sitemap
+     * @name PutSitemapsId
+     * @request PUT:/sitemaps/{id}
+     * @secure
+     */
+    putSitemapsId: (
+      id: number,
+      data: SitemapRequest,
+      params: RequestParams = {},
+    ) =>
+      this.request<SitemapResponse, Error>({
+        path: `/sitemaps/${id}`,
+        method: "PUT",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sitemap
+     * @name DeleteSitemapsId
+     * @request DELETE:/sitemaps/{id}
+     * @secure
+     */
+    deleteSitemapsId: (id: number, params: RequestParams = {}) =>
+      this.request<number, Error>({
+        path: `/sitemaps/${id}`,
         method: "DELETE",
         secure: true,
         format: "json",

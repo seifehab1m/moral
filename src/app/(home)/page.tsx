@@ -12,7 +12,6 @@ export default async function HomePage() {
   const [page, err] = await getHome();
 
   if (err) notFound();
-
   return (
     <>
       <c.Hero hero={page.data?.hero} />
