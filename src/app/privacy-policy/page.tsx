@@ -1,7 +1,7 @@
 import { getPrivacyPolicy } from "@/cms/privacy";
 import { notFound } from "next/navigation";
 import { toTwoDigits } from "@/lib/utils";
-import { StrapiBlocksRenderer } from "@/components/helpers";
+import { JSONLD, StrapiBlocksRenderer } from "@/components/helpers";
 import { createMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
@@ -43,6 +43,8 @@ export default async function page() {
           </section>
         );
       })}
+
+      <JSONLD structuredData={(page.data as any)?.seo?.structuredData} />
     </div>
   );
 }

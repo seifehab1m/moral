@@ -2,6 +2,7 @@ import * as c from "./_components";
 import { getHome } from "@/cms/home";
 import { createMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
+import { JSONLD } from "@/components/helpers";
 
 export async function generateMetadata() {
   const [page] = await getHome();
@@ -12,6 +13,7 @@ export default async function HomePage() {
   const [page, err] = await getHome();
 
   if (err) notFound();
+
   return (
     <>
       <c.Hero hero={page.data?.hero} />
@@ -19,6 +21,7 @@ export default async function HomePage() {
       <c.CallToActionBG section={page.data?.imageSection} className="pb-10" />
       <c.Sectors sectors={page.data?.sectors} />
       <c.FlagshipSpotlight spotlight={page.data?.spotlight} />
+      <JSONLD structuredData={page.data?.seo?.structuredData} />
     </>
   );
 }

@@ -5,6 +5,7 @@ import ContactUsPartner from "@/components/pages/partner/ContactUsPartner";
 import { getPartnership } from "@/cms/partnership";
 import { notFound } from "next/navigation";
 import { createMetadata } from "@/lib/seo";
+import { JSONLD } from "@/components/helpers";
 
 export async function generateMetadata() {
   const [page] = await getPartnership();
@@ -17,11 +18,12 @@ export default async function Page() {
   if (err) notFound();
 
   return (
-    <section className="pt-[92px] lg:pt-[230px]">
+    <div className="pt-[92px] lg:pt-[230px]">
       <PartnerHeader section={page.data?.hero} />
       <Investment section={page.data?.partnership} />
       <SuccessStories section={page.data?.imageSection} />
       <ContactUsPartner section={page.data?.contact} />
-    </section>
+      <JSONLD structuredData={page.data?.seo?.structuredData} />
+    </div>
   );
 }

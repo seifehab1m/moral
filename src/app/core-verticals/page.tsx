@@ -1,5 +1,6 @@
 import { Hero, SectorBrowser, CompanySection } from "./_components";
 import { getWhatWeDo } from "@/cms/what-we-do";
+import { JSONLD } from "@/components/helpers";
 import { createMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 
@@ -22,6 +23,8 @@ export default async function CoreVerticals() {
         else if (s.__component === "what-we-do.sector-browser")
           return <SectorBrowser key={i} sectors={s} />;
       })}
+
+      <JSONLD structuredData={page.data?.seo?.structuredData} />
     </>
   );
 }

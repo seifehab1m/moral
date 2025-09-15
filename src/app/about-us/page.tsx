@@ -6,6 +6,7 @@ import Values from "@/components/pages/about-us/Values";
 import { getAbout } from "@/cms/about";
 import { notFound } from "next/navigation";
 import { createMetadata } from "@/lib/seo";
+import { JSONLD } from "@/components/helpers";
 
 export async function generateMetadata() {
   const [page] = await getAbout();
@@ -24,6 +25,7 @@ export default async function page() {
       <LeaderShip section={page?.data?.leadership} />
       <Values section={page.data?.values} />
       <Sectors section={page.data?.sectors} />
+      <JSONLD structuredData={page.data?.seo?.structuredData} />
     </div>
   );
 }

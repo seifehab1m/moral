@@ -1,4 +1,5 @@
 import { getCareers } from "@/cms/careers";
+import { JSONLD } from "@/components/helpers";
 import CareerHeader from "@/components/pages/career-opportunities/CareerHeader";
 import CareerOpportunitiesForm from "@/components/pages/career-opportunities/CareerOpportunitiesForm";
 import { createMetadata } from "@/lib/seo";
@@ -18,6 +19,7 @@ export default async function Page() {
     <>
       <CareerHeader section={page.data?.section} />
       <CareerOpportunitiesForm />
+      <JSONLD structuredData={page.data?.seo?.structuredData} />
     </>
   );
 }
