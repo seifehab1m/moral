@@ -91,7 +91,7 @@ export function Sectors() {
           <span className="sub-header font-medium split-sectors-heading">
             Our Sectors
           </span>
-          <p className="mt-3 lg:mt-12 lg:text-2xl font-medium text-light-black split-sectors-heading">
+          <p className="mt-3 lg:mt-12 lg:text-2xl font-light text-light-black split-sectors-heading">
             MRBF Holding manages sizeable assets across investment and financial
             services, healthcare, real estate, construction, IT services and
             hospitality. It delivers experiences at the forefront of market

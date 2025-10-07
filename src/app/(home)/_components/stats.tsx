@@ -51,7 +51,7 @@ export function Stats() {
             Building legacies, <br />
             <span className="text-primary">bettering lives</span>
           </h2>
-          <p className="text-light-black font-medium lg:text-2xl lg:max-w-[690px] lg:mt-[99px] split-stats">
+          <p className="text-light-black font-light lg:text-2xl lg:max-w-[690px] lg:mt-[99px] split-stats">
             MRBF Holding is a new kind of holding company. Built on 55 years of
             diversified success, and equipped with a keen sense of future
             demand, it operates with agility and intent – focused on

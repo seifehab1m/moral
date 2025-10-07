@@ -43,7 +43,7 @@ export default function CareerHeader() {
             inspired by the pursuit of <br /> opportunities.
           </span>
         </h1>
-        <p className="heading-4 text-black font-medium mt-3 lg:mt-12 career-header">
+        <p className="heading-4 text-black font-light mt-3 lg:mt-12 career-header">
           Join us in contributing to the future of the UAE and beyond,
           maximising your talent across sectors including financial services,
           healthcare, real estate, hospitality, and IT services.

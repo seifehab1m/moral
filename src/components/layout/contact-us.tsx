@@ -35,7 +35,7 @@ export function ContactUs() {
                 <Link href="/contact-us">Contact Us</Link>
               </Button>
             </div>
-            <p className="mt-6 lg:mt-12 text-sm lg:text-2xl lg:font-medium text-secondary lg:text-black contact-us-section">
+            <p className="mt-6 lg:mt-12 text-sm lg:text-2xl lg:font-light text-secondary lg:text-black contact-us-section">
               MRBF Holding is focused identifying new growth frontiers across
               key industries. If you are an emerging business looking to strike
               purposeful opportunities, please get in touch.

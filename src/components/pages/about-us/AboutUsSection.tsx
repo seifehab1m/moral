@@ -32,7 +32,7 @@ export default function AboutUsSection() {
         Building legacies, <br />
         <span className="text-primary">bettering lives.</span>
       </h2>
-      <p className="heading-4 text-black font-medium mt-8 about-us">
+      <p className="heading-4 text-black font-light mt-8 about-us">
         MRBF Holding grew in the UAE as a respected family enterprise with an
         ambition for innovation, quality and community enhancement. For nearly
         half a century, it has expanded across sectors and regions, shaping

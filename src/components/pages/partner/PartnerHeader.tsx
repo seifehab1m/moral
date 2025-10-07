@@ -34,7 +34,7 @@ export default function PartnerHeader() {
             partnership <br /> with us
           </span>
         </h1>
-        <p className="heading-4 text-black font-medium partnership-header">
+        <p className="heading-4 text-black font-light partnership-header">
           Creating value, enriching communities.
         </p>
       </div>

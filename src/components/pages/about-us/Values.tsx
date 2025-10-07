@@ -55,7 +55,7 @@ function ValueCard({
       <h2 className={`heading-2 text-primary font-medium ${className}`}>
         {name}
       </h2>
-      <p className={`mt-6 text-sm md:text-base font-medium ${className}`}>
+      <p className={`mt-6 text-sm md:text-base font-light ${className}`}>
         {description}
       </p>
       <div

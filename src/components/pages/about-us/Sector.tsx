@@ -22,7 +22,7 @@ export default function Sector() {
             <span className="text-secondary">Broad sector expertise,</span> deep
             market understanding.
           </h2>
-          <p className="md:w-1/2 heading-4 font-medium sector-description">
+          <p className="md:w-1/2 heading-4 font-light sector-description">
             MRBF Holding creates value in key sectors that have the power to
             deliver sustainable returns and a genuine impact for communities.
             From quality developments that transform lifestyles, to strategic

@@ -73,7 +73,7 @@ export function CallToActionBG({
       <div className="relative z-10 container flex flex-row gap-4 items-end lg:items-center justify-between mb-[38px]">
         <h2
           ref={headingRef}
-          className="heading-1 text-white font-semibold max-w-[500px] line"
+          className="heading-1 text-white font-medium max-w-[500px] line"
         >
           {headerText}
         </h2>

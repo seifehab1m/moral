@@ -21,7 +21,7 @@ export default function Investment() {
           </h2>
         </div>
 
-        <p className="heading-4 text-light-black font-medium mt-4 invesetment-section">
+        <p className="heading-4 text-light-black font-light mt-4 invesetment-section">
           MRBF Holding is committed to driving exceptional investor returns by
           combining deep insights into global opportunities with the financial
           strength of its ADGM-housed fund. It is open to forging new

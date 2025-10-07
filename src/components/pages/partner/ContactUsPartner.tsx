@@ -33,7 +33,7 @@ export default function ContactUsPartner() {
     <section ref={containerRef}>
       <div className="container py-[42px] lg:py-[90px]">
         <h6 className="sub-header pb-5 contact-us-partner">Contact Us</h6>
-        <h2 className="text-primary font-medium heading-1 md:max-w-[768px] contact-us-partner">
+        <h2 className="text-primary font-light heading-1 md:max-w-[768px] contact-us-partner">
           If you would like to know more about MRBF and opportunities,{} please
           complete the form below
         </h2>

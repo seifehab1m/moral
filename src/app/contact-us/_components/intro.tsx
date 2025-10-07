@@ -16,7 +16,7 @@ export function Intro() {
           of */}
           <span className="text-primary"> Connect with MRBF Holding</span>
         </h1>
-        <p className="lg:text-2xl font-medium mt-3 lg:mt-10">
+        <p className="lg:text-2xl font-light mt-3 lg:mt-10">
           MRBF Holding is headquartered in Dubai, UAE, with interests across
           Europe, APAC and the Americas. <br /> Please get in touch using the
           details below, or simply fill out the form and the correct team will

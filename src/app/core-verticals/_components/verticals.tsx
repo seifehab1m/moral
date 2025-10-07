@@ -49,7 +49,7 @@ export function Verticals() {
           by building{" "}
           <span className="text-primary">exceptional businesses.</span>
         </h2>
-        <p className="text-xs lg:text-2xl mt-3 lg:font-medium lg:mt-12 text-light-black vertical">
+        <p className="text-xs lg:text-2xl mt-3 lg:font-light lg:mt-12 text-light-black vertical">
           MRBF Holding is committed to sectors that deliver sustainable returns
           and have a genuine impact on wider communities. Overseeing a pool of
           successful entities across financial services, healthcare, real

@@ -47,10 +47,10 @@ export default function FutureAndPresent() {
       <div className="relative flex items-center h-full">
         <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
           <div className="max-w-[690px]">
-            <h2 className="heading-1 text-white font-semibold leading-12 ceo-word">
+            <h2 className="heading-1 text-white font-medium leading-12 ceo-word">
               Future, Present.
             </h2>
-            <p className="heading-4 text-white lg:mt-8 mt-3 ceo-word">
+            <p className="heading-4 text-white lg:mt-8 mt-3 ceo-word !font-light">
               Like our home, the UAE, MRBF Holding thinks long-term, acts
               decisively and moves with precision. Over the years, our family
               business has evolved to deliver exceptional investor returns and
